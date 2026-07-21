@@ -3,61 +3,308 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>StudentHub-Home</title>
+    <title>StudentHub - Portal</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: {
+                        brand: { 50: '#eff6ff', 500: '#3b82f6', 600: '#4f46e5', 700: '#4338ca' }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #f8fafc; }
+        .page-section { display: none; }
+        .page-section.active { display: block; animation: fadeIn 0.3s ease-in-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
 </head>
-<body>
-    <header>
-        <h1>
-            StudentHub
-        </h1>
-        <p>
-            Your Digital Campus Portal
-        </p>
-    </header>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="regiter.html">Register</a>
-        <a href="login.html">Login</a>
-        <a href="dashboard.html">Dashboard</a>
-        <a href="events.html">Events</a>
-        <a href="profile.html">Profile</a>
-        <a href="contact.html">Contact</a>
-        <a href="admin.html">Admin</a>
-        <a href="faq.html">FAQ</a>
-        <a href="feedback.html">Feedback</a>
+<body class="text-slate-800 font-sans antialiased flex flex-col min-h-screen">
+
+    <!-- Global Navigation -->
+    <nav class="bg-white border-b border-slate-200 sticky top-0 z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-wrap justify-between items-center py-4 gap-4">
+                <!-- Logo -->
+                <div class="flex items-center gap-2 cursor-pointer" onclick="navigateTo('home')">
+                    <div class="bg-brand-50 p-2 rounded-lg">
+                        <i class="ph-duotone ph-book-open text-2xl text-brand-600"></i>
+                    </div>
+                    <span class="text-xl font-bold text-slate-900">StudentHub</span>
+                </div>
+
+                <!-- Main Nav Links -->
+                <div class="flex flex-wrap items-center gap-1 md:gap-2 text-sm font-medium">
+                    <button onclick="navigateTo('home')" class="nav-btn px-3 py-2 rounded-lg text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-colors">Home</button>
+                    <button onclick="navigateTo('about')" class="nav-btn px-3 py-2 rounded-lg text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-colors">About</button>
+                    <button onclick="navigateTo('dashboard')" class="nav-btn px-3 py-2 rounded-lg text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-colors">Dashboard</button>
+                    <button onclick="navigateTo('events')" class="nav-btn px-3 py-2 rounded-lg text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-colors">Events</button>
+                    <button onclick="navigateTo('profile')" class="nav-btn px-3 py-2 rounded-lg text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-colors">Profile</button>
+                    <button onclick="navigateTo('faq')" class="nav-btn px-3 py-2 rounded-lg text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-colors">FAQ</button>
+                    <button onclick="navigateTo('feedback')" class="nav-btn px-3 py-2 rounded-lg text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-colors">Feedback</button>
+                    <button onclick="navigateTo('contact')" class="nav-btn px-3 py-2 rounded-lg text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-colors">Contact</button>
+                </div>
+
+                <!-- Auth Links -->
+                <div class="flex items-center gap-2">
+                    <button onclick="navigateTo('login')" class="px-4 py-2 text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors">Login</button>
+                    <button onclick="navigateTo('register')" class="px-4 py-2 text-sm font-medium bg-brand-600 text-white rounded-lg hover:bg-brand-700 transition-colors">Register</button>
+                </div>
+            </div>
+        </div>
     </nav>
-    <main>
-        <section>
-            <h2>
-                Welcome To StudentHub
-            </h2>
-            <p>
-                StudentHub is digital platform where students can register,
-                participate in events, manage profiles, and access academic information.
-            <p>
-            
+
+    <!-- Main Content Area -->
+    <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full">
+        
+        <!-- 1. Home Page -->
+        <section id="home" class="page-section active text-center py-20">
+            <h1 class="text-5xl font-bold text-slate-900 mb-6">Welcome to StudentHub</h1>
+            <p class="text-xl text-slate-600 max-w-2xl mx-auto mb-10">Your all-in-one campus platform for managing events, notices, and academic progress.</p>
+            <div class="flex justify-center gap-4">
+                <button onclick="navigateTo('register')" class="px-6 py-3 bg-brand-600 text-white rounded-xl font-semibold hover:bg-brand-700">Get Started</button>
+                <button onclick="navigateTo('about')" class="px-6 py-3 bg-white border border-slate-300 text-slate-700 rounded-xl font-semibold hover:bg-slate-50">Learn More</button>
+            </div>
         </section>
 
-        <article>
-            <h3>Upcoming Workshop</h3>
-            <p>A Web Development workshop will be conducted next week</p>
-        </article>
+        <!-- 2. About Page -->
+        <section id="about" class="page-section max-w-3xl mx-auto">
+            <h2 class="text-3xl font-bold text-slate-900 mb-6">About Us</h2>
+            <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm">
+                <p class="text-slate-600 mb-4 leading-relaxed">StudentHub was created in 2026 to bridge the gap between campus administration and student life. We believe that managing your academic journey should be seamless and intuitive.</p>
+                <p class="text-slate-600 leading-relaxed">Our mission is to provide a unified dashboard where students can discover events, track their progress, and stay updated with crucial campus notices without feeling overwhelmed.</p>
+            </div>
+        </section>
 
-        <aside>
-            <h3>Latest Notice</h3>
-            <u1>
-                <li >Lab Submission on Friday</li>
-                <li>Workshop Registration Open</li>
-                <li>Hackathon Next Month</li>
-                
-            </u1>
-        </aside>
+        <!-- 3. Login Page -->
+        <section id="login" class="page-section max-w-md mx-auto">
+            <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm">
+                <div class="text-center mb-8">
+                    <h2 class="text-2xl font-bold text-slate-900">Welcome Back</h2>
+                    <p class="text-slate-500 mt-2">Enter your credentials to access your account</p>
+                </div>
+                <form class="space-y-4" onsubmit="event.preventDefault(); navigateTo('dashboard');">
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700 mb-1">Student ID / Email</label>
+                        <input type="email" class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-brand-500 outline-none" required>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700 mb-1">Password</label>
+                        <input type="password" class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-brand-500 outline-none" required>
+                    </div>
+                    <button type="submit" class="w-full bg-brand-600 text-white font-semibold py-2.5 rounded-lg hover:bg-brand-700 mt-4">Sign In</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- 4. Register Page -->
+        <section id="register" class="page-section max-w-md mx-auto">
+            <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm">
+                <div class="text-center mb-8">
+                    <h2 class="text-2xl font-bold text-slate-900">Create Account</h2>
+                    <p class="text-slate-500 mt-2">Join the StudentHub community</p>
+                </div>
+                <form class="space-y-4" onsubmit="event.preventDefault(); navigateTo('login');">
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700 mb-1">Full Name</label>
+                        <input type="text" class="w-full px-4 py-2 border border-slate-300 rounded-lg outline-none" required>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700 mb-1">University Email</label>
+                        <input type="email" class="w-full px-4 py-2 border border-slate-300 rounded-lg outline-none" required>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700 mb-1">Password</label>
+                        <input type="password" class="w-full px-4 py-2 border border-slate-300 rounded-lg outline-none" required>
+                    </div>
+                    <button type="submit" class="w-full bg-brand-600 text-white font-semibold py-2.5 rounded-lg hover:bg-brand-700 mt-4">Register Now</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- 5. Student Dashboard Page -->
+        <section id="dashboard" class="page-section">
+            <h2 class="text-3xl font-bold text-slate-900 mb-2">Good morning, Smeet <span class="text-2xl">👋</span></h2>
+            <p class="text-slate-500 mb-8">Semester 3 in progress</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                    <i class="ph ph-calendar-check text-brand-600 text-2xl mb-2"></i>
+                    <h3 class="text-3xl font-bold">4</h3>
+                    <p class="text-slate-600 text-sm">Registered Events</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                    <i class="ph ph-bell text-red-500 text-2xl mb-2"></i>
+                    <h3 class="text-3xl font-bold">5</h3>
+                    <p class="text-slate-600 text-sm">Unread Notices</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                    <i class="ph ph-user-circle text-emerald-500 text-2xl mb-2"></i>
+                    <h3 class="text-3xl font-bold">78%</h3>
+                    <p class="text-slate-600 text-sm">Profile Completion</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Events Page -->
+        <section id="events" class="page-section">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-3xl font-bold text-slate-900">Campus Events</h2>
+                <button class="bg-slate-900 text-white px-4 py-2 rounded-lg text-sm font-medium">Filter</button>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Event Placeholder -->
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                    <span class="text-brand-600 text-xs font-bold uppercase tracking-wider">Technical</span>
+                    <h3 class="text-lg font-bold text-slate-900 mt-2 mb-2">Tech Fest 2026</h3>
+                    <p class="text-slate-500 text-sm mb-4"><i class="ph ph-calendar-blank"></i> Jul 26, 2026 • Main Auditorium</p>
+                    <button class="w-full py-2 bg-brand-50 text-brand-700 font-medium rounded-lg">View Details</button>
+                </div>
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                    <span class="text-emerald-600 text-xs font-bold uppercase tracking-wider">Career</span>
+                    <h3 class="text-lg font-bold text-slate-900 mt-2 mb-2">Summer Career Fair</h3>
+                    <p class="text-slate-500 text-sm mb-4"><i class="ph ph-calendar-blank"></i> Jul 28, 2026 • Convention Hall B</p>
+                    <button class="w-full py-2 bg-brand-50 text-brand-700 font-medium rounded-lg">View Details</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. Profile Page -->
+        <section id="profile" class="page-section max-w-2xl mx-auto">
+            <h2 class="text-3xl font-bold text-slate-900 mb-6">My Profile</h2>
+            <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
+                <div class="bg-brand-600 h-32"></div>
+                <div class="px-8 pb-8 relative">
+                    <div class="h-24 w-24 bg-white rounded-full p-1 absolute -top-12 border-4 border-white">
+                        <div class="h-full w-full bg-brand-100 rounded-full flex items-center justify-center text-brand-600 text-2xl font-bold">PS</div>
+                    </div>
+                    <div class="mt-14">
+                        <h3 class="text-2xl font-bold text-slate-900">Priya Sharma</h3>
+                        <p class="text-slate-500">Computer Science Engineering • 3rd Year</p>
+                    </div>
+                    <hr class="my-6 border-slate-100">
+                    <div class="space-y-4">
+                        <p><strong>Email:</strong> priya.sharma@university.edu</p>
+                        <p><strong>Student ID:</strong> CSE2026045</p>
+                        <p><strong>Skills:</strong> Python, Web Development, UI/UX Design</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. FAQ Page -->
+        <section id="faq" class="page-section max-w-3xl mx-auto">
+            <h2 class="text-3xl font-bold text-slate-900 mb-6">Frequently Asked Questions</h2>
+            <div class="space-y-4">
+                <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
+                    <h4 class="font-bold text-slate-900 flex items-center justify-between cursor-pointer">How do I register for an event? <i class="ph ph-caret-down"></i></h4>
+                    <p class="text-slate-600 text-sm mt-3">Navigate to the Events page, select your desired event, and click the "Register" button before the deadline.</p>
+                </div>
+                <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
+                    <h4 class="font-bold text-slate-900 flex items-center justify-between cursor-pointer">Where can I see urgent notices? <i class="ph ph-caret-down"></i></h4>
+                    <p class="text-slate-600 text-sm mt-3">Urgent notices will always appear pinned at the top of your Student Dashboard.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 9. Feedback Page -->
+        <section id="feedback" class="page-section max-w-2xl mx-auto">
+            <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm">
+                <h2 class="text-2xl font-bold text-slate-900 mb-2">Submit Feedback</h2>
+                <p class="text-slate-500 mb-6 text-sm">Help us improve the campus experience by sharing your thoughts.</p>
+                <form class="space-y-4" onsubmit="event.preventDefault(); alert('Feedback submitted!'); navigateTo('dashboard');">
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700 mb-1">Category</label>
+                        <select class="w-full px-4 py-2 border border-slate-300 rounded-lg outline-none">
+                            <option>Platform Bug</option>
+                            <option>Event Suggestion</option>
+                            <option>General Feedback</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700 mb-1">Your Message</label>
+                        <textarea rows="4" class="w-full px-4 py-2 border border-slate-300 rounded-lg outline-none" placeholder="Type your feedback here..." required></textarea>
+                    </div>
+                    <button type="submit" class="bg-brand-600 text-white font-semibold px-6 py-2.5 rounded-lg hover:bg-brand-700">Submit</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- 10. Contact Page -->
+        <section id="contact" class="page-section max-w-3xl mx-auto">
+            <h2 class="text-3xl font-bold text-slate-900 mb-6">Contact Administration</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                    <i class="ph ph-envelope-simple text-brand-600 text-3xl mb-4"></i>
+                    <h3 class="font-bold text-lg mb-1">Email Support</h3>
+                    <p class="text-slate-500 text-sm mb-4">Drop us an email anytime.</p>
+                    <a href="#" class="text-brand-600 font-medium">support@studenthub.edu</a>
+                </div>
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                    <i class="ph ph-phone text-brand-600 text-3xl mb-4"></i>
+                    <h3 class="font-bold text-lg mb-1">Phone</h3>
+                    <p class="text-slate-500 text-sm mb-4">Mon-Fri from 9am to 5pm.</p>
+                    <a href="#" class="text-brand-600 font-medium">+1 (555) 123-4567</a>
+                </div>
+            </div>
+        </section>
+
     </main>
-        <footer>
-            <p>&copy; 2026 StudentHub, All Rights Reserved</p>
-        </footer>
 
-    
+    <!-- Footer -->
+    <footer class="bg-white border-t border-slate-200 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 py-6 text-center text-sm text-slate-500">
+            &copy; 2026 StudentHub. All rights reserved.
+        </div>
+    </footer>
+
+    <!-- Navigation Script -->
+    <script>
+        function navigateTo(pageId) {
+            // Hide all pages
+            document.querySelectorAll('.page-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // Show the target page
+            const target = document.getElementById(pageId);
+            if (target) {
+                target.classList.add('active');
+            }
+
+            // Update navigation UI styling
+            document.querySelectorAll('.nav-btn').forEach(btn => {
+                btn.classList.remove('bg-brand-50', 'text-brand-600');
+                btn.classList.add('text-slate-600');
+            });
+
+            // Find the clicked button and highlight it (if it's in the top nav)
+            const clickedBtn = Array.from(document.querySelectorAll('.nav-btn')).find(
+                btn => btn.getAttribute('onclick').includes(pageId)
+            );
+            
+            if (clickedBtn) {
+                clickedBtn.classList.remove('text-slate-600');
+                clickedBtn.classList.add('bg-brand-50', 'text-brand-600');
+            }
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+
+        // Initialize the app on the Dashboard page to match your previous screenshot request
+        document.addEventListener('DOMContentLoaded', () => {
+            navigateTo('dashboard');
+        });
+    </script>
 </body>
 </html>
