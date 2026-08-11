@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Students Hub - Home</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+    <!-- HEADER & NAVIGATION -->
+    <header>
+        <div class="logo">
+            <!-- Clickable Logo linking to Home -->
+            <a href="index.html"><h1>Students Hub</h1></a>
+        </div>
+        
+        <nav class="center-nav">
+            <ul>
+                <li><a href="about.html">About</a></li>
+                
+                <li><a href="events.html">Events</a></li>
+
+                <li><a href="forum.html" >Forum</a></li>
+        
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="tos.html">Terms of Service</a></li>
+            </ul>
+        </nav>
+
+        <div class="auth-buttons">
+            <a href="login.html" class="btn-login">Login</a>
+            <a href="register.html" class="btn-register">Register</a>
+        </div>
+    </header>
+
+    <hr>
+
+    <!-- MAIN CONTENT -->
+    <main>
+        
+        <!-- HERO SECTION -->
+        <section class="hero">
+            <h2>CONNECT. LEARN. SHARE.</h2>
+            <p>Your ultimate campus companion. Organize your engineering coursework, collaborate on projects, and elevate your university experience all in one place.</p>
+            <a href="register.html"><button>Join the Hub</button></a>
+        </section>
+
+        <hr>
+
+        <section>
+            <h2>My Overview</h2>
+            <div class="card-grid">
+                <div>
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="forum.html">Deep Learning Discussion</a></li>
+                        <li><a href="#">Cloud Computing Notes</a></li>
+                        <li><a href="#">CGPIT Exam Schedule</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Upcoming Deadlines</h3>
+                    <ul>
+                        <li>Machine Intelligence Final Report - Due Monday</li>
+                        <li>Bootstrap UI Project - Due Thursday</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <hr>
+
+        <!-- COMMUNITY HUB SECTION -->
+        <section>
+            <h2>Community Hub</h2>
+            <div class="card-grid">
+                <div>
+                    <h3>Upcoming Events</h3>
+                    <ul>
+                        <li>Tech Symposium at Uka Tarsadia University - <a href="events.html">Join</a></li>
+                        <li>Full-Stack (PERN) Workshop - <a href="events.html">Join</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Forum Feed</h3>
+                    <ul>
+                        <li><a href="forum.html">Best practices for modern Bootstrap layouts?</a></li>
+                        <li><a href="forum.html">Troubleshooting API connections in n8n?</a></li>
+                        <li><a href="forum.html">Anyone have past papers for Cloud Computing?</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <hr>
+
+        <!-- TOOLS & RESOURCES SECTION -->
+        <section>
+            <h2>Tools & Resources</h2>
+            <ul class="resource-links">
+                <li><a href="#">GPA Calculator</a></li>
+                <li><a href="#">Campus Map</a></li>
+                <li><a href="#">Engineering Internship Portal</a></li>
+                <li><a href="#">Student Tech Discounts</a></li>
+            </ul>
+        </section>
+
+    </main>
+
+    <hr>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 Student Hub. All rights reserved</p>
+    </footer>
+
+
+
+    <script>
+    // Automatically highlight the current active sidebar menu item
+    document.addEventListener("DOMContentLoaded", function () {
+        const currentPage = window.location.pathname.split("/").pop();
+        const menuLinks = document.querySelectorAll(".text-menu a");
+
+        menuLinks.forEach(link => {
+            const linkPage = link.getAttribute("href").split("/").pop();
+            if (linkPage === currentPage) {
+                link.classList.add("active");
+            } else {
+                link.classList.remove("active");
+            }
+        });
+    });
+</script>
+</body>
+</html>
