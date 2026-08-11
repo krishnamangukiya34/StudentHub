@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Students Hub - Login</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+    <!-- HEADER & NAVIGATION -->
+    <header>
+        <div class="logo">
+            <a href="index.html"><h1>Students Hub</h1></a>
+        </div>
+        
+        <nav class="center-nav">
+            <ul>
+                <li><a href="about.html">About</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="forum.html">Forum</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="tos.html">Terms of Service</a></li>
+            </ul>
+        </nav>
+
+        <div class="auth-buttons">
+            <a href="login.html" class="btn-login" style="color: var(--bg-main) !important; background-color: var(--accent-green);">Login</a>
+            <a href="register.html" class="btn-register">Register</a>
+        </div>
+    </header>
+
+    <hr>
+
+    <!-- MAIN LOGIN CONTENT -->
+    <main class="auth-wrapper">
+        <div class="auth-card">
+            
+            <div class="auth-header">
+                <h2>Students Hub</h2>
+                <p>Welcome back! Please sign in to continue.</p>
+            </div>
+
+            <form action="dashboard.html" method="GET" class="auth-form">
+                
+                <div class="input-group">
+                    <span class="input-icon">👤</span>
+                    <input type="text" id="username" name="username" placeholder="Username or Email" required>
+                </div>
+                
+                <div class="input-group">
+                    <span class="input-icon">🔒</span>
+                    <input type="password" id="password" name="password" placeholder="Password" required>
+                    <span class="input-icon-right">👁️</span>
+                </div>
+
+                <div class="auth-options">
+                    <a href="#" class="forgot-link">Forgot password?</a>
+                </div>
+
+                <button type="submit" class="btn-auth">Sign In</button>
+            </form>
+
+            <p class="auth-switch">Don't have an account? <a href="register.html">Register now</a></p>
+
+        </div>
+    </main>
+
+    <hr>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 Students Hub</p>
+    </footer>
+
+</body>
+</html>

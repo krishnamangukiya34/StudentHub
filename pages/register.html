@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Students Hub - Register</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+    <!-- HEADER & NAVIGATION -->
+    <header>
+        <div class="logo">
+            <a href="index.html"><h1>Students Hub</h1></a>
+        </div>
+        
+        <nav class="center-nav">
+            <ul>
+                <li><a href="about.html">About</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="forum.html">Forum</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="tos.html">Terms of Service</a></li>
+            </ul>
+        </nav>
+
+        <div class="auth-buttons">
+            <a href="login.html" class="btn-login">Login</a>
+            <a href="register.html" class="btn-register" style="border: 2px solid var(--accent-green);">Register</a>
+        </div>
+    </header>
+
+    <hr>
+
+    <!-- MAIN REGISTER CONTENT -->
+    <main class="auth-wrapper">
+        <div class="auth-card">
+            
+            <div class="auth-header">
+                <h2>Join the Hub</h2>
+                <p>Create your account to start collaborating.</p>
+            </div>
+
+            <form action="dashboard.html" method="GET" class="auth-form">
+                
+                <div class="input-group">
+                    <span class="input-icon">📝</span>
+                    <input type="text" id="fullname" name="fullname" placeholder="Full Name" required>
+                </div>
+
+                <div class="input-group">
+                    <span class="input-icon">📧</span>
+                    <input type="email" id="email" name="email" placeholder="Email Address" required>
+                </div>
+                
+                <div class="input-group">
+                    <span class="input-icon">🔒</span>
+                    <input type="password" id="reg-password" name="reg-password" placeholder="Password" required>
+                </div>
+
+                <div class="input-group">
+                    <span class="input-icon">🔐</span>
+                    <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm Password" required>
+                </div>
+
+                <button type="submit" class="btn-auth" style="margin-top: 20px;">Create Account</button>
+            </form>
+
+            <p class="auth-switch">Already have an account? <a href="login.html">Sign In</a></p>
+
+        </div>
+    </main>
+
+    <hr>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 Students Hub</p>
+    </footer>
+
+</body>
+</html>

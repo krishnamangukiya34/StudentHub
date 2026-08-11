@@ -3,9 +3,120 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>StudentHub</title>
+    <title>Students Hub - About Us</title>
+    <!-- Link to your existing CSS file -->
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-    
+
+    <!-- HEADER & NAVIGATION -->
+    <header>
+        <div class="logo">
+            <a href="index.html"><h1>Students Hub</h1></a>
+        </div>
+        
+        <nav class="center-nav">
+            <ul>
+                <!-- "About" is highlighted white -->
+                <li><a href="about.html" style="color: var(--text-primary);">About</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="forum.html">Forum</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="tos.html">Terms of Service</a></li>
+            </ul>
+        </nav>
+
+        <div class="auth-buttons">
+            <a href="login.html" class="btn-login">Login</a>
+            <a href="register.html" class="btn-register">Register</a>
+        </div>
+    </header>
+
+    <hr>
+
+    <!-- MAIN ABOUT CONTENT -->
+    <main class="about-page">
+        
+        <!-- ABOUT HERO -->
+        <section class="about-hero">
+            <h2>About Students Hub</h2>
+            <p>Empowering students to connect, learn, and succeed together.</p>
+        </section>
+
+        <!-- MISSION SECTION -->
+        <section class="mission-section">
+            <div class="mission-text">
+                <h3>Our Mission</h3>
+                <p>We built Students Hub to bridge the gap between academic requirements and student collaboration. Whether you are managing complex projects, seeking notes for upcoming exams, or looking for study groups, this platform is designed to be your central command center.</p>
+            </div>
+            
+            <!-- Statistics Cards -->
+            <div class="mission-stats card-grid">
+                <div>
+                    <h4>10k+</h4>
+                    <p>Active Students</p>
+                </div>
+                <div>
+                    <h4>50+</h4>
+                    <p>Universities</p>
+                </div>
+                <div>
+                    <h4>24/7</h4>
+                    <p>Community Support</p>
+                </div>
+            </div>
+        </section>
+
+        <hr>
+
+        <!-- CORE VALUES -->
+        <section>
+            <h3 class="section-title">What Drives Us</h3>
+            <div class="card-grid">
+                <div>
+                    <h3>Collaboration</h3>
+                    <p>We believe that peer-to-peer learning and sharing resources is the fastest way to master complex subjects.</p>
+                </div>
+                <div>
+                    <h3>Innovation</h3>
+                    <p>We constantly update our tools to provide modern, aesthetic, and functional layouts that make managing your university life effortless.</p>
+                </div>
+                <div>
+                    <h3>Accessibility</h3>
+                    <p>From GPA calculators to internship portals, we ensure every crucial campus resource is just one click away.</p>
+                </div>
+            </div>
+        </section>
+
+        
+
+    </main>
+
+    <hr>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 Student Hub. All rights reserved</p>
+    </footer>
+
+
+
+    <script>
+    // Automatically highlight the current active sidebar menu item
+    document.addEventListener("DOMContentLoaded", function () {
+        const currentPage = window.location.pathname.split("/").pop();
+        const menuLinks = document.querySelectorAll(".text-menu a");
+
+        menuLinks.forEach(link => {
+            const linkPage = link.getAttribute("href").split("/").pop();
+            if (linkPage === currentPage) {
+                link.classList.add("active");
+            } else {
+                link.classList.remove("active");
+            }
+        });
+    });
+</script>
 </body>
 </html>

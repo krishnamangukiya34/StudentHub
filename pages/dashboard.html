@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Students Hub - Dashboard</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="dashboard-body">
+
+    <!-- APP WRAPPER -->
+    <div class="app-layout">
+        
+        <!-- FULL TEXT SIDEBAR -->
+        <aside class="text-sidebar">
+            <div class="sidebar-brand-text">
+                <h2>Students Hub</h2>
+            </div>
+            
+            <ul class="text-menu">
+                <li><a href="index.html">🏠 Home</a></li>
+                <li><a href="dashboard.html" class="active">📊 Dashboard</a></li>
+                <li><a href="profile.html">👤 My Profile</a></li>
+                <li><a href="courses.html">📚 Courses</a></li>
+                <li><a href="events.html">📅 Schedule</a></li>
+                <li><a href="forum.html">💬 Discussions</a></li>
+                <li><a href="faq.html">❓ Help & FAQ</a></li>
+            </ul>
+
+
+
+            <div class="sidebar-footer-text">
+                <a href="index.html" class="logout-text-btn">🚪 Log Out</a>
+            </div>
+        </aside>
+
+        <!-- MAIN APP CONTENT AREA -->
+        <main class="app-main-content">
+            
+          <!-- TOP HEADER BAR -->
+            <header class="app-header-bar">
+                <div class="header-brand-area">
+                    <h2>Dashboard</h2>
+                </div>
+                
+                <div class="header-actions">
+                    <button class="action-btn-outline">Download Report</button>
+                    <button class="action-btn-solid">+ Join Class</button>
+                    
+                    <!-- PASTE THE CODE HERE -->
+                    <div class="header-profile">
+                        <span class="bell">🔔</span>
+                        <a href="profile.html" title="View Profile" class="header-profile-link">
+                            <div class="avatar-pill">
+                                <span>👨‍💻</span>
+                                <strong>Smeet N.</strong>
+                            </div>
+                        </a>
+                    </div>
+                    
+                </div>
+            </header>
+
+            <!-- DASHBOARD CONTENT GRID -->
+            <div class="portal-grid">
+                
+                <!-- LEFT MAIN SECTION -->
+                <div class="portal-left-col">
+                    
+                    <!-- 1. TOP STATS ROW (3 Cards) -->
+                    <div class="stats-row">
+                        <div class="stat-card">
+                            <div class="stat-icon" style="background: rgba(16, 185, 129, 0.1); color: var(--accent-green);">📚</div>
+                            <div class="stat-info">
+                                <h3>Active Courses</h3>
+                                <p class="stat-num">4</p>
+                                <span class="stat-sub">Cloud, AI & Web Dev</span>
+                            </div>
+                        </div>
+
+                        <div class="stat-card">
+                            <div class="stat-icon" style="background: rgba(59, 130, 246, 0.1); color: #3b82f6;">📝</div>
+                            <div class="stat-info">
+                                <h3>Assignments</h3>
+                                <p class="stat-num">3</p>
+                                <span class="stat-sub">Pending submission</span>
+                            </div>
+                        </div>
+
+                        <div class="stat-card">
+                            <div class="stat-icon" style="background: rgba(245, 158, 11, 0.1); color: #f59e0b;">⭐</div>
+                            <div class="stat-info">
+                                <h3>Current GPA</h3>
+                                <p class="stat-num">7.95</p>
+                                <span class="stat-sub">Fall Semester</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2. MIDDLE CHARTS ROW (Attendance & Progress Breakdown) -->
+                    <div class="charts-row">
+                        <!-- Simulated Attendance Bar Chart Box -->
+                        <div class="portal-card attendance-box">
+                            <div class="card-header-flex">
+                                <h3>Weekly Study Activity</h3>
+                                <span class="pill-dropdown">This Week ▾</span>
+                            </div>
+                            <div class="fake-bar-chart">
+                                <div class="bar-col"><span>Mon</span><div class="bar" style="height: 60%;"></div></div>
+                                <div class="bar-col"><span>Tue</span><div class="bar" style="height: 85%;"></div></div>
+                                <div class="bar-col"><span>Wed</span><div class="bar" style="height: 45%;"></div></div>
+                                <div class="bar-col"><span>Thu</span><div class="bar" style="height: 90%;"></div></div>
+                                <div class="bar-col"><span>Fri</span><div class="bar" style="height: 75%;"></div></div>
+                                <div class="bar-col"><span>Sat</span><div class="bar" style="height: 40%;"></div></div>
+                                <div class="bar-col"><span>Sun</span><div class="bar" style="height: 20%;"></div></div>
+                            </div>
+                        </div>
+
+                        <!-- Skill Completion Breakdown Box -->
+                        <div class="portal-card skills-box">
+                            <h3>Skill Mastery</h3>
+                            <div class="donut-container">
+                                <div class="fake-donut-ring">
+                                    <span class="donut-center-text">85%</span>
+                                </div>
+                                <div class="donut-legend">
+                                    <p><span class="dot" style="background: var(--accent-green);"></span> Webflow & React (45%)</p>
+                                    <p><span class="dot" style="background: #3b82f6;"></span> Node & PERN (30%)</p>
+                                    <p><span class="dot" style="background: #f59e0b;"></span> Python / AI (25%)</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3. NOTICE BOARD / ANNOUNCEMENTS -->
+                    <div class="portal-card notice-board">
+                        <div class="card-header-flex">
+                            <h3>Notice Board</h3>
+                            <span class="date-tag">📅 10 Aug 2026</span>
+                        </div>
+                        
+                        <div class="notice-item">
+                            <div class="notice-badge-row">
+                                <span class="badge-blue">Important</span>
+                                <span class="notice-time">Posted 2 hours ago</span>
+                            </div>
+                            <h4>Industrial Training Report Final Submissions</h4>
+                            <p>Ensure your hard-bound copies and database deployment verification links are ready before Friday.</p>
+                            <span class="notice-author">By Dept. Coordinator</span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- RIGHT SIDEBAR (Events Calendar & Upcoming Schedule) -->
+                <div class="portal-right-col">
+                    
+                    <!-- Events Calendar Widget -->
+                    <div class="portal-card calendar-widget">
+                        <div class="calendar-header">
+                            <h3>Events Calendar</h3>
+                            <div class="cal-nav">
+                                <button class="cal-btn">&lang;</button>
+                                <span class="cal-month">August 2026</span>
+                                <button class="cal-btn">&rang;</button>
+                            </div>
+                        </div>
+
+                        <div class="cal-grid">
+                            <span class="day-hdr">Su</span><span class="day-hdr">Mo</span><span class="day-hdr">Tu</span><span class="day-hdr">We</span><span class="day-hdr">Th</span><span class="day-hdr">Fr</span><span class="day-hdr">Sa</span>
+                            <span>26</span><span>27</span><span>28</span><span>29</span><span>30</span><span>31</span><span class="day-num">1</span>
+                            <span class="day-num">2</span><span class="day-num">3</span><span class="day-num">4</span><span class="day-num">5</span><span class="day-num">6</span><span class="day-num">7</span><span class="day-num">8</span>
+                            <span class="day-num">9</span><span class="day-num today-dot">10</span><span class="day-num">11</span><span class="day-num event-dot">12</span><span class="day-num">13</span><span class="day-num">14</span><span class="day-num">15</span>
+                            <span class="day-num">16</span><span class="day-num">17</span><span class="day-num">18</span><span class="day-num">19</span><span class="day-num">20</span><span class="day-num">21</span><span class="day-num">22</span>
+                        </div>
+                    </div>
+
+                    <!-- Upcoming Schedule / Timeline -->
+                    <div class="portal-card upcoming-widget">
+                        <h3>Upcoming Events</h3>
+                        
+                        <div class="timeline-item">
+                            <div class="timeline-dot" style="background: #f59e0b;"></div>
+                            <div class="timeline-content">
+                                <h4>n8n & Webflow Masterclass</h4>
+                                <p>Oct 12 at 4:00 PM</p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-dot" style="background: #3b82f6;"></div>
+                            <div class="timeline-content">
+                                <h4>University Expo</h4>
+                                <p>Nov 02 at 10:00 AM</p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-dot" style="background: var(--accent-green);"></div>
+                            <div class="timeline-content">
+                                <h4>Industrial Training Defense</h4>
+                                <p>Dec 12 at 9:00 AM</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- NEW CONTENT: RECENT FORUM DISCUSSIONS -->
+                    <div class="portal-card">
+                        <h3>Recent Forum Topics</h3>
+                        <div style="display: flex; flex-direction: column; gap: 12px; margin-top: 15px;">
+                            <div style="font-size: 0.85rem; border-bottom: 1px solid var(--border-color); padding-bottom: 8px;">
+                                <a href="forum.html" style="color: var(--text-primary); text-decoration: none; font-weight: 600;">Neon DB connection timeout fix</a>
+                                <p style="margin: 3px 0 0 0; font-size: 0.75rem; color: var(--text-secondary);">4 replies • 1 hr ago</p>
+                            </div>
+                            <div style="font-size: 0.85rem;">
+                                <a href="forum.html" style="color: var(--text-primary); text-decoration: none; font-weight: 600;">React state management best practices</a>
+                                <p style="margin: 3px 0 0 0; font-size: 0.75rem; color: var(--text-secondary);">8 replies • 3 hrs ago</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </main>
+    </div>
+
+
+
+    <script>
+    // Automatically highlight the current active sidebar menu item
+    document.addEventListener("DOMContentLoaded", function () {
+        const currentPage = window.location.pathname.split("/").pop();
+        const menuLinks = document.querySelectorAll(".text-menu a");
+
+        menuLinks.forEach(link => {
+            const linkPage = link.getAttribute("href").split("/").pop();
+            if (linkPage === currentPage) {
+                link.classList.add("active");
+            } else {
+                link.classList.remove("active");
+            }
+        });
+    });
+</script>
+</body>
+</html>

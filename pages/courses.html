@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Students Hub - Courses</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="dashboard-body">
+
+    <!-- APP WRAPPER -->
+    <div class="app-layout">
+        
+        <!-- FULL TEXT SIDEBAR -->
+        <aside class="text-sidebar">
+            <div class="sidebar-brand-text">
+                <h2>Students Hub</h2>
+            </div>
+            
+            <ul class="text-menu">
+                <li><a href="index.html">🏠 Home</a></li>
+                <li><a href="dashboard.html">📊 Dashboard</a></li>
+                <li><a href="profile.html">👤 My Profile</a></li>
+                <li><a href="courses.html" class="active">📚 Courses</a></li>
+                <li><a href="events.html">📅 Schedule</a></li>
+                <li><a href="forum.html">💬 Discussions</a></li>
+                <li><a href="faq.html">❓ Help & FAQ</a></li>
+            </ul>
+
+            <div class="sidebar-footer-text">
+                <a href="index.html" class="logout-text-btn">🚪 Log Out</a>
+            </div>
+        </aside>
+
+        <!-- MAIN APP CONTENT AREA -->
+        <main class="app-main-content">
+            
+            <!-- TOP HEADER BAR -->
+            <header class="app-header-bar">
+                <h2>Enrolled Courses</h2>
+                
+                <div class="header-actions">
+                    <div class="header-profile">
+                        <span class="bell">🔔</span>
+                        <div class="avatar-pill">
+                            <span>👨‍💻</span>
+                            <strong>Smeet N.</strong>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- COURSES CONTENT GRID -->
+            <div class="portal-grid">
+                
+                <!-- LEFT COLUMN: MAIN COURSES LIST -->
+                <div class="portal-left-col">
+                    
+                    <div class="portal-card">
+                        <div class="card-header-flex">
+                            <h3>Fall 2026 Modules</h3>
+                            <span class="pill-dropdown">4 Active Courses</span>
+                        </div>
+
+                        <div class="courses-list-stack">
+                            
+                            <!-- Course 1 -->
+                            <div class="course-item-card">
+                                <div class="course-item-icon course-icon-green">☁️</div>
+                                <div class="course-item-details">
+                                    <h4>Cloud Computing & Architecture</h4>
+                                    <p>Prof. Sharma • Main Auditorium</p>
+                                    <div class="course-progress-bar-wrap">
+                                        <div class="course-progress-fill progress-75"></div>
+                                    </div>
+                                    <span class="course-progress-text">75% Completed • 4 hours weekly</span>
+                                </div>
+                                <a href="#course1" class="action-btn-solid course-module-btn">Module</a>
+                            </div>
+
+                            <!-- Course 2 -->
+                            <div class="course-item-card">
+                                <div class="course-item-icon course-icon-blue">🧠</div>
+                                <div class="course-item-details">
+                                    <h4>Deep Learning & AI</h4>
+                                    <p>Dr. Patel • Lab 1</p>
+                                    <div class="course-progress-bar-wrap">
+                                        <div class="course-progress-fill progress-60 bg-blue"></div>
+                                    </div>
+                                    <span class="course-progress-text">60% Completed • 3 hours weekly</span>
+                                </div>
+                                <a href="#course2" class="action-btn-solid course-module-btn">Module</a>
+                            </div>
+
+                            <!-- Course 3 -->
+                            <div class="course-item-card">
+                                <div class="course-item-icon course-icon-amber">⚡</div>
+                                <div class="course-item-details">
+                                    <h4>PERN Stack Full-Stack Development</h4>
+                                    <p>Lab Project • Studio 2</p>
+                                    <div class="course-progress-bar-wrap">
+                                        <div class="course-progress-fill progress-90 bg-amber"></div>
+                                    </div>
+                                    <span class="course-progress-text">90% Completed • Project Phase</span>
+                                </div>
+                                <a href="#course3" class="action-btn-solid course-module-btn">Module</a>
+                            </div>
+
+                            <!-- Course 4 -->
+                            <div class="course-item-card">
+                                <div class="course-item-icon course-icon-purple">🎨</div>
+                                <div class="course-item-details">
+                                    <h4>Advanced UI/UX Design Systems</h4>
+                                    <p>Design Studio • Lab 3</p>
+                                    <div class="course-progress-bar-wrap">
+                                        <div class="course-progress-fill progress-50 bg-purple"></div>
+                                    </div>
+                                    <span class="course-progress-text">50% Completed • Weekly Lab</span>
+                                </div>
+                                <a href="#course4" class="action-btn-solid course-module-btn">Module</a>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- RIGHT COLUMN: SUMMARY & RESOURCES -->
+                <div class="portal-right-col">
+                    
+                    <div class="portal-card">
+                        <h3>Semester Summary</h3>
+                        <div class="profile-overview-stack">
+                            <div class="overview-row">
+                                <span class="overview-label">Total Credits</span>
+                                <strong class="text-primary-bold">24 Credits</strong>
+                            </div>
+                            <div class="overview-row">
+                                <span class="overview-label">Attendance Rate</span>
+                                <strong class="text-green-accent">94.5%</strong>
+                            </div>
+                            <div class="overview-row no-border">
+                                <span class="overview-label">Pending Assignments</span>
+                                <strong class="text-primary-bold">3 Tasks</strong>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="portal-card">
+                        <h3>Quick Resources</h3>
+                        <div class="resources-grid" style="grid-template-columns: 1fr; margin-top: 15px;">
+                            <div class="resource-item">
+                                <span class="resource-emoji">📖</span>
+                                <div>
+                                    <h4>Syllabus Guidelines 2026</h4>
+                                    <p>PDF Document</p>
+                                </div>
+                            </div>
+                            <div class="resource-item">
+                                <span class="resource-emoji">🔗</span>
+                                <div>
+                                    <h4>GitHub Repositories</h4>
+                                    <p>Source Code & Starters</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </main>
+    </div>
+
+
+    <script>
+    // Automatically highlight the current active sidebar menu item
+    document.addEventListener("DOMContentLoaded", function () {
+        const currentPage = window.location.pathname.split("/").pop();
+        const menuLinks = document.querySelectorAll(".text-menu a");
+
+        menuLinks.forEach(link => {
+            const linkPage = link.getAttribute("href").split("/").pop();
+            if (linkPage === currentPage) {
+                link.classList.add("active");
+            } else {
+                link.classList.remove("active");
+            }
+        });
+    });
+</script>
+</body>
+</html>

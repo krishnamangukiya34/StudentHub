@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Students Hub - Forum</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<!-- HEADER & NAVIGATION -->
+    <header>
+        <div class="logo">
+            <!-- Clickable Logo linking to Home -->
+            <a href="index.html"><h1>Students Hub</h1></a>
+        </div>
+        
+        <nav class="center-nav">
+            <ul>
+                <li><a href="about.html">About</a></li>
+                
+                <li><a href="events.html">Events</a></li>
+                <!-- Highlighted Events Us link -->
+                <li><a href="forum.html"  style="color: var(--text-primary);">Forum</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="tos.html">Terms of Service</a></li>
+            </ul>
+        </nav>
+
+        <div class="auth-buttons">
+            <a href="login.html" class="btn-login">Login</a>
+            <a href="register.html" class="btn-register">Register</a>
+        </div>
+    </header>
+
+
+    <hr>
+
+    <!-- MAIN FORUM CONTENT -->
+    <main class="forum-page">
+        
+        <!-- FORUM HEADER (Search & New Post) -->
+        <section class="forum-header">
+            <h2>Community Forum</h2>
+            <div class="forum-actions">
+                <input type="text" placeholder="Search discussions..." class="search-bar">
+                <button class="btn-new-post">Start a Discussion</button>
+            </div>
+        </section>
+
+        <!-- FORUM FEED & SIDEBAR -->
+        <section class="forum-content-layout">
+            
+            <!-- Left Sidebar: Categories -->
+            <aside class="forum-sidebar">
+                <h3>Categories</h3>
+                <ul>
+                    <li><a href="#">All Discussions</a></li>
+                    <li><a href="#">Web Development</a></li>
+                    <li><a href="#">Machine Intelligence</a></li>
+                    <li><a href="#">Cloud Computing</a></li>
+                    <li><a href="#">General Chat</a></li>
+                </ul>
+            </aside>
+
+            <!-- Right Side: Post Feed -->
+            <div class="forum-posts">
+                
+                <!-- Post 1 -->
+                <div class="post-card">
+                    <div class="post-info">
+                        <span class="tag">Web Development</span>
+                        <a href="#"><h3>Best approach for building a responsive layout using Bootstrap?</h3></a>
+                        <p>Posted by Student101 • 2 hours ago</p>
+                    </div>
+                    <div class="post-stats">
+                        <span>💬 14 Replies</span>
+                    </div>
+                </div>
+
+                <!-- Post 2 -->
+                <div class="post-card">
+                    <div class="post-info">
+                        <span class="tag">API & Automation</span>
+                        <a href="#"><h3>Troubleshooting n8n automation workflows with external APIs</h3></a>
+                        <p>Posted by DevGuy • 5 hours ago</p>
+                    </div>
+                    <div class="post-stats">
+                        <span>💬 8 Replies</span>
+                    </div>
+                </div>
+
+                <!-- Post 3 -->
+                <div class="post-card">
+                    <div class="post-info">
+                        <span class="tag">Backend</span>
+                        <a href="#"><h3>Connecting Neon databases in a PERN stack application</h3></a>
+                        <p>Posted by CodeNinja • 1 day ago</p>
+                    </div>
+                    <div class="post-stats">
+                        <span>💬 22 Replies</span>
+                    </div>
+                </div>
+
+                <!-- Post 4 -->
+                <div class="post-card">
+                    <div class="post-info">
+                        <span class="tag">Machine Intelligence</span>
+                        <a href="#"><h3>Deep Learning dataset recommendations for final year project?</h3></a>
+                        <p>Posted by AI_Enthusiast • 2 days ago</p>
+                    </div>
+                    <div class="post-stats">
+                        <span>💬 5 Replies</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <hr>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 Students Hub</p>
+    </footer>
+
+
+    <script>
+    // Automatically highlight the current active sidebar menu item
+    document.addEventListener("DOMContentLoaded", function () {
+        const currentPage = window.location.pathname.split("/").pop();
+        const menuLinks = document.querySelectorAll(".text-menu a");
+
+        menuLinks.forEach(link => {
+            const linkPage = link.getAttribute("href").split("/").pop();
+            if (linkPage === currentPage) {
+                link.classList.add("active");
+            } else {
+                link.classList.remove("active");
+            }
+        });
+    });
+</script>
+</body>
+</html>

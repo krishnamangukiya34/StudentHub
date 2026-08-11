@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Students Hub - Discussions</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="dashboard-body">
+    <div class="app-layout">
+        <aside class="text-sidebar">
+            <div class="sidebar-brand-text"><h2>Students Hub</h2></div>
+            <ul class="text-menu">
+                <li><a href="../index.html">🏠 Home</a></li>
+                <li><a href="dashboard.html">📊 Dashboard</a></li>
+                <li><a href="../profile.html">👤 My Profile</a></li>
+                <li><a href="courses.html">📚 Courses</a></li>
+                <li><a href="schedule.html">📅 Schedule</a></li>
+                <li><a href="discussion.html" class="active">💬 Discussions</a></li>
+            </ul>
+            <div class="sidebar-footer-text">
+                <a href="../index.html" class="logout-text-btn">🚪 Log Out</a>
+            </div>
+        </aside>
+        <main class="app-main-content">
+            <header class="app-header-bar">
+                <h2>Forum Discussions</h2>
+            </header>
+            <div class="portal-grid">
+                <div class="portal-left-col">
+                    <div class="portal-card">
+                        <h3>Recent Community Topics</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 10px;">Engage with peers, debug database errors, and share web development solutions.</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+    // Automatically highlight the current active sidebar menu item
+    document.addEventListener("DOMContentLoaded", function () {
+        const currentPage = window.location.pathname.split("/").pop();
+        const menuLinks = document.querySelectorAll(".text-menu a");
+
+        menuLinks.forEach(link => {
+            const linkPage = link.getAttribute("href").split("/").pop();
+            if (linkPage === currentPage) {
+                link.classList.add("active");
+            } else {
+                link.classList.remove("active");
+            }
+        });
+    });
+</script>
+</body>
+</html>
