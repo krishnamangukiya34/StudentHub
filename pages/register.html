@@ -3,10 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Students Hub - Register</title>
+    <title>Students Hub - Student Registration & Enrollment</title>
+    <meta name="description" content="Create a student account on Students Hub with accessible validation and password security.">
     <link rel="stylesheet" href="../css/style.css">
 </head>
-<body>
+<body class="light-cream-bg">
+
+    <!-- Accessibility Skip Link -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Notification Banner -->
+    <div class="notification-banner alert-info" data-banner-id="reg_banner">
+        <div class="banner-content">
+            <span class="banner-badge">Admissions</span>
+            <span>Fall Semester 2026 Student Enrollment is now open! Fill the form below to join.</span>
+        </div>
+        <button class="banner-close-btn" aria-label="Close notification">&times;</button>
+    </div>
 
     <!-- HEADER & NAVIGATION -->
     <header>
@@ -14,18 +27,36 @@
             <a href="index.html"><h1>Students Hub</h1></a>
         </div>
         
-        <nav class="center-nav">
+        <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">☰</button>
+
+        <nav class="center-nav" role="navigation">
             <ul>
+                <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="events.html">Events</a></li>
                 <li><a href="forum.html">Forum</a></li>
                 <li><a href="faq.html">FAQ</a></li>
                 <li><a href="contact.html">Contact Us</a></li>
-                <li><a href="tos.html">Terms of Service</a></li>
+                <li><a href="feedback.html">Feedback</a></li>
+                <li><a href="tos.html">Terms</a></li>
             </ul>
         </nav>
 
         <div class="auth-buttons">
+            <button class="theme-toggle-btn" role="switch" aria-checked="false" aria-label="Toggle dark mode" title="Switch between Light Cream and Dark Mode">
+                <span class="celestial-sky">
+                    <span class="sky-cloud cloud-1"></span>
+                    <span class="sky-cloud cloud-2"></span>
+                    <span class="sky-star star-1"></span>
+                    <span class="sky-star star-2"></span>
+                    <span class="sky-star star-3"></span>
+                </span>
+                <span class="celestial-orb">
+                    <span class="crater crater-1"></span>
+                    <span class="crater crater-2"></span>
+                    <span class="crater crater-3"></span>
+                </span>
+            </button>
             <a href="login.html" class="btn-login">Login</a>
             <a href="register.html" class="btn-register" style="border: 2px solid var(--accent-green);">Register</a>
         </div>
@@ -34,40 +65,137 @@
     <hr>
 
     <!-- MAIN REGISTER CONTENT -->
-    <main class="auth-wrapper">
-        <div class="auth-card">
+    <main id="main-content" class="auth-wrapper" style="padding: 40px 15px;">
+
+        <!-- Breadcrumbs -->
+        <nav class="breadcrumbs" aria-label="Breadcrumb navigation" style="max-width: 540px; margin: 0 auto 15px auto;">
+            <a href="index.html">Home</a>
+            <span class="separator">/</span>
+            <span class="current">Register</span>
+        </nav>
+
+        <div class="auth-card" style="max-width: 540px; margin: 0 auto; box-shadow: var(--shadow-md); border-radius: 16px;">
             
-            <div class="auth-header">
-                <h2>Join the Hub</h2>
-                <p>Create your account to start collaborating.</p>
+            <div class="auth-header" style="text-align: center; margin-bottom: 25px;">
+                <h2 style="margin: 0 0 8px 0;">Create Student Account</h2>
+                <p style="color: var(--text-secondary); margin: 0;">Fill in the details below to access coursework, events, and forums.</p>
             </div>
 
-            <form action="dashboard.html" method="GET" class="auth-form">
+            <!-- REGISTRATION FORM (Practical 5 & Practical 7) -->
+            <form id="student-registration-form" action="../php/process_register.php" method="POST" class="auth-form" novalidate>
                 
-                <div class="input-group">
-                    <span class="input-icon">📝</span>
-                    <input type="text" id="fullname" name="fullname" placeholder="Full Name" required>
+                <!-- 1. Full Name -->
+                <div class="form-field-wrap">
+                    <label for="fullname" class="form-label">Full Name <span style="color: #dc2626;">*</span></label>
+                    <input type="text" id="fullname" name="fullname" class="form-input" placeholder="e.g. Smeet Nakrani" autocomplete="name" required>
+                    <div class="error-feedback" id="fullname-error"></div>
                 </div>
 
-                <div class="input-group">
-                    <span class="input-icon">📧</span>
-                    <input type="email" id="email" name="email" placeholder="Email Address" required>
-                </div>
-                
-                <div class="input-group">
-                    <span class="input-icon">🔒</span>
-                    <input type="password" id="reg-password" name="reg-password" placeholder="Password" required>
+                <!-- 2. Email Address -->
+                <div class="form-field-wrap">
+                    <label for="email" class="form-label">Student Email Address <span style="color: #dc2626;">*</span></label>
+                    <input type="email" id="email" name="email" class="form-input" placeholder="smeet.nakrani@studentshub.edu" autocomplete="email" required>
+                    <div class="error-feedback" id="email-error"></div>
                 </div>
 
-                <div class="input-group">
-                    <span class="input-icon">🔐</span>
-                    <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm Password" required>
+                <!-- 3. Mobile Number -->
+                <div class="form-field-wrap">
+                    <label for="mobile" class="form-label">Mobile Number (10 Digits) <span style="color: #dc2626;">*</span></label>
+                    <input type="tel" id="mobile" name="mobile" class="form-input" placeholder="e.g. 9812345678" pattern="[6-9][0-9]{9}" maxlength="10" autocomplete="tel" required>
+                    <div class="error-feedback" id="mobile-error"></div>
                 </div>
 
-                <button type="submit" class="btn-auth" style="margin-top: 20px;">Create Account</button>
+                <!-- 4. Course & Year Row -->
+                <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+                    <div class="form-field-wrap" style="flex: 1; min-width: 180px;">
+                        <label for="course" class="form-label">Enrolled Course <span style="color: #dc2626;">*</span></label>
+                        <select id="course" name="course" class="form-select" required>
+                            <option value="">-- Select Course --</option>
+                            <option value="B.Tech IT">B.Tech IT</option>
+                            <option value="B.Tech CSE">B.Tech CSE</option>
+                            <option value="B.Tech AI&DS">B.Tech AI&DS</option>
+                            <option value="BCA">BCA</option>
+                            <option value="MCA">MCA</option>
+                            <option value="M.Tech CSE">M.Tech CSE</option>
+                        </select>
+                        <div class="error-feedback" id="course-error"></div>
+                    </div>
+
+                    <div class="form-field-wrap" style="flex: 1; min-width: 140px;">
+                        <label for="year" class="form-label">Academic Year <span style="color: #dc2626;">*</span></label>
+                        <select id="year" name="year" class="form-select" required>
+                            <option value="">-- Year --</option>
+                            <option value="1st Year">1st Year</option>
+                            <option value="2nd Year">2nd Year</option>
+                            <option value="3rd Year">3rd Year</option>
+                            <option value="4th Year">4th Year</option>
+                        </select>
+                        <div class="error-feedback" id="year-error"></div>
+                    </div>
+                </div>
+
+                <!-- 5. Gender Selection -->
+                <div class="form-field-wrap" id="gender-group-wrap">
+                    <span class="form-label">Gender <span style="color: #dc2626;">*</span></span>
+                    <div class="radio-group" role="radiogroup" aria-label="Gender identity">
+                        <label><input type="radio" name="gender" value="Male"> Male</label>
+                        <label><input type="radio" name="gender" value="Female"> Female</label>
+                        <label><input type="radio" name="gender" value="Other"> Other</label>
+                    </div>
+                    <div class="error-feedback" id="gender-error"></div>
+                </div>
+
+                <!-- 6. Password -->
+                <div class="form-field-wrap">
+                    <label for="reg-password" class="form-label">Password <span style="color: #dc2626;">*</span></label>
+                    <input type="password" id="reg-password" name="reg-password" class="form-input" placeholder="Create strong password" autocomplete="new-password" required>
+                    
+                    <!-- Password Strength Meter (Practical 5) -->
+                    <div class="password-meter">
+                        <div class="strength-bar-track">
+                            <div class="strength-bar-fill" id="strength-fill"></div>
+                        </div>
+                        <div class="strength-label">
+                            <span>Strength: <strong id="strength-text">None</strong></span>
+                            <span>Min. 8 chars (A-Z, a-z, 0-9, @#$)</span>
+                        </div>
+                    </div>
+                    <div class="error-feedback" id="reg-password-error"></div>
+                </div>
+
+                <!-- 7. Confirm Password -->
+                <div class="form-field-wrap">
+                    <label for="confirm-password" class="form-label">Confirm Password <span style="color: #dc2626;">*</span></label>
+                    <input type="password" id="confirm-password" name="confirm-password" class="form-input" placeholder="Re-enter password" autocomplete="new-password" required>
+                    <div class="error-feedback" id="confirm-password-error"></div>
+                </div>
+
+                <!-- 8. Canvas Custom CAPTCHA (Practical 5 Advanced) -->
+                <div class="form-field-wrap">
+                    <label class="form-label">Security Verification (CAPTCHA) <span style="color: #dc2626;">*</span></label>
+                    <div class="captcha-container">
+                        <canvas id="captcha-canvas" class="captcha-canvas" width="140" height="42" aria-label="Security verification code"></canvas>
+                        <button type="button" id="refresh-captcha" class="btn-refresh-captcha" title="Regenerate CAPTCHA">🔄 New Code</button>
+                    </div>
+                    <input type="text" id="captcha-input" class="form-input" placeholder="Type the 5 characters above" maxlength="5" required>
+                    <div class="error-feedback" id="captcha-error"></div>
+                </div>
+
+                <!-- 9. Terms Acceptance Checkbox -->
+                <div class="form-field-wrap">
+                    <div class="checkbox-wrap">
+                        <input type="checkbox" id="terms" name="terms" required>
+                        <label for="terms">I accept the <a href="tos.html" target="_blank">Terms of Service</a> and academic conduct rules.</label>
+                    </div>
+                    <div class="error-feedback" id="terms-error"></div>
+                </div>
+
+                <button type="submit" class="btn-auth" style="margin-top: 15px; width: 100%;">Create Account</button>
             </form>
 
-            <p class="auth-switch">Already have an account? <a href="login.html">Sign In</a></p>
+            <p class="auth-switch" style="text-align: center; margin-top: 20px;">
+                Already registered? <a href="login.html">Sign In here</a>
+            </p>
 
         </div>
     </main>
@@ -76,8 +204,34 @@
 
     <!-- FOOTER -->
     <footer>
-        <p>&copy; 2026 Students Hub</p>
+        <p>&copy; 2026 Students Hub Portal • Secure Enrollment System</p>
     </footer>
 
+    <!-- SUCCESS MODAL (Practical 4 Modal) -->
+    <div class="modal-overlay" id="reg-success-modal" role="dialog" aria-modal="true" aria-labelledby="reg-modal-title">
+        <div class="modal-box" style="text-align: center;">
+            <div class="modal-header">
+                <h3 id="reg-modal-title" style="color: var(--accent-green);">Registration Complete</h3>
+                <button class="modal-close-btn" aria-label="Close modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div style="font-size: 3rem; margin-bottom: 12px;">🎓</div>
+                <p class="modal-message-content" style="font-size: 1.05rem; font-weight: 500;">
+                    Your account has been created successfully!
+                </p>
+                <p style="color: var(--text-secondary); font-size: 0.9rem;">
+                    Your registration has been validated and recorded. You can now access all portal features.
+                </p>
+            </div>
+            <div class="modal-footer" style="justify-content: center; gap: 15px;">
+                <a href="dashboard.html" class="action-btn-solid">Go to Dashboard</a>
+                <button class="action-btn-outline" data-modal-close>Stay on Page</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Interactive Scripts -->
+    <script src="../js/app.js"></script>
+    <script src="../js/validation.js"></script>
 </body>
 </html>

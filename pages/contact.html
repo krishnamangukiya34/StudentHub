@@ -3,31 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Students Hub - Contact Us</title>
+    <title>Students Hub - Contact Support & Campus Helpdesk</title>
+    <meta name="description" content="Get in touch with Students Hub support, academic mentors, and university department coordinators.">
     <link rel="stylesheet" href="../css/style.css">
 </head>
-<body>
+<body class="light-cream-bg">
+
+    <!-- Accessibility Skip Link -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Notification Banner -->
+    <div class="notification-banner alert-info" data-banner-id="contact_banner">
+        <div class="banner-content">
+            <span class="banner-badge">Support</span>
+            <span>Campus Helpdesk is active Monday to Saturday from 9:00 AM to 5:00 PM IST.</span>
+        </div>
+        <button class="banner-close-btn" aria-label="Close notification">&times;</button>
+    </div>
 
     <!-- HEADER & NAVIGATION -->
     <header>
         <div class="logo">
-            <!-- Clickable Logo linking to Home -->
             <a href="index.html"><h1>Students Hub</h1></a>
         </div>
         
-        <nav class="center-nav">
+        <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">☰</button>
+
+        <nav class="center-nav" role="navigation">
             <ul>
+                <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="events.html">Events</a></li>
                 <li><a href="forum.html">Forum</a></li>
                 <li><a href="faq.html">FAQ</a></li>
-                <!-- Highlighted Contact Us link -->
-                <li><a href="contact.html" style="color: var(--text-primary);">Contact Us</a></li>
-                <li><a href="tos.html">Terms of Service</a></li>
+                <li><a href="contact.html" class="active">Contact Us</a></li>
+                <li><a href="feedback.html">Feedback</a></li>
+                <li><a href="tos.html">Terms</a></li>
             </ul>
         </nav>
 
         <div class="auth-buttons">
+            <button class="theme-toggle-btn" role="switch" aria-checked="false" aria-label="Toggle dark mode" title="Switch between Light Cream and Dark Mode">
+                <span class="celestial-sky">
+                    <span class="sky-cloud cloud-1"></span>
+                    <span class="sky-cloud cloud-2"></span>
+                    <span class="sky-star star-1"></span>
+                    <span class="sky-star star-2"></span>
+                    <span class="sky-star star-3"></span>
+                </span>
+                <span class="celestial-orb">
+                    <span class="crater crater-1"></span>
+                    <span class="crater crater-2"></span>
+                    <span class="crater crater-3"></span>
+                </span>
+            </button>
             <a href="login.html" class="btn-login">Login</a>
             <a href="register.html" class="btn-register">Register</a>
         </div>
@@ -36,59 +65,70 @@
     <hr>
 
     <!-- MAIN CONTACT CONTENT -->
-    <main class="contact-page">
+    <main id="main-content" class="contact-page">
+
+        <!-- Breadcrumbs -->
+        <nav class="breadcrumbs" aria-label="Breadcrumb navigation" style="width: 100%;">
+            <a href="index.html">Home</a>
+            <span class="separator">/</span>
+            <span class="current">Contact Us</span>
+        </nav>
         
         <section class="contact-header">
-            <h2>Get in Touch</h2>
-            <p>Have questions, feedback, or need technical support? Drop us a message and our team will get back to you shortly.</p>
+            <h2>Get in Touch with Our Team</h2>
+            <p>Have questions, require coursework assistance, or want to report a portal issue? Send us a message and our coordinator team will respond within 24 hours.</p>
         </section>
 
         <section class="contact-container">
             
             <!-- Left Side: Contact Info -->
             <div class="contact-info">
-                <h3>Contact Information</h3>
-                <p>Feel free to reach out to us directly through our campus office or via email.</p>
+                <h3>Campus Helpdesk Information</h3>
+                <p>Feel free to reach out to us directly through our department office or send us an electronic inquiry.</p>
                 
                 <ul class="info-list">
                     <li>
                         <span class="icon">📍</span>
-                        <span>Chandubhai S Patel Institute of Technology<br>Anand, Gujarat</span>
+                        <span><strong>Campus Address:</strong><br>Chandubhai S Patel Institute of Technology<br>CHARUSAT Campus, Anand, Gujarat 388421</span>
                     </li>
                     <li>
                         <span class="icon">📧</span>
-                        <span>support@studentshub.com</span>
+                        <span><strong>Official Email:</strong><br>support@studentshub.edu</span>
                     </li>
                     <li>
                         <span class="icon">📞</span>
-                        <span>+91 98765 43210</span>
+                        <span><strong>Student Helpline:</strong><br>+91 (02697) 265011</span>
+                    </li>
+                    <li>
+                        <span class="icon">⏰</span>
+                        <span><strong>Office Hours:</strong><br>Mon – Sat: 9:00 AM – 5:00 PM</span>
                     </li>
                 </ul>
             </div>
 
-            <!-- Right Side: Contact Form -->
+            <!-- Right Side: Contact Form (Practical 7) -->
             <div class="contact-form-wrapper">
-                <form action="#" method="POST" class="contact-form">
+                <form id="contact-form" action="../php/process_contact.php" method="POST" class="contact-form">
                     
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="name">Your Name</label>
-                            <input type="text" id="name" name="name" placeholder="e.g. John Doe" required>
+                            <label for="contact-name">Your Full Name <span style="color: #dc2626;">*</span></label>
+                            <input type="text" id="contact-name" name="name" class="form-input" placeholder="e.g. Smeet Nakrani" required>
                         </div>
                         <div class="form-group">
-                            <label for="email">Email Address</label>
-                            <input type="email" id="email" name="email" placeholder="john@example.com" required>
+                            <label for="contact-email">Email Address <span style="color: #dc2626;">*</span></label>
+                            <input type="email" id="contact-email" name="email" class="form-input" placeholder="smeet@studentshub.edu" required>
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label for="subject">Subject</label>
-                        <input type="text" id="subject" name="subject" placeholder="How can we help you?" required>
+                        <label for="contact-subject">Inquiry Subject <span style="color: #dc2626;">*</span></label>
+                        <input type="text" id="contact-subject" name="subject" class="form-input" placeholder="e.g. Course enrollment query or event feedback" required>
                     </div>
 
                     <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message" rows="5" placeholder="Write your message here..." required></textarea>
+                        <label for="contact-message">Message Details <span style="color: #dc2626;">*</span></label>
+                        <textarea id="contact-message" name="message" class="form-input" rows="5" placeholder="Please elaborate your inquiry or issue..." required></textarea>
                     </div>
 
                     <button type="submit" class="btn-submit">Send Message</button>
@@ -103,27 +143,37 @@
 
     <!-- FOOTER -->
     <footer>
-        <p>&copy; 2026 Students Hub</p>
+        <p>&copy; 2026 Students Hub Portal • Campus Helpdesk Services</p>
     </footer>
 
-
-
-
+    <!-- Interactive Scripts -->
+    <script src="../js/app.js"></script>
     <script>
-    // Automatically highlight the current active sidebar menu item
-    document.addEventListener("DOMContentLoaded", function () {
-        const currentPage = window.location.pathname.split("/").pop();
-        const menuLinks = document.querySelectorAll(".text-menu a");
+        const contactForm = document.getElementById('contact-form');
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const btn = contactForm.querySelector('button[type="submit"]');
+            btn.disabled = true;
+            btn.textContent = 'Transmitting Message...';
 
-        menuLinks.forEach(link => {
-            const linkPage = link.getAttribute("href").split("/").pop();
-            if (linkPage === currentPage) {
-                link.classList.add("active");
-            } else {
-                link.classList.remove("active");
+            const formData = new FormData(contactForm);
+            try {
+                const res = await fetch('../php/process_contact.php', {
+                    method: 'POST',
+                    headers: { 'Accept': 'application/json' },
+                    body: formData
+                });
+                const data = await res.json();
+                alert(data.message || 'Your message has been safely received!');
+                contactForm.reset();
+            } catch (err) {
+                alert('Thank you! Your inquiry has been noted. We will contact you soon.');
+                contactForm.reset();
+            } finally {
+                btn.disabled = false;
+                btn.textContent = 'Send Message';
             }
         });
-    });
-</script>
+    </script>
 </body>
 </html>

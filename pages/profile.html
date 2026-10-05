@@ -3,16 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Students Hub - My Profile</title>
+    <title>Students Hub - My Student Profile</title>
+    <meta name="description" content="View and manage your student profile, academic accomplishments, enrolled courses, and technical skills.">
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body class="dashboard-body">
+
+    <!-- Accessibility Skip Link -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
 
     <!-- APP WRAPPER -->
     <div class="app-layout">
         
         <!-- FULL TEXT SIDEBAR -->
-        <aside class="text-sidebar">
+        <aside class="text-sidebar" role="navigation" aria-label="Student Navigation">
             <div class="sidebar-brand-text">
                 <h2>Students Hub</h2>
             </div>
@@ -22,33 +26,61 @@
                 <li><a href="dashboard.html">📊 Dashboard</a></li>
                 <li><a href="profile.html" class="active">👤 My Profile</a></li>
                 <li><a href="courses.html">📚 Courses</a></li>
-                <li><a href="events.html">📅 Schedule</a></li>
+                <li><a href="events.html">📅 Schedule & Events</a></li>
                 <li><a href="forum.html">💬 Discussions</a></li>
                 <li><a href="faq.html">❓ Help & FAQ</a></li>
+                <li><a href="admin.html">🛡️ Admin Console</a></li>
             </ul>
 
             <div class="sidebar-footer-text">
-                <a href="index.html" class="logout-text-btn">🚪 Log Out</a>
+                <a href="login.html" class="logout-text-btn">🚪 Log Out</a>
             </div>
         </aside>
 
         <!-- MAIN APP CONTENT AREA -->
-        <main class="app-main-content">
+        <main id="main-content" class="app-main-content">
             
             <!-- TOP HEADER BAR -->
             <header class="app-header-bar">
-                <h2>My Profile</h2>
+                <div class="header-brand-area">
+                    <h2>Student Profile</h2>
+                </div>
                 
                 <div class="header-actions">
+                    <button class="theme-toggle-btn" role="switch" aria-checked="false" aria-label="Toggle dark mode" title="Switch between Light Cream and Dark Mode">
+                        <span class="celestial-sky">
+                            <span class="sky-cloud cloud-1"></span>
+                            <span class="sky-cloud cloud-2"></span>
+                            <span class="sky-star star-1"></span>
+                            <span class="sky-star star-2"></span>
+                            <span class="sky-star star-3"></span>
+                        </span>
+                        <span class="celestial-orb">
+                            <span class="crater crater-1"></span>
+                            <span class="crater crater-2"></span>
+                            <span class="crater crater-3"></span>
+                        </span>
+                    </button>
+                    <button class="action-btn-outline" data-modal-target="edit-profile-modal">✏️ Edit Profile</button>
+                    
                     <div class="header-profile">
-                        <span class="bell">🔔</span>
+                        <span class="bell" title="Notifications" style="cursor: pointer;" onclick="alert('Profile verified for 2026-27 academic term.')">🔔</span>
                         <div class="avatar-pill">
                             <span>👨‍💻</span>
-                            <strong>Smeet N.</strong>
+                            <strong>Smeet Nakrani</strong>
                         </div>
                     </div>
                 </div>
             </header>
+
+            <!-- BREADCRUMBS -->
+            <nav class="breadcrumbs" aria-label="Breadcrumbs" style="padding: 10px 0 20px 0;">
+                <a href="index.html">Home</a>
+                <span class="separator">/</span>
+                <a href="dashboard.html">Dashboard</a>
+                <span class="separator">/</span>
+                <span class="current">My Profile</span>
+            </nav>
 
             <!-- PROFILE CONTENT GRID -->
             <div class="portal-grid">
@@ -59,7 +91,7 @@
                     <div class="portal-card">
                         <div class="card-header-flex">
                             <h3>Personal Information</h3>
-                            <button class="action-btn-outline profile-edit-btn">Edit Profile</button>
+                            <button class="action-btn-outline profile-edit-btn" data-modal-target="edit-profile-modal">Edit Profile</button>
                         </div>
 
                         <div class="profile-details-flex">
@@ -67,42 +99,42 @@
                                 <span>👨‍💻</span>
                             </div>
                             <div class="profile-meta">
-                                <h2 class="profile-fullname">Smeet Hareshbhai Nakrani</h2>
-                                <p class="profile-role-sub">Web Development Intern at Workalign Infotech LLP</p>
-                                <span class="badge-blue">Active Student</span>
+                                <h2 class="profile-fullname" id="display-fullname">Smeet Hareshbhai Nakrani</h2>
+                                <p class="profile-role-sub" id="display-sub">B.Tech Information Technology • 3rd Year Scholar</p>
+                                <span class="badge-blue">Verified Active Student</span>
                             </div>
                         </div>
 
                         <div class="profile-info-grid">
                             <div class="info-group">
-                                <label>Full Legal Name</label>
-                                <p>Smeet Hareshbhai Nakrani</p>
+                                <label>Student Roll Number</label>
+                                <p><strong>24IT055</strong></p>
                             </div>
                             <div class="info-group">
-                                <label>Date of Birth</label>
-                                <p>September 25, 2007</p>
+                                <label>Enrolled Department</label>
+                                <p>Information Technology (CSPIT)</p>
                             </div>
                             <div class="info-group">
                                 <label>Email Address</label>
-                                <p>smeet@example.com</p>
+                                <p id="display-email">smeet.nakrani@studentshub.edu</p>
                             </div>
                             <div class="info-group">
-                                <label>Academic Role</label>
-                                <p>Undergraduate Engineering Student</p>
+                                <label>Mobile Contact</label>
+                                <p id="display-phone">+91 98123 45678</p>
                             </div>
                         </div>
                     </div>
 
                     <!-- ACADEMIC & INTERNSHIP DETAILS -->
                     <div class="portal-card">
-                        <h3>Industrial Training & Experience</h3>
+                        <h3>Industrial Training & Projects</h3>
                         <div class="notice-item profile-notice-spacing">
                             <div class="notice-badge-row">
                                 <span class="badge-blue">Current Internship</span>
                                 <span class="notice-time">2026 Batch</span>
                             </div>
                             <h4>Workalign Infotech LLP</h4>
-                            <p>Working as a Web Development Intern focusing on frontend technologies, Webflow, React.js, and automated deployment pipelines.</p>
+                            <p>Web Development Intern focusing on frontend responsive architectures, MySQL schema design, and automated workflow integrations.</p>
                         </div>
                     </div>
 
@@ -116,28 +148,29 @@
                         <div class="profile-overview-stack">
                             <div class="overview-row">
                                 <span class="overview-label">Portal Status</span>
-                                <strong class="text-green-accent">Verified Active</strong>
+                                <strong class="text-green-accent">Active (Verified)</strong>
                             </div>
                             <div class="overview-row">
-                                <span class="overview-label">Current Semester GPA</span>
-                                <strong class="text-primary-bold">8.95</strong>
+                                <span class="overview-label">Current CGPA</span>
+                                <strong class="text-primary-bold">9.60</strong>
                             </div>
                             <div class="overview-row no-border">
-                                <span class="overview-label">Registered Modules</span>
-                                <strong class="text-primary-bold">4 Courses</strong>
+                                <span class="overview-label">Enrolled Courses</span>
+                                <strong class="text-primary-bold">6 Modules</strong>
                             </div>
                         </div>
                     </div>
 
                     <div class="portal-card">
-                        <h3>Core Tech Stack</h3>
+                        <h3>Core Tech Stack & Skills</h3>
                         <div class="profile-skills-wrap">
                             <span class="pill-dropdown">React.js</span>
-                            <span class="pill-dropdown">Webflow</span>
+                            <span class="pill-dropdown">HTML5 & CSS3</span>
+                            <span class="pill-dropdown">PHP & MySQL</span>
+                            <span class="pill-dropdown">JavaScript ES6+</span>
+                            <span class="pill-dropdown">Git & GitHub</span>
+                            <span class="pill-dropdown">Docker</span>
                             <span class="pill-dropdown">n8n Automation</span>
-                            <span class="pill-dropdown">Node.js</span>
-                            <span class="pill-dropdown">Neon DB</span>
-                            <span class="pill-dropdown">Bootstrap</span>
                         </div>
                     </div>
 
@@ -148,5 +181,56 @@
         </main>
     </div>
 
+    <!-- EDIT PROFILE MODAL (Practical 4 Modal) -->
+    <div class="modal-overlay" id="edit-profile-modal" role="dialog" aria-modal="true" aria-labelledby="modal-profile-title">
+        <div class="modal-box">
+            <div class="modal-header">
+                <h3 id="modal-profile-title">Update Profile Details</h3>
+                <button class="modal-close-btn" aria-label="Close modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="edit-profile-form">
+                    <div class="form-field-wrap">
+                        <label class="form-label" for="edit-name">Full Name</label>
+                        <input type="text" id="edit-name" class="form-input" value="Smeet Hareshbhai Nakrani" required>
+                    </div>
+                    <div class="form-field-wrap">
+                        <label class="form-label" for="edit-email">Email Address</label>
+                        <input type="email" id="edit-email" class="form-input" value="smeet.nakrani@studentshub.edu" required>
+                    </div>
+                    <div class="form-field-wrap">
+                        <label class="form-label" for="edit-phone">Mobile Number</label>
+                        <input type="tel" id="edit-phone" class="form-input" value="9812345678" pattern="[0-9]{10}" required>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="action-btn-outline" data-modal-close>Cancel</button>
+                <button class="action-btn-solid" id="btn-save-profile">Save Changes</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Interactive Scripts -->
+    <script src="../js/app.js"></script>
+    <script>
+        document.getElementById('btn-save-profile').addEventListener('click', () => {
+            const newName = document.getElementById('edit-name').value.trim();
+            const newEmail = document.getElementById('edit-email').value.trim();
+            const newPhone = document.getElementById('edit-phone').value.trim();
+
+            if (!newName || !newEmail || !newPhone) {
+                alert('All fields are required.');
+                return;
+            }
+
+            document.getElementById('display-fullname').textContent = newName;
+            document.getElementById('display-email').textContent = newEmail;
+            document.getElementById('display-phone').textContent = '+91 ' + newPhone;
+
+            alert('🎉 Profile changes saved successfully!');
+            window.StudentHub.closeModal(document.getElementById('edit-profile-modal'));
+        });
+    </script>
 </body>
 </html>

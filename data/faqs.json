@@ -1,0 +1,114 @@
+[
+  {
+    "id": 1,
+    "category": "Academics",
+    "question": "How do I access course materials and past exam papers?",
+    "answer": "You can access verified study materials, lecture slides, and past semester exam papers from the Courses page or your personalized Quick Links section on the Dashboard. Select your enrolled department, course code, and academic term to download PDFs.",
+    "tags": ["courses", "exams", "notes"]
+  },
+  {
+    "id": 2,
+    "category": "Academics",
+    "question": "Can I use external frontend frameworks like Bootstrap or Tailwind?",
+    "answer": "Yes. Bootstrap 5 and Tailwind CSS are fully permitted and supported across web development laboratory submissions. Make sure to structure your HTML semantically and avoid unnecessary inline styles.",
+    "tags": ["web-development", "bootstrap", "css"]
+  },
+  {
+    "id": 3,
+    "category": "Events",
+    "question": "How do I register for campus hackathons and workshops?",
+    "answer": "Navigate to the Events page, browse available workshops or seminars, and click the 'Join Now' or 'Register' button on the event card. You will receive an instant confirmation modal and an entry in your Dashboard schedule.",
+    "tags": ["events", "workshops", "hackathon"]
+  },
+  {
+    "id": 4,
+    "category": "Events",
+    "question": "Are certificates provided after attending technical seminars?",
+    "answer": "Yes, digital verifiable attendance and participation certificates are generated on your Profile under the 'Achievements' tab within 48 hours after verified check-in.",
+    "tags": ["certificates", "events"]
+  },
+  {
+    "id": 5,
+    "category": "Account",
+    "question": "Is creating an account on StudentHub free of charge?",
+    "answer": "Yes, standard student accounts are 100% free for all enrolled university students. Simply use your student roll number and university email to register.",
+    "tags": ["account", "pricing", "registration"]
+  },
+  {
+    "id": 6,
+    "category": "Account",
+    "question": "What should I do if I forget my login password?",
+    "answer": "Click the 'Forgot Password?' link on the Login page and enter your registered email address. A secure time-limited password reset link will be sent to your student inbox.",
+    "tags": ["account", "password", "security"]
+  },
+  {
+    "id": 7,
+    "category": "Technical",
+    "question": "How does StudentHub handle client-side form validation?",
+    "answer": "StudentHub utilizes HTML5 constraint validation paired with JavaScript regular expressions (Regex) on keyup and blur events. This provides instantaneous visual feedback without submitting faulty data to the server.",
+    "tags": ["javascript", "validation", "forms"]
+  },
+  {
+    "id": 8,
+    "category": "Technical",
+    "question": "How does offline caching work for events and notices?",
+    "answer": "StudentHub uses modern Fetch API with localStorage fallback caching. If your connection drops or external API is offline, the portal automatically restores the latest cached response to maintain seamless browsing.",
+    "tags": ["api", "fetch", "cache"]
+  },
+  {
+    "id": 9,
+    "category": "Technical",
+    "question": "How do I connect external APIs with n8n workflow automation?",
+    "answer": "We maintain pre-built n8n templates in the Tools & Resources repository. You can import workflows connecting Google Sheets, Webflow CMS collections, and Discord webhooks via Webhook triggers.",
+    "tags": ["n8n", "apis", "automation"]
+  },
+  {
+    "id": 10,
+    "category": "Academics",
+    "question": "How do study groups and peer discussion forums work?",
+    "answer": "Students can initiate new forum topics under department categories (AI, Cloud, Full-Stack, IoT). Members can upvote helpful replies, mark verified answers, and schedule collaborative Google Meet study sessions.",
+    "tags": ["forum", "collaboration", "groups"]
+  },
+  {
+    "id": 11,
+    "category": "Account",
+    "question": "How do I update my registered mobile number and profile details?",
+    "answer": "Log into your account, visit 'My Profile' from the sidebar menu, click 'Edit Profile', modify your contact details or bio, and save changes. Verification OTP may be requested for mobile updates.",
+    "tags": ["profile", "account", "settings"]
+  },
+  {
+    "id": 12,
+    "category": "Policies",
+    "question": "What is the code of conduct for community discussions?",
+    "answer": "We enforce strict academic integrity. Sharing live examination solutions, plagiarized code, harassment, or distributing malicious content results in immediate suspension as outlined in our Terms of Service.",
+    "tags": ["tos", "conduct", "rules"]
+  },
+  {
+    "id": 13,
+    "category": "Technical",
+    "question": "What security standards are applied for storing student passwords?",
+    "answer": "All passwords are salted and hashed on the server side using PHP's industry-standard `password_hash()` with the bcrypt algorithm at work factor 12. Plaintext passwords are never stored or logged.",
+    "tags": ["security", "password-hash", "php"]
+  },
+  {
+    "id": 14,
+    "category": "Policies",
+    "question": "How can I submit feedback or report a bug?",
+    "answer": "You can visit the dedicated Feedback page accessible in the footer and main navigation. Choose the feedback category, provide a rating, and attach screenshots or reproduction steps.",
+    "tags": ["feedback", "bugs", "support"]
+  },
+  {
+    "id": 15,
+    "category": "Events",
+    "question": "Can I cancel my event registration if my schedule changes?",
+    "answer": "Yes, navigate to your Student Dashboard, locate the event under 'Registered Events', and click 'Cancel Registration' at least 2 hours prior to the start time to release seats for waitlisted peers.",
+    "tags": ["events", "cancellation", "schedule"]
+  },
+  {
+    "id": 16,
+    "category": "Academics",
+    "question": "Are there automated reminders for upcoming assignment deadlines?",
+    "answer": "Yes, the StudentHub Dashboard highlights upcoming submission deadlines with color-coded urgency badges (Due Today, Due in 2 Days, Due Next Week) synchronized with your enrolled subjects.",
+    "tags": ["deadlines", "assignments", "dashboard"]
+  }
+]

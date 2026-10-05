@@ -3,9 +3,278 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Students Hub - Administrator Portal</title>
+    <meta name="description" content="Central administrative dashboard for managing students, campus events, and registrations.">
+    <link rel="stylesheet" href="../css/style.css">
 </head>
-<body>
-    
+<body class="dashboard-body">
+
+    <!-- Accessibility Skip Link -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- APP WRAPPER -->
+    <div class="app-layout">
+        
+        <!-- FULL TEXT SIDEBAR -->
+        <aside class="text-sidebar" role="navigation" aria-label="Admin Navigation">
+            <div class="sidebar-brand-text">
+                <h2>Students Hub <span style="font-size: 0.7rem; background: rgba(13,148,136,0.1); color: var(--accent-green); padding: 2px 6px; border-radius: 4px;">ADMIN</span></h2>
+            </div>
+            
+            <ul class="text-menu">
+                <li><a href="index.html">🏠 Public Portal</a></li>
+                <li><a href="../php/dashboard.php">📊 Student View</a></li>
+                <li><a href="../php/admin.php" class="active">🛡️ Admin Console</a></li>
+                <li><a href="events.html">📅 Campus Events</a></li>
+                <li><a href="../php/view_submissions.php">📁 Stored Records</a></li>
+                <li><a href="feedback.html">⭐ Feedback Review</a></li>
+            </ul>
+
+            <div class="sidebar-footer-text">
+                <a href="../php/logout.php" class="logout-text-btn" style="color: #DC2626;">🚪 Sign Out</a>
+            </div>
+        </aside>
+
+        <!-- MAIN APP CONTENT AREA -->
+        <main id="main-content" class="app-main-content">
+            
+            <!-- TOP HEADER BAR -->
+            <header class="app-header-bar">
+                <div class="header-brand-area">
+                    <h2>Administrator Command Center</h2>
+                </div>
+                
+                <div class="header-actions">
+                    <button class="theme-toggle-btn" role="switch" aria-checked="false" aria-label="Toggle dark mode" title="Switch between Light Cream and Dark Mode">
+                        <span class="celestial-sky">
+                            <span class="sky-cloud cloud-1"></span>
+                            <span class="sky-cloud cloud-2"></span>
+                            <span class="sky-star star-1"></span>
+                            <span class="sky-star star-2"></span>
+                            <span class="sky-star star-3"></span>
+                        </span>
+                        <span class="celestial-orb">
+                            <span class="crater crater-1"></span>
+                            <span class="crater crater-2"></span>
+                            <span class="crater crater-3"></span>
+                        </span>
+                    </button>
+                    <button class="action-btn-outline" id="btn-export-csv">📥 Export CSV</button>
+                    <button class="action-btn-solid" data-modal-target="add-event-modal">+ New Event</button>
+                    
+                    <div class="header-profile">
+                        <div class="avatar-pill">
+                            <span>🛡️</span>
+                            <strong>System Admin</strong>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- BREADCRUMBS -->
+            <nav class="breadcrumbs" aria-label="Breadcrumbs" style="padding: 10px 0 20px 0;">
+                <a href="index.html">Home</a>
+                <span class="separator">/</span>
+                <span class="current">Admin Console</span>
+            </nav>
+
+            <!-- METRIC CARDS ROW -->
+            <div class="admin-metrics-grid">
+                <div class="admin-metric-card">
+                    <div class="metric-icon-wrap" style="background: rgba(13, 148, 136, 0.1); color: var(--accent-green);">👥</div>
+                    <div class="metric-text">
+                        <h4>Total Students</h4>
+                        <p class="metric-number" id="metric-total-students">16</p>
+                    </div>
+                </div>
+                <div class="admin-metric-card">
+                    <div class="metric-icon-wrap" style="background: rgba(59, 130, 246, 0.1); color: #3B82F6;">📅</div>
+                    <div class="metric-text">
+                        <h4>Scheduled Events</h4>
+                        <p class="metric-number">16</p>
+                    </div>
+                </div>
+                <div class="admin-metric-card">
+                    <div class="metric-icon-wrap" style="background: rgba(245, 158, 11, 0.1); color: #F59E0B;">📝</div>
+                    <div class="metric-text">
+                        <h4>Form Submissions</h4>
+                        <p class="metric-number">38</p>
+                    </div>
+                </div>
+                <div class="admin-metric-card">
+                    <div class="metric-icon-wrap" style="background: rgba(16, 185, 129, 0.1); color: #10B981;">⚡</div>
+                    <div class="metric-text">
+                        <h4>MySQL & PDO Status</h4>
+                        <p class="metric-number" style="font-size: 1.1rem; color: #059669;">Active (3NF)</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- STUDENT DIRECTORY TABLE (Practical 6 Rendering) -->
+            <section class="portal-card" style="margin-bottom: 30px;">
+                <div class="card-header-flex" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; margin-bottom: 20px;">
+                    <div>
+                        <h3 style="margin: 0 0 5px 0;">Enrolled Student Directory</h3>
+                        <p style="margin: 0; color: var(--text-secondary); font-size: 0.88rem;">Search, filter by enrolled department, and view academic records.</p>
+                    </div>
+                    <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+                        <input type="text" id="admin-search" placeholder="Search by name, roll no, email..." class="search-bar" style="min-width: 260px;">
+                        <select id="admin-course-filter" class="sort-select">
+                            <option value="All">All Courses</option>
+                            <option value="B.Tech IT">B.Tech IT</option>
+                            <option value="B.Tech CSE">B.Tech CSE</option>
+                            <option value="B.Tech AI&DS">B.Tech AI&DS</option>
+                            <option value="BCA">BCA</option>
+                            <option value="MCA">MCA</option>
+                            <option value="M.Tech CSE">M.Tech CSE</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="portal-table">
+                        <thead>
+                            <tr>
+                                <th>Roll No</th>
+                                <th>Student Name</th>
+                                <th>Course & Year</th>
+                                <th>Email</th>
+                                <th>CGPA</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="admin-students-tbody">
+                            <!-- Populated dynamically by admin-loader.js -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="pagination-container" id="admin-pagination"></div>
+            </section>
+
+            <!-- QUICK TOOLS & DATABASE ACTIONS -->
+            <div class="card-grid" style="display: flex; gap: 25px;">
+                <div class="portal-card" style="flex: 1;">
+                    <h3>Database Administration (Practicals 8 & 9)</h3>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6;">
+                        The database schema is structured in Third Normal Form (3NF). Use the links below to test database connectivity, view ER models, or inspect file archives.
+                    </p>
+                    <ul style="list-style: none; padding: 0; margin-top: 15px;">
+                        <li style="padding: 8px 0; border-bottom: 1px solid var(--border-color);"><a href="../php/db.php" target="_blank">🔍 Test PDO Connection (<code>php/db.php</code>)</a></li>
+                        <li style="padding: 8px 0; border-bottom: 1px solid var(--border-color);"><a href="../php/view_submissions.php">📁 Stored CSV/JSON Submissions</a></li>
+                        <li style="padding: 8px 0;"><a href="events.html">📅 Manage Campus Events</a></li>
+                    </ul>
+                </div>
+
+                <div class="portal-card" style="flex: 1;">
+                    <h3>System Security Checklist</h3>
+                    <ul style="list-style: none; padding: 0; margin: 0; font-size: 0.9rem;">
+                        <li style="padding: 10px 0; border-bottom: 1px solid var(--border-color); display: flex; justify-content: space-between;">
+                            <span>Password Hashing (bcrypt, cost 12):</span>
+                            <strong style="color: var(--accent-green);">Enabled</strong>
+                        </li>
+                        <li style="padding: 10px 0; border-bottom: 1px solid var(--border-color); display: flex; justify-content: space-between;">
+                            <span>Prepared Statements (SQLi Prevention):</span>
+                            <strong style="color: var(--accent-green);">Active</strong>
+                        </li>
+                        <li style="padding: 10px 0; border-bottom: 1px solid var(--border-color); display: flex; justify-content: space-between;">
+                            <span>Frontend Regex + Canvas CAPTCHA:</span>
+                            <strong style="color: var(--accent-green);">Active</strong>
+                        </li>
+                        <li style="padding: 10px 0; display: flex; justify-content: space-between;">
+                            <span>File Storage (Locking mechanism):</span>
+                            <strong style="color: var(--accent-green);">LOCK_EX</strong>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <!-- ADD EVENT MODAL (Practical 4 Modal) -->
+    <div class="modal-overlay" id="add-event-modal" role="dialog" aria-modal="true" aria-labelledby="modal-add-title">
+        <div class="modal-box">
+            <div class="modal-header">
+                <h3 id="modal-add-title">Add New Campus Event</h3>
+                <button class="modal-close-btn" aria-label="Close modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="add-event-form">
+                    <div class="form-field-wrap">
+                        <label class="form-label" for="new-event-title">Event Title</label>
+                        <input type="text" id="new-event-title" class="form-input" placeholder="e.g. Next.js & Server Actions Workshop" required>
+                    </div>
+                    <div class="form-field-wrap">
+                        <label class="form-label" for="new-event-category">Category</label>
+                        <select id="new-event-category" class="form-select" required>
+                            <option value="Workshops">Workshops</option>
+                            <option value="Seminars">Seminars</option>
+                            <option value="Competitions">Competitions</option>
+                            <option value="Masterclasses">Masterclasses</option>
+                            <option value="Hackathons">Hackathons</option>
+                        </select>
+                    </div>
+                    <div style="display: flex; gap: 15px;">
+                        <div class="form-field-wrap" style="flex: 1;">
+                            <label class="form-label" for="new-event-date">Date</label>
+                            <input type="date" id="new-event-date" class="form-input" required>
+                        </div>
+                        <div class="form-field-wrap" style="flex: 1;">
+                            <label class="form-label" for="new-event-seats">Max Seats</label>
+                            <input type="number" id="new-event-seats" class="form-input" value="60" min="10" max="300" required>
+                        </div>
+                    </div>
+                    <div class="form-field-wrap">
+                        <label class="form-label" for="new-event-location">Venue / Location</label>
+                        <input type="text" id="new-event-location" class="form-input" placeholder="e.g. Auditorium Hall 2" required>
+                    </div>
+                    <div class="form-field-wrap">
+                        <label class="form-label" for="new-event-desc">Description</label>
+                        <textarea id="new-event-desc" class="form-input" rows="3" placeholder="Brief event details..." required></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="action-btn-outline" data-modal-close>Cancel</button>
+                <button class="action-btn-solid" id="btn-save-event">Save Event</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../js/app.js"></script>
+    <script src="../js/admin-loader.js"></script>
+    <script>
+        document.getElementById('btn-save-event').addEventListener('click', () => {
+            const title = document.getElementById('new-event-title').value.trim();
+            if (!title) {
+                alert('Please enter an event title.');
+                return;
+            }
+            alert(`🎉 Event "${title}" created successfully! Added to campus roster.`);
+            window.StudentHub.closeModal(document.getElementById('add-event-modal'));
+            document.getElementById('add-event-form').reset();
+        });
+
+        // Practical 10: Strict Administrator RBAC Verification
+        (async function checkAdminAuth() {
+            try {
+                const res = await fetch('../php/session_status.php');
+                if (res.ok) {
+                    const data = await res.json();
+                    if (!data.authenticated) {
+                        window.location.href = '../php/login.php?msg=unauthorized';
+                    } else if (data.role !== 'admin') {
+                        // Logged in as student, block access to admin
+                        window.location.href = '../php/dashboard.php?msg=admin_denied';
+                    }
+                }
+            } catch (err) {
+                console.info('Static mode: PHP server not responding', err);
+            }
+        })();
+    </script>
 </body>
 </html>

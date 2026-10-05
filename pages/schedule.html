@@ -3,56 +3,180 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Students Hub - Schedule</title>
+    <title>Students Hub - Academic & Events Schedule</title>
+    <meta name="description" content="Weekly lecture timetable, upcoming examination dates, and campus event schedules.">
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body class="dashboard-body">
+
+    <!-- Accessibility Skip Link -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
     <div class="app-layout">
-        <aside class="text-sidebar">
+        
+        <!-- SIDEBAR -->
+        <aside class="text-sidebar" role="navigation" aria-label="Student Navigation">
             <div class="sidebar-brand-text"><h2>Students Hub</h2></div>
             <ul class="text-menu">
-                <li><a href="../index.html">🏠 Home</a></li>
+                <li><a href="index.html">🏠 Home</a></li>
                 <li><a href="dashboard.html">📊 Dashboard</a></li>
-                <li><a href="../profile.html">👤 My Profile</a></li>
+                <li><a href="profile.html">👤 My Profile</a></li>
                 <li><a href="courses.html">📚 Courses</a></li>
                 <li><a href="schedule.html" class="active">📅 Schedule</a></li>
-                <li><a href="discussion.html">💬 Discussions</a></li>
+                <li><a href="events.html">🎉 Events</a></li>
+                <li><a href="forum.html">💬 Discussions</a></li>
+                <li><a href="admin.html">🛡️ Admin Console</a></li>
             </ul>
             <div class="sidebar-footer-text">
-                <a href="../index.html" class="logout-text-btn">🚪 Log Out</a>
+                <a href="login.html" class="logout-text-btn">🚪 Log Out</a>
             </div>
         </aside>
-        <main class="app-main-content">
+
+        <!-- MAIN CONTENT AREA -->
+        <main id="main-content" class="app-main-content">
+            
             <header class="app-header-bar">
                 <h2>Events & Class Schedule</h2>
+                <div class="header-actions">
+                    <button class="theme-toggle-btn" role="switch" aria-checked="false" aria-label="Toggle dark mode" title="Switch between Light Cream and Dark Mode">
+                        <span class="celestial-sky">
+                            <span class="sky-cloud cloud-1"></span>
+                            <span class="sky-cloud cloud-2"></span>
+                            <span class="sky-star star-1"></span>
+                            <span class="sky-star star-2"></span>
+                            <span class="sky-star star-3"></span>
+                        </span>
+                        <span class="celestial-orb">
+                            <span class="crater crater-1"></span>
+                            <span class="crater crater-2"></span>
+                            <span class="crater crater-3"></span>
+                        </span>
+                    </button>
+                    <button class="action-btn-solid" onclick="window.print()">🖨️ Print Schedule</button>
+                </div>
             </header>
+
+            <!-- BREADCRUMBS -->
+            <nav class="breadcrumbs" aria-label="Breadcrumbs" style="padding: 10px 0 20px 0;">
+                <a href="index.html">Home</a>
+                <span class="separator">/</span>
+                <a href="dashboard.html">Dashboard</a>
+                <span class="separator">/</span>
+                <span class="current">Class Schedule</span>
+            </nav>
+
             <div class="portal-grid">
+                
                 <div class="portal-left-col">
+                    
+                    <!-- Weekly Timetable Card -->
+                    <div class="portal-card" style="margin-bottom: 25px;">
+                        <div class="card-header-flex">
+                            <h3>Weekly Lecture Timetable (Fall 2026)</h3>
+                            <span class="pill-dropdown">Semester 5 - Section A</span>
+                        </div>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 5px 0 20px 0;">
+                            Review your weekly theory lectures and practical laboratory slots.
+                        </p>
+
+                        <div class="table-responsive">
+                            <table class="portal-table">
+                                <thead>
+                                    <tr>
+                                        <th>Day</th>
+                                        <th>9:00 - 10:30 AM</th>
+                                        <th>10:45 - 12:15 PM</th>
+                                        <th>1:15 - 3:15 PM (Lab)</th>
+                                        <th>3:30 - 4:30 PM</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>Monday</strong></td>
+                                        <td>Cloud Computing (IT301)</td>
+                                        <td>Deep Learning (IT302)</td>
+                                        <td><span class="badge-status badge-active">Cloud Lab (Lab 3)</span></td>
+                                        <td>Library Research</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Tuesday</strong></td>
+                                        <td>Web Technologies (IT303)</td>
+                                        <td>Operating Systems (IT304)</td>
+                                        <td><span class="badge-status badge-active">PERN Lab (Lab 2)</span></td>
+                                        <td>Tutorial Session</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Wednesday</strong></td>
+                                        <td>AI & Machine Intelligence</td>
+                                        <td>Cloud Architecture</td>
+                                        <td><span class="badge-status badge-active">AI Project Lab</span></td>
+                                        <td>Faculty Mentoring</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Thursday</strong></td>
+                                        <td>Responsive UI & UX</td>
+                                        <td>Database Systems (3NF)</td>
+                                        <td><span class="badge-status badge-active">MySQL Lab (Lab 4)</span></td>
+                                        <td>Sports & Clubs</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Friday</strong></td>
+                                        <td>Software Engineering</td>
+                                        <td>Cybersecurity Fundamentals</td>
+                                        <td><span class="badge-status badge-active">Hackathon Prep</span></td>
+                                        <td>Weekly Review</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Upcoming Deadlines Table -->
                     <div class="portal-card">
-                        <h3>Upcoming Timetable</h3>
-                        <p style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 10px;">Review your upcoming lectures, masterclasses, and submission deadlines.</p>
+                        <h3>Upcoming Key Deadlines & Viva Dates</h3>
+                        <ul style="list-style: none; padding: 0; margin-top: 15px; font-size: 0.92rem;">
+                            <li style="padding: 12px 0; border-bottom: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center;">
+                                <div>
+                                    <strong>Practical 1 - 5 Web Development Portfolio</strong>
+                                    <p style="margin: 3px 0 0 0; font-size: 0.8rem; color: var(--text-secondary);">Source code submission and viva checklist</p>
+                                </div>
+                                <span class="badge-status badge-pending">Due Oct 15</span>
+                            </li>
+                            <li style="padding: 12px 0; border-bottom: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center;">
+                                <div>
+                                    <strong>Practical 6 - 9 PHP & MySQL Database Insert</strong>
+                                    <p style="margin: 3px 0 0 0; font-size: 0.8rem; color: var(--text-secondary);">PDO connectivity & secure password hash demonstration</p>
+                                </div>
+                                <span class="badge-status badge-active">Due Oct 28</span>
+                            </li>
+                            <li style="padding: 12px 0; display: flex; justify-content: space-between; align-items: center;">
+                                <div>
+                                    <strong>Mid-Semester Theory Examinations</strong>
+                                    <p style="margin: 3px 0 0 0; font-size: 0.8rem; color: var(--text-secondary);">University exam center (Hall A)</p>
+                                </div>
+                                <span class="badge-status badge-closed">Nov 10 – Nov 18</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+
+                <!-- RIGHT SIDEBAR -->
+                <div class="portal-right-col">
+                    <div class="portal-card">
+                        <h3>Quick Timezone & Campus Note</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.88rem; line-height: 1.6;">
+                            All timetable entries are synchronized in Indian Standard Time (IST, UTC+5:30). Lecture room alterations will be alerted via the notification banner.
+                        </p>
                     </div>
                 </div>
+
             </div>
+
         </main>
     </div>
 
-
-    <script>
-    // Automatically highlight the current active sidebar menu item
-    document.addEventListener("DOMContentLoaded", function () {
-        const currentPage = window.location.pathname.split("/").pop();
-        const menuLinks = document.querySelectorAll(".text-menu a");
-
-        menuLinks.forEach(link => {
-            const linkPage = link.getAttribute("href").split("/").pop();
-            if (linkPage === currentPage) {
-                link.classList.add("active");
-            } else {
-                link.classList.remove("active");
-            }
-        });
-    });
-</script>
+    <!-- Interactive Scripts -->
+    <script src="../js/app.js"></script>
 </body>
 </html>

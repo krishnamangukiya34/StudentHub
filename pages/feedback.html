@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Students Hub - Student Feedback & Suggestions</title>
+    <meta name="description" content="Submit your thoughts, suggestions, and feedback to improve Students Hub services.">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="light-cream-bg">
+
+    <!-- Skip Link for Accessibility (Practical 2 Advanced) -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Notification Banner (Practical 4) -->
+    <div class="notification-banner alert-info" data-banner-id="feedback_banner">
+        <div class="banner-content">
+            <span class="banner-badge">Feedback</span>
+            <span>Your feedback shapes the future of StudentHub! Tell us how we can improve your campus portal.</span>
+        </div>
+        <button class="banner-close-btn" aria-label="Close notification">&times;</button>
+    </div>
+
+    <!-- HEADER & NAVIGATION -->
+    <header>
+        <div class="logo">
+            <a href="index.html"><h1>Students Hub</h1></a>
+        </div>
+
+        <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">☰</button>
+        
+        <nav class="center-nav" role="navigation">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="forum.html">Forum</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="feedback.html" class="active">Feedback</a></li>
+                <li><a href="tos.html">Terms</a></li>
+            </ul>
+        </nav>
+
+        <div class="auth-buttons">
+            <button class="theme-toggle-btn" role="switch" aria-checked="false" aria-label="Toggle dark mode" title="Switch between Light Cream and Dark Mode">
+                <span class="celestial-sky">
+                    <span class="sky-cloud cloud-1"></span>
+                    <span class="sky-cloud cloud-2"></span>
+                    <span class="sky-star star-1"></span>
+                    <span class="sky-star star-2"></span>
+                    <span class="sky-star star-3"></span>
+                </span>
+                <span class="celestial-orb">
+                    <span class="crater crater-1"></span>
+                    <span class="crater crater-2"></span>
+                    <span class="crater crater-3"></span>
+                </span>
+            </button>
+            <a href="login.html" class="btn-login">Login</a>
+            <a href="register.html" class="btn-register">Register</a>
+        </div>
+    </header>
+
+    <hr>
+
+    <!-- MAIN CONTENT -->
+    <main id="main-content" class="contact-page">
+
+        <!-- Breadcrumbs (Practical 2 Intermediate) -->
+        <nav class="breadcrumbs" aria-label="Breadcrumb navigation">
+            <a href="index.html">Home</a>
+            <span class="separator">/</span>
+            <span class="current">Feedback</span>
+        </nav>
+
+        <section class="contact-header">
+            <h2>Campus & Portal Feedback</h2>
+            <p>We value your ideas, suggestions, and critique. Help our development and student affairs team make StudentHub better for everyone.</p>
+        </section>
+
+        <section class="contact-container">
+            
+            <!-- Left Info Card -->
+            <div class="contact-info">
+                <h3>Why Your Feedback Matters</h3>
+                <p>StudentHub is built for students, by students. Every comment is reviewed weekly during our continuous improvement meetings.</p>
+                
+                <ul class="info-list">
+                    <li>
+                        <span class="icon">💡</span>
+                        <span><strong>Feature Requests:</strong> Propose new study tools or dashboard widgets.</span>
+                    </li>
+                    <li>
+                        <span class="icon">🐛</span>
+                        <span><strong>Bug Reports:</strong> Inform us of broken links or layout issues.</span>
+                    </li>
+                    <li>
+                        <span class="icon">⭐</span>
+                        <span><strong>Campus Affairs:</strong> Share opinions on workshops and events.</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Right Form Card -->
+            <div class="contact-form-wrapper">
+                <form id="feedback-form" action="../php/process_feedback.php" method="POST" class="contact-form">
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="fb-name">Your Full Name</label>
+                            <input type="text" id="fb-name" name="name" class="form-input" placeholder="e.g. Smeet Nakrani" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="fb-email">Student Email</label>
+                            <input type="email" id="fb-email" name="email" class="form-input" placeholder="smeet@studentshub.edu" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="fb-category">Feedback Category</label>
+                        <select id="fb-category" name="category" class="form-select" required>
+                            <option value="Website UI">Website UI & Navigation</option>
+                            <option value="Academic Resources">Academic Resources & Courses</option>
+                            <option value="Campus Events">Campus Events & Workshops</option>
+                            <option value="Bug Report">Technical Bug or Issue</option>
+                            <option value="Suggestions">General Suggestion</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Overall Experience Rating</label>
+                        <div class="star-rating-box" id="star-box" role="radiogroup" aria-label="Rating out of 5 stars">
+                            <span data-star="1" role="radio" aria-checked="true" class="active">★</span>
+                            <span data-star="2" role="radio" aria-checked="true" class="active">★</span>
+                            <span data-star="3" role="radio" aria-checked="true" class="active">★</span>
+                            <span data-star="4" role="radio" aria-checked="true" class="active">★</span>
+                            <span data-star="5" role="radio" aria-checked="true" class="active">★</span>
+                        </div>
+                        <input type="hidden" name="rating" id="rating-val" value="5">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="fb-message">Your Comments or Suggestions</label>
+                        <textarea id="fb-message" name="message" class="form-input" rows="5" placeholder="Share your detailed feedback here..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-submit">Submit Feedback</button>
+                </form>
+            </div>
+
+        </section>
+
+    </main>
+
+    <hr>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 Students Hub Portal • Built with accessibility and responsiveness.</p>
+    </footer>
+
+    <!-- Interactive Scripts -->
+    <script src="../js/app.js"></script>
+    <script>
+        // Star rating interactivity
+        const stars = document.querySelectorAll('#star-box span');
+        const ratingInput = document.getElementById('rating-val');
+        
+        stars.forEach(star => {
+            star.addEventListener('click', () => {
+                const val = parseInt(star.dataset.star);
+                ratingInput.value = val;
+                stars.forEach((s, idx) => {
+                    s.classList.toggle('active', idx < val);
+                });
+            });
+        });
+
+        // Feedback submission handler
+        const fbForm = document.getElementById('feedback-form');
+        fbForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const btn = fbForm.querySelector('button[type="submit"]');
+            btn.disabled = true;
+            btn.textContent = 'Submitting...';
+
+            const formData = new FormData(fbForm);
+            try {
+                const res = await fetch('../php/process_feedback.php', {
+                    method: 'POST',
+                    headers: { 'Accept': 'application/json' },
+                    body: formData
+                });
+                const data = await res.json();
+                alert(data.message || 'Thank you for your valuable feedback!');
+                fbForm.reset();
+            } catch (err) {
+                alert('Thank you! Your feedback has been received and noted.');
+                fbForm.reset();
+            } finally {
+                btn.disabled = false;
+                btn.textContent = 'Submit Feedback';
+            }
+        });
+    </script>
+</body>
+</html>

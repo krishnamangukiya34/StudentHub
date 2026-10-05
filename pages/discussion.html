@@ -3,55 +3,185 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Students Hub - Discussions</title>
+    <title>Students Hub - Discussion Thread</title>
+    <meta name="description" content="Community thread on mobile-first responsive layout strategies, CSS Grid, and accessibility practices.">
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body class="dashboard-body">
+
+    <!-- Accessibility Skip Link -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
     <div class="app-layout">
-        <aside class="text-sidebar">
+        
+        <!-- SIDEBAR -->
+        <aside class="text-sidebar" role="navigation" aria-label="Student Navigation">
             <div class="sidebar-brand-text"><h2>Students Hub</h2></div>
             <ul class="text-menu">
-                <li><a href="../index.html">🏠 Home</a></li>
+                <li><a href="index.html">🏠 Home</a></li>
                 <li><a href="dashboard.html">📊 Dashboard</a></li>
-                <li><a href="../profile.html">👤 My Profile</a></li>
+                <li><a href="profile.html">👤 My Profile</a></li>
                 <li><a href="courses.html">📚 Courses</a></li>
                 <li><a href="schedule.html">📅 Schedule</a></li>
                 <li><a href="discussion.html" class="active">💬 Discussions</a></li>
+                <li><a href="forum.html">📋 Forum Index</a></li>
+                <li><a href="admin.html">🛡️ Admin Console</a></li>
             </ul>
             <div class="sidebar-footer-text">
-                <a href="../index.html" class="logout-text-btn">🚪 Log Out</a>
+                <a href="login.html" class="logout-text-btn">🚪 Log Out</a>
             </div>
         </aside>
-        <main class="app-main-content">
+
+        <!-- MAIN CONTENT AREA -->
+        <main id="main-content" class="app-main-content">
+            
             <header class="app-header-bar">
-                <h2>Forum Discussions</h2>
+                <h2>Discussion Thread</h2>
+                <div class="header-actions">
+                    <button class="theme-toggle-btn" role="switch" aria-checked="false" aria-label="Toggle dark mode" title="Switch between Light Cream and Dark Mode">
+                        <span class="celestial-sky">
+                            <span class="sky-cloud cloud-1"></span>
+                            <span class="sky-cloud cloud-2"></span>
+                            <span class="sky-star star-1"></span>
+                            <span class="sky-star star-2"></span>
+                            <span class="sky-star star-3"></span>
+                        </span>
+                        <span class="celestial-orb">
+                            <span class="crater crater-1"></span>
+                            <span class="crater crater-2"></span>
+                            <span class="crater crater-3"></span>
+                        </span>
+                    </button>
+                    <a href="forum.html" class="action-btn-outline">← Back to Forum</a>
+                </div>
             </header>
+
+            <!-- BREADCRUMBS -->
+            <nav class="breadcrumbs" aria-label="Breadcrumbs" style="padding: 10px 0 20px 0;">
+                <a href="index.html">Home</a>
+                <span class="separator">/</span>
+                <a href="forum.html">Forum</a>
+                <span class="separator">/</span>
+                <span class="current">Mobile-First Layout Strategies</span>
+            </nav>
+
             <div class="portal-grid">
+                
+                <!-- MAIN THREAD COLUMN -->
                 <div class="portal-left-col">
+                    
+                    <!-- Main Post Card -->
+                    <div class="portal-card" style="margin-bottom: 25px;">
+                        <span class="badge-blue" style="margin-bottom: 10px; display: inline-block;">Web Development</span>
+                        <h3 style="font-size: 1.4rem; margin: 5px 0 10px 0;">Best approach for building a mobile-first responsive layout using CSS Grid?</h3>
+                        <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 20px;">
+                            Started by <strong>Smeet Nakrani</strong> • Posted in Web Dev • 14 replies
+                        </p>
+                        <div style="line-height: 1.7; color: var(--text-primary); font-size: 0.95rem;">
+                            <p>Hey everyone! For Practical 3, I am structuring the Home and Dashboard pages. Should I default to mobile single-column layouts and scale up via <code>@media (min-width: 768px)</code>, or start from desktop? Also, how are you handling fluid card grids without overflow?</p>
+                        </div>
+                        <div style="display: flex; gap: 15px; margin-top: 20px; align-items: center;">
+                            <button class="action-btn-outline" id="upvote-btn" style="padding: 6px 14px; font-size: 0.85rem;">👍 Helpful (<span id="upvote-count">12</span>)</button>
+                            <span style="font-size: 0.85rem; color: var(--text-secondary);">4 active participants</span>
+                        </div>
+                    </div>
+
+                    <!-- REPLIES LIST -->
+                    <div class="portal-card" style="margin-bottom: 25px;">
+                        <h3>Community Replies (3)</h3>
+                        
+                        <div style="margin-top: 20px; display: flex; flex-direction: column; gap: 20px;">
+                            
+                            <!-- Reply 1 -->
+                            <div style="padding-bottom: 15px; border-bottom: 1px solid var(--border-color);">
+                                <div style="display: flex; justify-content: space-between; margin-bottom: 6px;">
+                                    <strong>Diya Patel (24IT015)</strong>
+                                    <span style="font-size: 0.8rem; color: var(--text-secondary);">1 hour ago</span>
+                                </div>
+                                <p style="margin: 0; line-height: 1.6; color: var(--text-secondary); font-size: 0.92rem;">
+                                    Definitely mobile-first! Start with a 1-column layout for small viewports, then use <code>grid-template-columns: repeat(auto-fit, minmax(280px, 1fr))</code> for the card containers. That way it automatically flexes across tablet and desktop without extra media queries.
+                                </p>
+                            </div>
+
+                            <!-- Reply 2 -->
+                            <div style="padding-bottom: 15px; border-bottom: 1px solid var(--border-color);">
+                                <div style="display: flex; justify-content: space-between; margin-bottom: 6px;">
+                                    <strong>Prof. Ananya (Faculty Mentor)</strong>
+                                    <span style="font-size: 0.8rem; color: var(--text-secondary);">45 mins ago</span>
+                                </div>
+                                <p style="margin: 0; line-height: 1.6; color: var(--text-secondary); font-size: 0.92rem;">
+                                    Great advice Diya. Also remember to include a skip-to-content link and ensure touch targets on mobile buttons are at least 44x44 pixels for accessibility compliance.
+                                </p>
+                            </div>
+
+                            <!-- Reply 3 -->
+                            <div id="new-reply-slot"></div>
+
+                        </div>
+                    </div>
+
+                    <!-- POST REPLY CARD -->
                     <div class="portal-card">
-                        <h3>Recent Community Topics</h3>
-                        <p style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 10px;">Engage with peers, debug database errors, and share web development solutions.</p>
+                        <h3>Join the Discussion</h3>
+                        <form id="reply-form" style="margin-top: 15px;">
+                            <textarea id="reply-text" class="form-input" rows="4" placeholder="Write your response or solution..." required></textarea>
+                            <button type="submit" class="action-btn-solid" style="margin-top: 12px;">Submit Reply</button>
+                        </form>
+                    </div>
+
+                </div>
+
+                <!-- RIGHT SIDEBAR: RELATED TOPICS -->
+                <div class="portal-right-col">
+                    <div class="portal-card">
+                        <h3>Related Discussion Topics</h3>
+                        <ul style="list-style: none; padding: 0; margin-top: 15px; font-size: 0.9rem;">
+                            <li style="padding: 10px 0; border-bottom: 1px solid var(--border-color);"><a href="#">How to implement light cream theme in CSS variables</a></li>
+                            <li style="padding: 10px 0; border-bottom: 1px solid var(--border-color);"><a href="#">Password strength meter with regular expressions</a></li>
+                            <li style="padding: 10px 0;"><a href="#">MySQL PDO prepared statements vs MySQLi</a></li>
+                        </ul>
                     </div>
                 </div>
+
             </div>
+
         </main>
     </div>
 
+    <!-- Interactive Scripts -->
+    <script src="../js/app.js"></script>
     <script>
-    // Automatically highlight the current active sidebar menu item
-    document.addEventListener("DOMContentLoaded", function () {
-        const currentPage = window.location.pathname.split("/").pop();
-        const menuLinks = document.querySelectorAll(".text-menu a");
-
-        menuLinks.forEach(link => {
-            const linkPage = link.getAttribute("href").split("/").pop();
-            if (linkPage === currentPage) {
-                link.classList.add("active");
-            } else {
-                link.classList.remove("active");
+        // Upvote counter
+        let count = 12;
+        let voted = false;
+        document.getElementById('upvote-btn').addEventListener('click', () => {
+            if (!voted) {
+                count++;
+                document.getElementById('upvote-count').textContent = count;
+                voted = true;
+                document.getElementById('upvote-btn').style.borderColor = 'var(--accent-green)';
             }
         });
-    });
-</script>
+
+        // Reply submission
+        document.getElementById('reply-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const text = document.getElementById('reply-text').value.trim();
+            if (!text) return;
+
+            const slot = document.getElementById('new-reply-slot');
+            slot.innerHTML = `
+                <div style="padding-top: 15px;">
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 6px;">
+                        <strong>Smeet Nakrani (You)</strong>
+                        <span style="font-size: 0.8rem; color: var(--text-secondary);">Just now</span>
+                    </div>
+                    <p style="margin: 0; line-height: 1.6; color: var(--text-secondary); font-size: 0.92rem;">${text}</p>
+                </div>
+            `;
+            document.getElementById('reply-text').value = '';
+            alert('🎉 Reply posted to thread!');
+        });
+    </script>
 </body>
 </html>

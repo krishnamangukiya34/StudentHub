@@ -3,31 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Students Hub - Events</title>
+    <title>Students Hub - Campus & Technical Events</title>
+    <meta name="description" content="Discover and register for campus workshops, hackathons, and technical seminars on Students Hub.">
     <link rel="stylesheet" href="../css/style.css">
 </head>
-<body>
+<body class="light-cream-bg">
 
-   <!-- HEADER & NAVIGATION -->
+    <!-- Accessibility Skip Link -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Notification Banner -->
+    <div class="notification-banner alert-info" data-banner-id="events_banner">
+        <div class="banner-content">
+            <span class="banner-badge">Campus News</span>
+            <span>Registration is filling fast for the 24-Hour Annual Hackathon! Reserve your team slot today.</span>
+        </div>
+        <button class="banner-close-btn" aria-label="Close notification">&times;</button>
+    </div>
+
+    <!-- HEADER & NAVIGATION -->
     <header>
         <div class="logo">
-            <!-- Clickable Logo linking to Home -->
             <a href="index.html"><h1>Students Hub</h1></a>
         </div>
         
-        <nav class="center-nav">
+        <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">☰</button>
+
+        <nav class="center-nav" role="navigation">
             <ul>
+                <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
-                <!-- Highlighted Events Us link -->
-                <li><a href="events.html" style="color: var(--text-primary);">Events</a></li>
+                <li><a href="events.html" class="active">Events</a></li>
                 <li><a href="forum.html">Forum</a></li>
                 <li><a href="faq.html">FAQ</a></li>
                 <li><a href="contact.html">Contact Us</a></li>
-                <li><a href="tos.html">Terms of Service</a></li>
+                <li><a href="feedback.html">Feedback</a></li>
+                <li><a href="tos.html">Terms</a></li>
             </ul>
         </nav>
 
         <div class="auth-buttons">
+            <button class="theme-toggle-btn" role="switch" aria-checked="false" aria-label="Toggle dark mode" title="Switch between Light Cream and Dark Mode">
+                <span class="celestial-sky">
+                    <span class="sky-cloud cloud-1"></span>
+                    <span class="sky-cloud cloud-2"></span>
+                    <span class="sky-star star-1"></span>
+                    <span class="sky-star star-2"></span>
+                    <span class="sky-star star-3"></span>
+                </span>
+                <span class="celestial-orb">
+                    <span class="crater crater-1"></span>
+                    <span class="crater crater-2"></span>
+                    <span class="crater crater-3"></span>
+                </span>
+            </button>
             <a href="login.html" class="btn-login">Login</a>
             <a href="register.html" class="btn-register">Register</a>
         </div>
@@ -36,130 +65,63 @@
     <hr>
 
     <!-- MAIN EVENTS CONTENT -->
-    <main class="events-page">
+    <main id="main-content" class="events-page">
+
+        <!-- Breadcrumbs -->
+        <nav class="breadcrumbs" aria-label="Breadcrumb navigation">
+            <a href="index.html">Home</a>
+            <span class="separator">/</span>
+            <span class="current">Campus Events</span>
+        </nav>
         
         <section class="events-header">
             <h2>Upcoming Campus & Tech Events</h2>
-            <p>Discover upcoming workshops, seminars, and hackathons to level up your skills and network with peers.</p>
+            <p>Explore hands-on workshops, technical seminars, hackathons, and guest masterclasses to level up your engineering skills.</p>
         </section>
 
-       <!-- 8 EVENTS GRID -->
-        <section class="events-list">
-            
-            <!-- Event 1 -->
-            <div class="event-card">
-                <div class="event-date">
-                    <span class="month">SEP</span>
-                    <span class="day">15</span>
-                </div>
-                <div class="event-details">
-                    <h3>IT Cloud Computing Seminar</h3>
-                    <p class="event-meta">📍 Main Auditorium • 10:00 AM</p>
-                    <p>Join industry experts for a deep dive into modern cloud architecture and deployment strategies.</p>
-                    <a href="#" class="btn-join">Join Now</a>
-                </div>
+        <!-- SEARCH, FILTER & SORT CONTROLS (Practical 6) -->
+        <section class="data-filter-bar" aria-label="Events search and filter tools">
+            <!-- Search Input -->
+            <div class="search-input-wrap">
+                <span class="search-icon">🔍</span>
+                <input type="text" id="events-search" placeholder="Search events by title, speaker, or venue..." aria-label="Search events">
             </div>
 
-            <!-- Event 2 -->
-            <div class="event-card">
-                <div class="event-date">
-                    <span class="month">SEP</span>
-                    <span class="day">22</span>
-                </div>
-                <div class="event-details">
-                    <h3>Full-Stack PERN Workshop</h3>
-                    <p class="event-meta">📍 Lab 3 • 2:00 PM</p>
-                    <p>A hands-on session building scalable applications using PostgreSQL, Express, React, Node, and Neon.</p>
-                    <a href="#" class="btn-join">Join Now</a>
-                </div>
+            <!-- Category Pills -->
+            <div class="category-pills" id="category-pills" role="tablist" aria-label="Event categories">
+                <button class="category-pill active" data-category="All" role="tab" aria-selected="true">All Events</button>
+                <button class="category-pill" data-category="Workshops" role="tab">Workshops</button>
+                <button class="category-pill" data-category="Seminars" role="tab">Seminars</button>
+                <button class="category-pill" data-category="Competitions" role="tab">Competitions</button>
+                <button class="category-pill" data-category="Masterclasses" role="tab">Masterclasses</button>
+                <button class="category-pill" data-category="Hackathons" role="tab">Hackathons</button>
             </div>
 
-            <!-- Event 3 -->
-            <div class="event-card">
-                <div class="event-date">
-                    <span class="month">OCT</span>
-                    <span class="day">05</span>
-                </div>
-                <div class="event-details">
-                    <h3>Bootstrap UI Challenge</h3>
-                    <p class="event-meta">📍 Virtual • 9:00 AM</p>
-                    <p>Compete to build the most aesthetic and responsive frontend layout using the Bootstrap framework.</p>
-                    <a href="#" class="btn-join">Join Now</a>
-                </div>
+            <!-- Sorting Select -->
+            <div>
+                <select id="events-sort" class="sort-select" aria-label="Sort events">
+                    <option value="date-asc">Date: Upcoming First</option>
+                    <option value="date-desc">Date: Furthest First</option>
+                    <option value="title-asc">Title: A to Z</option>
+                </select>
             </div>
-
-            <!-- Event 4 -->
-            <div class="event-card">
-                <div class="event-date">
-                    <span class="month">OCT</span>
-                    <span class="day">12</span>
-                </div>
-                <div class="event-details">
-                    <h3>n8n & Webflow Masterclass</h3>
-                    <p class="event-meta">📍 Virtual • 4:00 PM</p>
-                    <p>Learn step-by-step how to connect external API data to Webflow CMS collections via n8n automation.</p>
-                    <a href="#" class="btn-join">Join Now</a>
-                </div>
-            </div>
-
-            <!-- Event 5 -->
-            <div class="event-card">
-                <div class="event-date">
-                    <span class="month">OCT</span>
-                    <span class="day">18</span>
-                </div>
-                <div class="event-details">
-                    <h3>Machine Intelligence Hackathon</h3>
-                    <p class="event-meta">📍 CSPIT Campus • 48 Hours</p>
-                    <p>Collaborate in teams to solve real-world problems using machine learning models and AI tools.</p>
-                    <a href="#" class="btn-join">Join Now</a>
-                </div>
-            </div>
-
-            <!-- Event 6 -->
-            <div class="event-card">
-                <div class="event-date">
-                    <span class="month">OCT</span>
-                    <span class="day">25</span>
-                </div>
-                <div class="event-details">
-                    <h3>Modern Web Design Aesthetics</h3>
-                    <p class="event-meta">📍 Design Studio • 1:00 PM</p>
-                    <p>Move beyond templates. Learn how to create unique, modern, and aesthetic layouts for the web.</p>
-                    <a href="#" class="btn-join">Join Now</a>
-                </div>
-            </div>
-
-            <!-- Event 7 -->
-            <div class="event-card">
-                <div class="event-date">
-                    <span class="month">NOV</span>
-                    <span class="day">02</span>
-                </div>
-                <div class="event-details">
-                    <h3>University Expo</h3>
-                    <p class="event-meta">📍 Main Ground • 10:00 AM</p>
-                    <p>Showcase your projects and network with local tech firms, including optimum networking opportunities.</p>
-                    <a href="#" class="btn-join">Join Now</a>
-                </div>
-            </div>
-
-            <!-- Event 8 -->
-            <div class="event-card">
-                <div class="event-date">
-                    <span class="month">NOV</span>
-                    <span class="day">10</span>
-                </div>
-                <div class="event-details">
-                    <h3>Google Student Ambassador Mixer</h3>
-                    <p class="event-meta">📍 Student Center • 5:00 PM</p>
-                    <p>Meet campus leaders and learn about promoting AI tools, campus initiatives, and leadership roles.</p>
-                    <a href="#" class="btn-join">Join Now</a>
-                </div>
-            </div>
-
-
         </section>
+
+        <!-- LOADING SPINNER -->
+        <div id="events-spinner" class="spinner-container">
+            <div class="spinner"></div>
+            <p style="color: var(--text-secondary);">Loading campus events from API...</p>
+        </div>
+
+        <!-- DYNAMIC EVENTS GRID (Rendered by js/events-loader.js from data/events.json) -->
+        <section class="events-list" id="events-container" aria-live="polite">
+            <!-- Dynamically populated via Fetch API -->
+        </section>
+
+        <!-- PAGINATION BAR -->
+        <div class="pagination-container" id="pagination-container" aria-label="Pagination Navigation">
+            <!-- Dynamically populated -->
+        </div>
 
     </main>
 
@@ -167,26 +129,37 @@
 
     <!-- FOOTER -->
     <footer>
-        <p>&copy; 2026 Students Hub</p>
+        <p>&copy; 2026 Students Hub Portal • Campus Events Department</p>
     </footer>
 
+    <!-- EVENT DETAILS MODAL (Practical 4 & 6 Integration) -->
+    <div class="modal-overlay" id="event-detail-modal" role="dialog" aria-modal="true" aria-labelledby="modal-event-title">
+        <div class="modal-box">
+            <div class="modal-header">
+                <h3 id="modal-event-title">Event Overview</h3>
+                <button class="modal-close-btn" aria-label="Close modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div style="margin-bottom: 15px;">
+                    <p id="modal-event-meta" style="color: var(--accent-green); font-weight: 600; margin: 0 0 6px 0;"></p>
+                    <p style="color: var(--text-secondary); margin: 0; font-size: 0.95rem;">Host / Speaker: <strong id="modal-event-speaker" style="color: var(--text-primary);"></strong></p>
+                </div>
+                <hr style="margin: 15px 0;">
+                <p id="modal-event-desc" style="line-height: 1.7; color: var(--text-primary);"></p>
+                <div style="background: var(--bg-elevated); padding: 12px 18px; border-radius: 8px; margin-top: 20px; display: flex; justify-content: space-between; align-items: center;">
+                    <span style="font-size: 0.9rem; color: var(--text-secondary);">Capacity Status:</span>
+                    <strong id="modal-event-seats" style="color: var(--text-primary);"></strong>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="action-btn-outline" data-modal-close>Close</button>
+                <button class="action-btn-solid" id="modal-confirm-join-btn">Confirm Registration</button>
+            </div>
+        </div>
+    </div>
 
-
-    <script>
-    // Automatically highlight the current active sidebar menu item
-    document.addEventListener("DOMContentLoaded", function () {
-        const currentPage = window.location.pathname.split("/").pop();
-        const menuLinks = document.querySelectorAll(".text-menu a");
-
-        menuLinks.forEach(link => {
-            const linkPage = link.getAttribute("href").split("/").pop();
-            if (linkPage === currentPage) {
-                link.classList.add("active");
-            } else {
-                link.classList.remove("active");
-            }
-        });
-    });
-</script>
+    <!-- Interactive Scripts -->
+    <script src="../js/app.js"></script>
+    <script src="../js/events-loader.js"></script>
 </body>
 </html>

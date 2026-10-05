@@ -3,11 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Students Hub - About Us</title>
-    <!-- Link to your existing CSS file -->
+    <title>Students Hub - About Our Campus Community</title>
+    <meta name="description" content="Learn about Students Hub mission, university collaboration, and peer learning community.">
     <link rel="stylesheet" href="../css/style.css">
 </head>
-<body>
+<body class="light-cream-bg">
+
+    <!-- Accessibility Skip Link -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Notification Banner -->
+    <div class="notification-banner alert-info" data-banner-id="about_banner">
+        <div class="banner-content">
+            <span class="banner-badge">About Us</span>
+            <span>Discover how Students Hub brings over 10,000 engineering students together for peer learning!</span>
+        </div>
+        <button class="banner-close-btn" aria-label="Close notification">&times;</button>
+    </div>
 
     <!-- HEADER & NAVIGATION -->
     <header>
@@ -15,19 +27,36 @@
             <a href="index.html"><h1>Students Hub</h1></a>
         </div>
         
-        <nav class="center-nav">
+        <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">☰</button>
+
+        <nav class="center-nav" role="navigation">
             <ul>
-                <!-- "About" is highlighted white -->
-                <li><a href="about.html" style="color: var(--text-primary);">About</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html" class="active">About</a></li>
                 <li><a href="events.html">Events</a></li>
                 <li><a href="forum.html">Forum</a></li>
                 <li><a href="faq.html">FAQ</a></li>
                 <li><a href="contact.html">Contact Us</a></li>
-                <li><a href="tos.html">Terms of Service</a></li>
+                <li><a href="feedback.html">Feedback</a></li>
+                <li><a href="tos.html">Terms</a></li>
             </ul>
         </nav>
 
         <div class="auth-buttons">
+            <button class="theme-toggle-btn" role="switch" aria-checked="false" aria-label="Toggle dark mode" title="Switch between Light Cream and Dark Mode">
+                <span class="celestial-sky">
+                    <span class="sky-cloud cloud-1"></span>
+                    <span class="sky-cloud cloud-2"></span>
+                    <span class="sky-star star-1"></span>
+                    <span class="sky-star star-2"></span>
+                    <span class="sky-star star-3"></span>
+                </span>
+                <span class="celestial-orb">
+                    <span class="crater crater-1"></span>
+                    <span class="crater crater-2"></span>
+                    <span class="crater crater-3"></span>
+                </span>
+            </button>
             <a href="login.html" class="btn-login">Login</a>
             <a href="register.html" class="btn-register">Register</a>
         </div>
@@ -36,19 +65,26 @@
     <hr>
 
     <!-- MAIN ABOUT CONTENT -->
-    <main class="about-page">
+    <main id="main-content" class="about-page">
+
+        <!-- Breadcrumbs (Practical 2 Intermediate) -->
+        <nav class="breadcrumbs" aria-label="Breadcrumb navigation" style="width: 100%;">
+            <a href="index.html">Home</a>
+            <span class="separator">/</span>
+            <span class="current">About Us</span>
+        </nav>
         
         <!-- ABOUT HERO -->
         <section class="about-hero">
             <h2>About Students Hub</h2>
-            <p>Empowering students to connect, learn, and succeed together.</p>
+            <p>Empowering students to connect, learn, innovate, and succeed together through structured campus collaboration.</p>
         </section>
 
         <!-- MISSION SECTION -->
         <section class="mission-section">
             <div class="mission-text">
-                <h3>Our Mission</h3>
-                <p>We built Students Hub to bridge the gap between academic requirements and student collaboration. Whether you are managing complex projects, seeking notes for upcoming exams, or looking for study groups, this platform is designed to be your central command center.</p>
+                <h3>Our Core Mission</h3>
+                <p>We built Students Hub to bridge the gap between academic requirements and student collaboration. Whether managing complex course projects, seeking notes for upcoming university exams, or forming multidisciplinary hackathon teams, this platform serves as your central campus command center.</p>
             </div>
             
             <!-- Statistics Cards -->
@@ -59,11 +95,11 @@
                 </div>
                 <div>
                     <h4>50+</h4>
-                    <p>Universities</p>
+                    <p>Course Modules</p>
                 </div>
                 <div>
                     <h4>24/7</h4>
-                    <p>Community Support</p>
+                    <p>Peer Support</p>
                 </div>
             </div>
         </section>
@@ -72,24 +108,77 @@
 
         <!-- CORE VALUES -->
         <section>
-            <h3 class="section-title">What Drives Us</h3>
+            <h3 class="section-title">What Drives Our Platform</h3>
             <div class="card-grid">
                 <div>
-                    <h3>Collaboration</h3>
-                    <p>We believe that peer-to-peer learning and sharing resources is the fastest way to master complex subjects.</p>
+                    <h3>🤝 Peer Collaboration</h3>
+                    <p>We believe that peer-to-peer learning and open resource sharing is the fastest and most sustainable way to master complex computer science topics.</p>
                 </div>
                 <div>
-                    <h3>Innovation</h3>
-                    <p>We constantly update our tools to provide modern, aesthetic, and functional layouts that make managing your university life effortless.</p>
+                    <h3>🚀 Practical Innovation</h3>
+                    <p>We update our technical tooling to provide accessible, mobile-first, and responsive layouts that make student administration frictionless.</p>
                 </div>
                 <div>
-                    <h3>Accessibility</h3>
-                    <p>From GPA calculators to internship portals, we ensure every crucial campus resource is just one click away.</p>
+                    <h3>♿ Total Accessibility</h3>
+                    <p>Every tool, timetable, and study repository is designed to meet strict WCAG accessibility guidelines with screen-reader and keyboard compatibility.</p>
+                </div>
+            </div>
+        <hr>
+
+        <!-- CAMPUS ENVIRONMENT & INFRASTRUCTURE -->
+        <section>
+            <h3 class="section-title">Our Campus Infrastructure</h3>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="../images/campus-quad.jpg" alt="University academic quad with modern architecture">
+                    <div class="gallery-caption">
+                        <h4>State-of-the-Art Quad</h4>
+                        <p>Modern architectural facilities designed for active student life and innovation.</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="../images/library-study.jpg" alt="University knowledge and study library">
+                    <div class="gallery-caption">
+                        <h4>Knowledge Library</h4>
+                        <p>Over 50,000 digital volumes, IEEE journals, and quiet collaborative spaces.</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="../images/student-lounge.jpg" alt="Student collaboration and innovation lounge">
+                    <div class="gallery-caption">
+                        <h4>Innovation Lounge</h4>
+                        <p>Designed for peer hackathons, project discussions, and informal study groups.</p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        
+        <hr>
+
+        <!-- STUDENT LEADERSHIP TEAM -->
+        <section>
+            <h3 class="section-title">Student Leadership & Coordinators</h3>
+            <div class="card-grid">
+                <div style="text-align: center;">
+                    <div style="font-size: 3rem; margin-bottom: 10px;">👨‍💻</div>
+                    <h3 style="margin-bottom: 4px;">Smeet Nakrani</h3>
+                    <p style="color: var(--accent-green); font-weight: 600; margin: 0 0 8px 0;">Lead Full-Stack Architect</p>
+                    <p style="font-size: 0.9rem; color: var(--text-secondary);">3rd Year B.Tech IT • Passionate about cloud deployment, database normalization, and interactive UX design.</p>
+                </div>
+                <div style="text-align: center;">
+                    <div style="font-size: 3rem; margin-bottom: 10px;">👩‍💻</div>
+                    <h3 style="margin-bottom: 4px;">Diya Patel</h3>
+                    <p style="color: var(--accent-green); font-weight: 600; margin: 0 0 8px 0;">Technical Events Coordinator</p>
+                    <p style="font-size: 0.9rem; color: var(--text-secondary);">3rd Year B.Tech CSE • Organizes campus workshops, competitive coding rounds, and hackathon schedules.</p>
+                </div>
+                <div style="text-align: center;">
+                    <div style="font-size: 3rem; margin-bottom: 10px;">👩‍🎨</div>
+                    <h3 style="margin-bottom: 4px;">Ananya Desai</h3>
+                    <p style="color: var(--accent-green); font-weight: 600; margin: 0 0 8px 0;">UI/UX & Accessibility Lead</p>
+                    <p style="font-size: 0.9rem; color: var(--text-secondary);">4th Year B.Tech IT • Designs responsive interfaces, color palettes, and accessible interaction components.</p>
+                </div>
+            </div>
+        </section>
 
     </main>
 
@@ -97,26 +186,10 @@
 
     <!-- FOOTER -->
     <footer>
-        <p>&copy; 2026 Student Hub. All rights reserved</p>
+        <p>&copy; 2026 Students Hub Portal • Built with accessibility and care.</p>
     </footer>
 
-
-
-    <script>
-    // Automatically highlight the current active sidebar menu item
-    document.addEventListener("DOMContentLoaded", function () {
-        const currentPage = window.location.pathname.split("/").pop();
-        const menuLinks = document.querySelectorAll(".text-menu a");
-
-        menuLinks.forEach(link => {
-            const linkPage = link.getAttribute("href").split("/").pop();
-            if (linkPage === currentPage) {
-                link.classList.add("active");
-            } else {
-                link.classList.remove("active");
-            }
-        });
-    });
-</script>
+    <!-- Interactive Scripts -->
+    <script src="../js/app.js"></script>
 </body>
 </html>

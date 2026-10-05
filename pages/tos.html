@@ -3,31 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Students Hub - Terms of Service</title>
+    <title>Students Hub - Terms of Service & Academic Policies</title>
+    <meta name="description" content="Review the Terms of Service, academic integrity regulations, and privacy standards of Students Hub.">
     <link rel="stylesheet" href="../css/style.css">
 </head>
-<body>
+<body class="light-cream-bg">
+
+    <!-- Accessibility Skip Link -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Notification Banner -->
+    <div class="notification-banner alert-info" data-banner-id="tos_banner">
+        <div class="banner-content">
+            <span class="banner-badge">Policy</span>
+            <span>All students are expected to uphold the university code of conduct when posting in forum discussions.</span>
+        </div>
+        <button class="banner-close-btn" aria-label="Close notification">&times;</button>
+    </div>
 
     <!-- HEADER & NAVIGATION -->
     <header>
         <div class="logo">
-            <!-- Clickable Logo linking to Home -->
             <a href="index.html"><h1>Students Hub</h1></a>
         </div>
         
-        <nav class="center-nav">
+        <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">☰</button>
+
+        <nav class="center-nav" role="navigation">
             <ul>
+                <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="events.html">Events</a></li>
                 <li><a href="forum.html">Forum</a></li>
                 <li><a href="faq.html">FAQ</a></li>
                 <li><a href="contact.html">Contact Us</a></li>
-                <!-- Highlighted Terms of Service link -->
-                <li><a href="tos.html" style="color: var(--text-primary);">Terms of Service</a></li>
+                <li><a href="feedback.html">Feedback</a></li>
+                <li><a href="tos.html" class="active">Terms</a></li>
             </ul>
         </nav>
 
         <div class="auth-buttons">
+            <button class="theme-toggle-btn" role="switch" aria-checked="false" aria-label="Toggle dark mode" title="Switch between Light Cream and Dark Mode">
+                <span class="celestial-sky">
+                    <span class="sky-cloud cloud-1"></span>
+                    <span class="sky-cloud cloud-2"></span>
+                    <span class="sky-star star-1"></span>
+                    <span class="sky-star star-2"></span>
+                    <span class="sky-star star-3"></span>
+                </span>
+                <span class="celestial-orb">
+                    <span class="crater crater-1"></span>
+                    <span class="crater crater-2"></span>
+                    <span class="crater crater-3"></span>
+                </span>
+            </button>
             <a href="login.html" class="btn-login">Login</a>
             <a href="register.html" class="btn-register">Register</a>
         </div>
@@ -36,32 +65,39 @@
     <hr>
 
     <!-- MAIN TOS CONTENT -->
-    <main class="tos-page">
+    <main id="main-content" class="tos-page">
+
+        <!-- Breadcrumbs -->
+        <nav class="breadcrumbs" aria-label="Breadcrumb navigation" style="width: 100%; max-width: 800px;">
+            <a href="index.html">Home</a>
+            <span class="separator">/</span>
+            <span class="current">Terms of Service</span>
+        </nav>
         
         <section class="tos-header">
-            <h2>Terms of Service</h2>
-            <p>Last Updated: August 2026</p>
+            <h2>Terms of Service & Code of Conduct</h2>
+            <p>Last Updated: October 2026 • Version 2.0</p>
         </section>
 
         <section class="tos-container">
-            <div class="tos-content">
+            <div class="tos-content" style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 14px; padding: 35px;">
                 <h3>1. Acceptance of Terms</h3>
-                <p>By accessing and using Students Hub, you accept and agree to be bound by the terms and provision of this agreement. In addition, when using these particular services, you shall be subject to any posted guidelines or rules applicable to such services.</p>
+                <p>By accessing and utilizing Students Hub, you agree to be bound by the terms and provisions of this agreement. In addition, when using specific services such as event registration and forums, you agree to comply with posted academic guidelines.</p>
 
                 <h3>2. Academic Integrity</h3>
-                <p>Students Hub is designed to foster collaboration and learning. Users are strictly prohibited from using the platform to share answers for ongoing exams, plagiarize code, or violate their university's academic integrity policies.</p>
+                <p>Students Hub is designed to foster genuine collaboration and peer learning. Users are strictly prohibited from using the platform to share live examination answers, plagiarize code for graded laboratory assignments, or violate institutional academic regulations.</p>
 
                 <h3>3. User Conduct and Content</h3>
-                <p>You agree to use the forum, event boards, and study groups for lawful, educational purposes. Harassment, hate speech, spamming, and the distribution of malicious software are strictly forbidden and will result in immediate account termination.</p>
+                <p>You agree to use the forum, event boards, and study groups solely for lawful, educational objectives. Harassment, abusive language, spamming, and the distribution of malicious scripts are strictly forbidden and will result in permanent account suspension.</p>
 
-                <h3>4. Privacy and Data Usage</h3>
-                <p>We respect your privacy. Any personal information, project files, or portfolio links you connect or upload to Students Hub will be handled in accordance with strict privacy standards. We do not sell your personal academic data to third parties.</p>
+                <h3>4. Privacy, Password Security and Data Usage</h3>
+                <p>We respect your personal privacy. Student credentials and passwords are encrypted and salted using PHP's standard <code>password_hash()</code> with bcrypt. Plaintext passwords are never logged or stored. Personal academic records are not shared with third-party advertisers.</p>
 
                 <h3>5. Modification of Service</h3>
-                <p>We reserve the right at any time to modify or discontinue, temporarily or permanently, the platform (or any part thereof) with or without notice. We shall not be liable to you or to any third party for any modification, suspension, or discontinuance of the service.</p>
+                <p>The student development team reserves the right to enhance or alter features on the platform with appropriate notice. Feedback may be submitted directly through our dedicated <a href="feedback.html">Feedback Portal</a>.</p>
 
-                <h3>6. Contact Information</h3>
-                <p>If you have any questions about these Terms, please contact our support team via the <a href="contact.html">Contact Us</a> page.</p>
+                <h3>6. Contact and Inquiries</h3>
+                <p>If you have any questions regarding these Terms or wish to appeal an account decision, please contact the campus administrator via our <a href="contact.html">Contact Us</a> page.</p>
             </div>
         </section>
 
@@ -71,8 +107,10 @@
 
     <!-- FOOTER -->
     <footer>
-        <p>&copy; 2026 Students Hub</p>
+        <p>&copy; 2026 Students Hub Portal • Academic Policies & Governance</p>
     </footer>
 
+    <!-- Interactive Scripts -->
+    <script src="../js/app.js"></script>
 </body>
 </html>

@@ -3,33 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Students Hub - FAQ</title>
+    <title>Students Hub - Frequently Asked Questions</title>
+    <meta name="description" content="Find answers to common student questions about enrollment, courses, study groups, and campus events.">
     <link rel="stylesheet" href="../css/style.css">
 </head>
-<body>
+<body class="light-cream-bg">
 
- <!-- HEADER & NAVIGATION -->
+    <!-- Accessibility Skip Link -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Notification Banner -->
+    <div class="notification-banner alert-info" data-banner-id="faq_banner">
+        <div class="banner-content">
+            <span class="banner-badge">Help Desk</span>
+            <span>Have a specific question not listed here? Submit a ticket via Contact Us or post in the Community Forum.</span>
+        </div>
+        <button class="banner-close-btn" aria-label="Close notification">&times;</button>
+    </div>
+
+    <!-- HEADER & NAVIGATION -->
     <header>
         <div class="logo">
-            <!-- Clickable Logo linking to Home -->
             <a href="index.html"><h1>Students Hub</h1></a>
         </div>
         
-        <nav class="center-nav">
-            <ul>
-                <li><a href="about.html">About</a></li>
-                
-                <li><a href="events.html">Events</a></li>
+        <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">☰</button>
 
-                <li><a href="forum.html" >Forum</a></li>
-                <!-- Highlighted Events Us link -->
-                <li><a href="faq.html" style="color: var(--text-primary);">FAQ</a></li>
+        <nav class="center-nav" role="navigation">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="forum.html">Forum</a></li>
+                <li><a href="faq.html" class="active">FAQ</a></li>
                 <li><a href="contact.html">Contact Us</a></li>
-                <li><a href="tos.html">Terms of Service</a></li>
+                <li><a href="feedback.html">Feedback</a></li>
+                <li><a href="tos.html">Terms</a></li>
             </ul>
         </nav>
 
         <div class="auth-buttons">
+            <button class="theme-toggle-btn" role="switch" aria-checked="false" aria-label="Toggle dark mode" title="Switch between Light Cream and Dark Mode">
+                <span class="celestial-sky">
+                    <span class="sky-cloud cloud-1"></span>
+                    <span class="sky-cloud cloud-2"></span>
+                    <span class="sky-star star-1"></span>
+                    <span class="sky-star star-2"></span>
+                    <span class="sky-star star-3"></span>
+                </span>
+                <span class="celestial-orb">
+                    <span class="crater crater-1"></span>
+                    <span class="crater crater-2"></span>
+                    <span class="crater crater-3"></span>
+                </span>
+            </button>
             <a href="login.html" class="btn-login">Login</a>
             <a href="register.html" class="btn-register">Register</a>
         </div>
@@ -38,55 +65,40 @@
     <hr>
 
     <!-- MAIN FAQ CONTENT -->
-    <main class="faq-page">
+    <main id="main-content" class="faq-page">
+
+        <!-- Breadcrumbs -->
+        <nav class="breadcrumbs" aria-label="Breadcrumb navigation" style="width: 100%; max-width: 800px;">
+            <a href="index.html">Home</a>
+            <span class="separator">/</span>
+            <span class="current">Help & FAQ</span>
+        </nav>
         
         <section class="faq-header">
             <h2>Frequently Asked Questions</h2>
-            <p>Find answers to common questions about navigating the hub, joining study groups, and utilizing our resources.</p>
+            <p>Answers to common questions regarding student registration, workshop participation, academic policies, and technical tools.</p>
         </section>
 
-        <section class="faq-container">
-            
-            <!-- FAQ Item 1 -->
-            <details class="faq-card" name="faq-accordion">
-                <summary>How do I join a CGPIT study group?</summary>
-                <div class="faq-answer">
-                    You can browse active study groups by visiting the <strong>Events</strong> page or the Community Hub section on your dashboard. Once you find a group, click "Join" to receive meeting links and calendar invites.
-                </div>
-            </details>
+        <!-- SEARCH & FILTER BAR (Practical 6) -->
+        <div style="width: 100%; max-width: 800px; margin-bottom: 25px;">
+            <div class="search-input-wrap" style="margin-bottom: 15px;">
+                <span class="search-icon">🔍</span>
+                <input type="text" id="faq-search-input" placeholder="Type a keyword (e.g. password, certificate, events)..." aria-label="Search FAQs">
+            </div>
 
-            <!-- FAQ Item 2 -->
-            <details class="faq-card" name="faq-accordion">
-                <summary>Can I use the Bootstrap framework for my UI project submissions?</summary>
-                <div class="faq-answer">
-                    Absolutely. Bootstrap is fully supported and highly recommended for building responsive, modern layouts. Check out the Web Development category in the <strong>Forum</strong> for specific roadmap templates and mini-project ideas.
-                </div>
-            </details>
+            <div class="category-pills" id="faq-category-pills" role="tablist" aria-label="FAQ categories">
+                <button class="category-pill active" data-category="All" role="tab">All FAQs</button>
+                <button class="category-pill" data-category="Academics" role="tab">Academics</button>
+                <button class="category-pill" data-category="Events" role="tab">Events</button>
+                <button class="category-pill" data-category="Account" role="tab">Account</button>
+                <button class="category-pill" data-category="Technical" role="tab">Technical</button>
+                <button class="category-pill" data-category="Policies" role="tab">Policies</button>
+            </div>
+        </div>
 
-            <!-- FAQ Item 3 -->
-            <details class="faq-card" name="faq-accordion">
-                <summary>Are there resources for Cloud Computing and Deep Learning?</summary>
-                <div class="faq-answer">
-                    Yes. We have dedicated academic discussion boards for core engineering subjects including Deep Learning, Machine Intelligence, and Cloud Computing. You can also find shared notes and past papers in your personalized Quick Links.
-                </div>
-            </details>
-
-            <!-- FAQ Item 4 -->
-            <details class="faq-card" name="faq-accordion">
-                <summary>How do I connect external APIs to Webflow using n8n?</summary>
-                <div class="faq-answer">
-                    We host regular workshops on advanced integrations. You can find step-by-step guides on n8n automation workflows routing into Webflow CMS collections in our <strong>Tools & Resources</strong> portal.
-                </div>
-            </details>
-
-            <!-- FAQ Item 5 -->
-            <details class="faq-card" name="faq-accordion">
-                <summary>Is my student account free?</summary>
-                <div class="faq-answer">
-                    Yes, standard student accounts are completely free. We also offer premium tiers for advanced AI tool integrations and expanded cloud storage, which you can upgrade to from your Profile settings.
-                </div>
-            </details>
-
+        <!-- DYNAMIC ACCORDION CONTAINER (Rendered from data/faqs.json) -->
+        <section class="faq-container" id="faq-dynamic-container" aria-live="polite">
+            <!-- Dynamically populated via Fetch API by faq-loader.js -->
         </section>
 
     </main>
@@ -95,25 +107,11 @@
 
     <!-- FOOTER -->
     <footer>
-        <p>&copy; 2026 Students Hub</p>
+        <p>&copy; 2026 Students Hub Portal • Student Support & Knowledgebase</p>
     </footer>
 
-
-    <script>
-    // Automatically highlight the current active sidebar menu item
-    document.addEventListener("DOMContentLoaded", function () {
-        const currentPage = window.location.pathname.split("/").pop();
-        const menuLinks = document.querySelectorAll(".text-menu a");
-
-        menuLinks.forEach(link => {
-            const linkPage = link.getAttribute("href").split("/").pop();
-            if (linkPage === currentPage) {
-                link.classList.add("active");
-            } else {
-                link.classList.remove("active");
-            }
-        });
-    });
-</script>
+    <!-- Interactive Scripts -->
+    <script src="../js/app.js"></script>
+    <script src="../js/faq-loader.js"></script>
 </body>
 </html>

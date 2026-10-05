@@ -3,68 +3,283 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Students Hub - Home</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <title>Students Hub - Campus Learning & Collaboration Portal</title>
+    <meta name="description" content="Your central campus companion for engineering coursework, events, forums, and academic collaboration.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body class="home-page light-cream-bg">
+
+    <!-- Accessibility Skip Link (Practical 2 Advanced) -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Notification Banner (Practical 4) -->
+    <div class="notification-banner alert-info" data-banner-id="root_home_banner">
+        <div class="banner-content">
+            <span class="banner-badge">Announcements</span>
+            <span>Welcome to the new StudentHub Portal! Check out upcoming workshops and join community discussions.</span>
+        </div>
+        <button class="banner-close-btn" aria-label="Close notification">&times;</button>
+    </div>
 
     <!-- HEADER & NAVIGATION -->
     <header>
         <div class="logo">
-            <!-- Clickable Logo linking to Home -->
             <a href="index.html"><h1>Students Hub</h1></a>
         </div>
         
-        <nav class="center-nav">
-            <ul>
-                <li><a href="about.html">About</a></li>
-                
-                <li><a href="events.html">Events</a></li>
+        <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">☰</button>
 
-                <li><a href="forum.html" >Forum</a></li>
-        
-                <li><a href="faq.html">FAQ</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
-                <li><a href="tos.html">Terms of Service</a></li>
+        <nav class="center-nav" role="navigation">
+            <ul>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="pages/about.html">About</a></li>
+                <li><a href="pages/events.html">Events</a></li>
+                <li><a href="pages/forum.html">Forum</a></li>
+                <li><a href="pages/faq.html">FAQ</a></li>
+                <li><a href="pages/contact.html">Contact Us</a></li>
+                <li><a href="pages/feedback.html">Feedback</a></li>
+                <li><a href="pages/tos.html">Terms</a></li>
             </ul>
         </nav>
 
         <div class="auth-buttons">
-            <a href="login.html" class="btn-login">Login</a>
-            <a href="register.html" class="btn-register">Register</a>
+            <button class="theme-toggle-btn" role="switch" aria-checked="false" aria-label="Toggle dark mode" title="Switch between Light Cream and Dark Mode">
+                <span class="celestial-sky">
+                    <span class="sky-cloud cloud-1"></span>
+                    <span class="sky-cloud cloud-2"></span>
+                    <span class="sky-star star-1"></span>
+                    <span class="sky-star star-2"></span>
+                    <span class="sky-star star-3"></span>
+                </span>
+                <span class="celestial-orb">
+                    <span class="crater crater-1"></span>
+                    <span class="crater crater-2"></span>
+                    <span class="crater crater-3"></span>
+                </span>
+            </button>
+            <a href="pages/login.html" class="btn-login">Login</a>
+            <a href="pages/register.html" class="btn-register">Register</a>
         </div>
     </header>
 
     <hr>
 
     <!-- MAIN CONTENT -->
-    <main>
+    <main id="main-content">
         
-        <!-- HERO SECTION -->
-        <section class="hero">
-            <h2>CONNECT. LEARN. SHARE.</h2>
-            <p>Your ultimate campus companion. Organize your engineering coursework, collaborate on projects, and elevate your university experience all in one place.</p>
-            <a href="register.html"><button>Join the Hub</button></a>
+        <!-- HERO BANNER WITH LIGHT CAMPUS BACKDROP -->
+        <section class="hero-banner">
+            <div class="hero-banner-inner">
+                <div class="hero-content">
+                    <div class="hero-badge">
+                        <span class="hero-badge-pulse"></span>
+                        <span class="hero-badge-text">Campus Learning Ecosystem</span>
+                    </div>
+                    <h2 class="hero-title">CONNECT. <span class="hero-title-accent">LEARN.</span> SHARE.</h2>
+                    <p class="hero-desc">Your ultimate campus companion. Organize engineering coursework, collaborate on lab assignments, register for technical hackathons, and elevate your university journey.</p>
+                    <div class="hero-actions">
+                        <a href="pages/register.html" class="hero-btn-primary">Join the Hub <span class="btn-arrow">→</span></a>
+                        <a href="pages/events.html" class="hero-btn-secondary">Browse Events 📅</a>
+                    </div>
+                    <div class="hero-metrics">
+                        <div class="hero-metric-item">
+                            <span class="metric-val">5,200+</span>
+                            <span class="metric-lbl">Active Scholars</span>
+                        </div>
+                        <div class="metric-sep"></div>
+                        <div class="hero-metric-item">
+                            <span class="metric-val">140+</span>
+                            <span class="metric-lbl">Lab Modules</span>
+                        </div>
+                        <div class="metric-sep"></div>
+                        <div class="hero-metric-item">
+                            <span class="metric-val">4.9 / 5</span>
+                            <span class="metric-lbl">Peer Rating</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero-visual">
+                    <div class="hero-glass-card">
+                        <div class="hero-card-top">
+                            <span class="hero-status-pill"><span class="status-live-dot"></span> Spring 2026 Active</span>
+                            <span class="hero-version-pill">Portal V2.4</span>
+                        </div>
+                        <div class="hero-image-wrap">
+                            <img src="images/campus-quad-light.jpg" alt="Sunlit university quad and modern engineering campus" class="hero-preview-img">
+                            <div class="hero-img-badge">
+                                <span>☀️ University Quad & Research Pavilions</span>
+                            </div>
+                        </div>
+                        <div class="hero-features-list">
+                            <div class="hero-feat-chip">
+                                <span class="feat-icon">⚡</span>
+                                <span class="feat-text">Real-time Lab Workbenches</span>
+                            </div>
+                            <div class="hero-feat-chip">
+                                <span class="feat-icon">📚</span>
+                                <span class="feat-text">Peer-Verified Lecture Notes</span>
+                            </div>
+                            <div class="hero-feat-chip">
+                                <span class="feat-icon">🏆</span>
+                                <span class="feat-text">Campus Hackathons & Sprints</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- INTERACTIVE IMAGE & CONTENT SLIDER (Practical 4) -->
+        <div class="hero-slider-wrap" aria-label="Campus Highlights Slider">
+            <div class="slider-container">
+                
+                <!-- Slide 1: Coding Lab -->
+                <div class="slider-slide">
+                    <div class="slider-content">
+                        <span style="color: var(--accent-green); font-weight: 600; font-size: 0.88rem; text-transform: uppercase;">Laboratory Sessions</span>
+                        <h3>Full-Stack Coding & Innovation Labs</h3>
+                        <p>Work on scalable web apps using PostgreSQL, Express, React, and Node.js with faculty mentorship and peer reviews.</p>
+                        <a href="pages/events.html" class="btn-register">Explore Workshops</a>
+                    </div>
+                    <div class="slider-image-box">
+                        <img src="images/coding-workshop.jpg" alt="Students coding in modern computer lab">
+                    </div>
+                </div>
+
+                <!-- Slide 2: Hackathon -->
+                <div class="slider-slide">
+                    <div class="slider-content">
+                        <span style="color: var(--accent-amber); font-weight: 600; font-size: 0.88rem; text-transform: uppercase;">Annual Competition</span>
+                        <h3>24-Hour Campus Hackathon Sprint</h3>
+                        <p>Build impactful software solutions, compete for cash prizes, and network with leading technology recruiters.</p>
+                        <a href="pages/events.html" class="btn-register">Join Hackathon</a>
+                    </div>
+                    <div class="slider-image-box">
+                        <img src="images/campus-hackathon.jpg" alt="Students collaborating during 24-hour hackathon">
+                    </div>
+                </div>
+
+                <!-- Slide 3: Library Study -->
+                <div class="slider-slide">
+                    <div class="slider-content">
+                        <span style="color: #3b82f6; font-weight: 600; font-size: 0.88rem; text-transform: uppercase;">Knowledge Center</span>
+                        <h3>Sunlit Modern Library & Research Desks</h3>
+                        <p>Access thousands of academic journals, lecture notes, and quiet collaboration spaces for group revision.</p>
+                        <a href="pages/courses.html" class="btn-register">Browse Course Notes</a>
+                    </div>
+                    <div class="slider-image-box">
+                        <img src="images/library-study.jpg" alt="Students studying together in sunlit library">
+                    </div>
+                </div>
+
+                <!-- Slide 4: Robotics & IoT Lab -->
+                <div class="slider-slide">
+                    <div class="slider-content">
+                        <span style="color: #8b5cf6; font-weight: 600; font-size: 0.88rem; text-transform: uppercase;">Hardware Prototyping</span>
+                        <h3>Embedded Systems & IoT Workbenches</h3>
+                        <p>Hands-on experimentation with ESP32 microcontrollers, sensor arrays, and telemetry dashboards.</p>
+                        <a href="pages/courses.html" class="btn-register">View IoT Module</a>
+                    </div>
+                    <div class="slider-image-box">
+                        <img src="images/robotics-lab.jpg" alt="Engineering students wiring microcontrollers in hardware lab">
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Slider Controls (Arrows & Dots) -->
+            <div class="slider-controls">
+                <button class="slider-arrow-btn slider-prev" aria-label="Previous slide">‹</button>
+                <div class="slider-dots"></div>
+                <button class="slider-arrow-btn slider-next" aria-label="Next slide">›</button>
+            </div>
+        </div>
+
+        <hr>
+
+        <!-- CAMPUS LIFE & FACILITIES GALLERY SECTION -->
+        <section>
+            <h2>Campus Life & Learning Facilities</h2>
+            <p style="color: var(--text-secondary); margin-top: -15px;">Experience world-class learning environments, innovation spaces, and outdoor study zones.</p>
+            
+            <div class="gallery-grid">
+                
+                <div class="gallery-item">
+                    <img src="images/campus-quad.jpg" alt="Modern university institute campus architecture and green quad">
+                    <div class="gallery-caption">
+                        <h4>University Academic Quad</h4>
+                        <p>Contemporary institute infrastructure featuring manicured lawns and eco-friendly buildings.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="images/tech-seminar.jpg" alt="Tech symposium in modern campus auditorium">
+                    <div class="gallery-caption">
+                        <h4>Central Auditorium</h4>
+                        <p>Equipped with ultra-wide projection screens for guest keynote lectures and tech seminars.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="images/student-teamwork.jpg" alt="Students collaborating outdoors on campus lawn">
+                    <div class="gallery-caption">
+                        <h4>Outdoor Study Quads</h4>
+                        <p>Open campus spaces for peer brainstorming, assignment prep, and club activities.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="images/tech-exhibition.jpg" alt="University annual project exhibition and tech expo">
+                    <div class="gallery-caption">
+                        <h4>Annual Project Expo</h4>
+                        <p>Student showcase presenting Capstone projects, research papers, and software prototypes.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="images/student-lounge.jpg" alt="Cozy student innovation lounge with beanbags and books">
+                    <div class="gallery-caption">
+                        <h4>Student Innovation Lounge</h4>
+                        <p>Casual co-working zone designed for informal study groups, discussions, and coffee breaks.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="images/coding-workshop.jpg" alt="High performance computer laboratory">
+                    <div class="gallery-caption">
+                        <h4>Advanced Computing Labs</h4>
+                        <p>High-speed workstations pre-configured with Linux, Docker, and full-stack toolchains.</p>
+                    </div>
+                </div>
+
+            </div>
         </section>
 
         <hr>
 
+        <!-- MY OVERVIEW SECTION -->
         <section>
-            <h2>My Overview</h2>
+            <h2>Academic Dashboard Overview</h2>
             <div class="card-grid">
                 <div>
-                    <h3>Quick Links</h3>
+                    <h3>Quick Academic Links</h3>
                     <ul>
-                        <li><a href="forum.html">Deep Learning Discussion</a></li>
-                        <li><a href="#">Cloud Computing Notes</a></li>
-                        <li><a href="#">CGPIT Exam Schedule</a></li>
+                        <li><a href="pages/forum.html">Deep Learning & Transformer Models Forum</a></li>
+                        <li><a href="pages/courses.html">Cloud Computing & Kubernetes Notes</a></li>
+                        <li><a href="pages/schedule.html">End-Semester Examination Timetable</a></li>
+                        <li><a href="pages/admin.html">🛡️ Administrator Console</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h3>Upcoming Deadlines</h3>
+                    <h3>Upcoming Course Deadlines</h3>
                     <ul>
-                        <li>Machine Intelligence Final Report - Due Monday</li>
-                        <li>Bootstrap UI Project - Due Thursday</li>
+                        <li>Machine Intelligence Final Project Report — <strong style="color: #dc2626;">Due Monday</strong></li>
+                        <li>Responsive UI Practical Submissions — <strong style="color: #d97706;">Due Thursday</strong></li>
+                        <li>Database Normalization (3NF) Lab Sheet — <strong>Due Next Week</strong></li>
                     </ul>
                 </div>
             </div>
@@ -74,21 +289,22 @@
 
         <!-- COMMUNITY HUB SECTION -->
         <section>
-            <h2>Community Hub</h2>
+            <h2>Community Hub & Active Discussions</h2>
             <div class="card-grid">
                 <div>
-                    <h3>Upcoming Events</h3>
+                    <h3>Featured Upcoming Events</h3>
                     <ul>
-                        <li>Tech Symposium at Uka Tarsadia University - <a href="events.html">Join</a></li>
-                        <li>Full-Stack (PERN) Workshop - <a href="events.html">Join</a></li>
+                        <li>Cloud Computing Seminar (Auditorium 101) — <a href="pages/events.html">Join Now</a></li>
+                        <li>Full-Stack PERN Workshop (Lab 3) — <a href="pages/events.html">Join Now</a></li>
+                        <li>Bootstrap UI Challenge (Virtual) — <a href="pages/events.html">Join Now</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h3>Forum Feed</h3>
+                    <h3>Recent Forum Topics</h3>
                     <ul>
-                        <li><a href="forum.html">Best practices for modern Bootstrap layouts?</a></li>
-                        <li><a href="forum.html">Troubleshooting API connections in n8n?</a></li>
-                        <li><a href="forum.html">Anyone have past papers for Cloud Computing?</a></li>
+                        <li><a href="pages/forum.html">Best practices for mobile-first CSS Grid & Flexbox?</a></li>
+                        <li><a href="pages/discussion.html">Troubleshooting API connections in n8n automations?</a></li>
+                        <li><a href="pages/forum.html">Anyone have past papers for Advanced Cloud Computing?</a></li>
                     </ul>
                 </div>
             </div>
@@ -98,12 +314,13 @@
 
         <!-- TOOLS & RESOURCES SECTION -->
         <section>
-            <h2>Tools & Resources</h2>
+            <h2>Campus Tools & Digital Services</h2>
             <ul class="resource-links">
-                <li><a href="#">GPA Calculator</a></li>
-                <li><a href="#">Campus Map</a></li>
-                <li><a href="#">Engineering Internship Portal</a></li>
-                <li><a href="#">Student Tech Discounts</a></li>
+                <li><a href="pages/courses.html">📚 Course Materials</a></li>
+                <li><a href="pages/schedule.html">📅 Timetable & Calendar</a></li>
+                <li><a href="pages/forum.html">💬 Discussion Boards</a></li>
+                <li><a href="pages/faq.html">❓ Student Knowledgebase</a></li>
+                <li><a href="pages/feedback.html">⭐ Submit Portal Feedback</a></li>
             </ul>
         </section>
 
@@ -113,26 +330,10 @@
 
     <!-- FOOTER -->
     <footer>
-        <p>&copy; 2026 Student Hub. All rights reserved</p>
+        <p>&copy; 2026 Students Hub Portal • Built for university scholars.</p>
     </footer>
 
-
-
-    <script>
-    // Automatically highlight the current active sidebar menu item
-    document.addEventListener("DOMContentLoaded", function () {
-        const currentPage = window.location.pathname.split("/").pop();
-        const menuLinks = document.querySelectorAll(".text-menu a");
-
-        menuLinks.forEach(link => {
-            const linkPage = link.getAttribute("href").split("/").pop();
-            if (linkPage === currentPage) {
-                link.classList.add("active");
-            } else {
-                link.classList.remove("active");
-            }
-        });
-    });
-</script>
+    <!-- Interactive Scripts -->
+    <script src="js/app.js"></script>
 </body>
 </html>

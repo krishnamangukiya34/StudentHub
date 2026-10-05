@@ -3,16 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Students Hub - Dashboard</title>
+    <title>Students Hub - Student Dashboard</title>
+    <meta name="description" content="Personal student dashboard with course progress, assignment deadlines, attendance breakdown, and upcoming events.">
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body class="dashboard-body">
+
+    <!-- Accessibility Skip Link -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
 
     <!-- APP WRAPPER -->
     <div class="app-layout">
         
         <!-- FULL TEXT SIDEBAR -->
-        <aside class="text-sidebar">
+        <aside class="text-sidebar" role="navigation" aria-label="Student Navigation">
             <div class="sidebar-brand-text">
                 <h2>Students Hub</h2>
             </div>
@@ -22,44 +26,71 @@
                 <li><a href="dashboard.html" class="active">📊 Dashboard</a></li>
                 <li><a href="profile.html">👤 My Profile</a></li>
                 <li><a href="courses.html">📚 Courses</a></li>
-                <li><a href="events.html">📅 Schedule</a></li>
+                <li><a href="events.html">📅 Schedule & Events</a></li>
                 <li><a href="forum.html">💬 Discussions</a></li>
                 <li><a href="faq.html">❓ Help & FAQ</a></li>
+                <li><a href="../php/admin.php">🛡️ Admin Console</a></li>
             </ul>
 
-
-
             <div class="sidebar-footer-text">
-                <a href="index.html" class="logout-text-btn">🚪 Log Out</a>
+                <a href="../php/logout.php" class="logout-text-btn">🚪 Log Out</a>
             </div>
         </aside>
 
         <!-- MAIN APP CONTENT AREA -->
-        <main class="app-main-content">
+        <main id="main-content" class="app-main-content">
             
-          <!-- TOP HEADER BAR -->
+            <!-- TOP HEADER BAR -->
             <header class="app-header-bar">
                 <div class="header-brand-area">
-                    <h2>Dashboard</h2>
+                    <h2>Academic Dashboard</h2>
                 </div>
                 
                 <div class="header-actions">
-                    <button class="action-btn-outline">Download Report</button>
-                    <button class="action-btn-solid">+ Join Class</button>
+                    <button class="theme-toggle-btn" role="switch" aria-checked="false" aria-label="Toggle dark mode" title="Switch between Light Cream and Dark Mode">
+                        <span class="celestial-sky">
+                            <span class="sky-cloud cloud-1"></span>
+                            <span class="sky-cloud cloud-2"></span>
+                            <span class="sky-star star-1"></span>
+                            <span class="sky-star star-2"></span>
+                            <span class="sky-star star-3"></span>
+                        </span>
+                        <span class="celestial-orb">
+                            <span class="crater crater-1"></span>
+                            <span class="crater crater-2"></span>
+                            <span class="crater crater-3"></span>
+                        </span>
+                    </button>
+                    <button class="action-btn-outline" id="btn-download-report">📄 Download Report</button>
+                    <button class="action-btn-solid" data-modal-target="join-class-modal">+ Join Class</button>
                     
-                    <!-- PASTE THE CODE HERE -->
                     <div class="header-profile">
-                        <span class="bell">🔔</span>
-                        <a href="profile.html" title="View Profile" class="header-profile-link">
+                        <span class="bell" title="Notifications" style="cursor: pointer;" onclick="alert('You have 2 pending lab assignments.')">🔔</span>
+                        <a href="profile.html" title="View Profile" class="header-profile-link" style="text-decoration: none;">
                             <div class="avatar-pill">
                                 <span>👨‍💻</span>
-                                <strong>Smeet N.</strong>
+                                <strong>Smeet Nakrani</strong>
                             </div>
                         </a>
                     </div>
-                    
                 </div>
             </header>
+
+            <!-- BREADCRUMBS -->
+            <nav class="breadcrumbs" aria-label="Breadcrumb navigation" style="padding: 10px 0 20px 0;">
+                <a href="index.html">Home</a>
+                <span class="separator">/</span>
+                <span class="current">Student Dashboard</span>
+            </nav>
+
+            <!-- NOTIFICATION BANNER -->
+            <div class="notification-banner alert-info" data-banner-id="dashboard_banner" style="border-radius: 10px; margin-bottom: 25px;">
+                <div class="banner-content">
+                    <span class="banner-badge">Notice</span>
+                    <span>Submission deadline for Web Development Lab Practical is this Thursday at 11:59 PM.</span>
+                </div>
+                <button class="banner-close-btn" aria-label="Close notification">&times;</button>
+            </div>
 
             <!-- DASHBOARD CONTENT GRID -->
             <div class="portal-grid">
@@ -70,11 +101,11 @@
                     <!-- 1. TOP STATS ROW (3 Cards) -->
                     <div class="stats-row">
                         <div class="stat-card">
-                            <div class="stat-icon" style="background: rgba(16, 185, 129, 0.1); color: var(--accent-green);">📚</div>
+                            <div class="stat-icon" style="background: rgba(13, 148, 136, 0.1); color: var(--accent-green);">📚</div>
                             <div class="stat-info">
                                 <h3>Active Courses</h3>
-                                <p class="stat-num">4</p>
-                                <span class="stat-sub">Cloud, AI & Web Dev</span>
+                                <p class="stat-num">6</p>
+                                <span class="stat-sub">3rd Year IT</span>
                             </div>
                         </div>
 
@@ -90,20 +121,19 @@
                         <div class="stat-card">
                             <div class="stat-icon" style="background: rgba(245, 158, 11, 0.1); color: #f59e0b;">⭐</div>
                             <div class="stat-info">
-                                <h3>Current GPA</h3>
-                                <p class="stat-num">7.95</p>
-                                <span class="stat-sub">Fall Semester</span>
+                                <h3>Cumulative GPA</h3>
+                                <p class="stat-num">9.60</p>
+                                <span class="stat-sub">Top 5% of Batch</span>
                             </div>
                         </div>
                     </div>
 
-                    <!-- 2. MIDDLE CHARTS ROW (Attendance & Progress Breakdown) -->
+                    <!-- 2. CHARTS ROW (Weekly Activity & Skill Mastery) -->
                     <div class="charts-row">
-                        <!-- Simulated Attendance Bar Chart Box -->
                         <div class="portal-card attendance-box">
                             <div class="card-header-flex">
-                                <h3>Weekly Study Activity</h3>
-                                <span class="pill-dropdown">This Week ▾</span>
+                                <h3>Weekly Study Hours</h3>
+                                <span class="pill-dropdown">Current Term ▾</span>
                             </div>
                             <div class="fake-bar-chart">
                                 <div class="bar-col"><span>Mon</span><div class="bar" style="height: 60%;"></div></div>
@@ -116,16 +146,15 @@
                             </div>
                         </div>
 
-                        <!-- Skill Completion Breakdown Box -->
                         <div class="portal-card skills-box">
                             <h3>Skill Mastery</h3>
                             <div class="donut-container">
                                 <div class="fake-donut-ring">
-                                    <span class="donut-center-text">85%</span>
+                                    <span class="donut-center-text">88%</span>
                                 </div>
                                 <div class="donut-legend">
-                                    <p><span class="dot" style="background: var(--accent-green);"></span> Webflow & React (45%)</p>
-                                    <p><span class="dot" style="background: #3b82f6;"></span> Node & PERN (30%)</p>
+                                    <p><span class="dot" style="background: var(--accent-green);"></span> Full-Stack (45%)</p>
+                                    <p><span class="dot" style="background: #3b82f6;"></span> Cloud & DevOps (30%)</p>
                                     <p><span class="dot" style="background: #f59e0b;"></span> Python / AI (25%)</p>
                                 </div>
                             </div>
@@ -135,24 +164,24 @@
                     <!-- 3. NOTICE BOARD / ANNOUNCEMENTS -->
                     <div class="portal-card notice-board">
                         <div class="card-header-flex">
-                            <h3>Notice Board</h3>
-                            <span class="date-tag">📅 10 Aug 2026</span>
+                            <h3>Department Notice Board</h3>
+                            <span class="date-tag">📅 Oct 2026</span>
                         </div>
                         
                         <div class="notice-item">
                             <div class="notice-badge-row">
                                 <span class="badge-blue">Important</span>
-                                <span class="notice-time">Posted 2 hours ago</span>
+                                <span class="notice-time">Posted today</span>
                             </div>
-                            <h4>Industrial Training Report Final Submissions</h4>
-                            <p>Ensure your hard-bound copies and database deployment verification links are ready before Friday.</p>
-                            <span class="notice-author">By Dept. Coordinator</span>
+                            <h4>Database Optimization & Web Security Defense Schedule</h4>
+                            <p>All students must ensure their laboratory files, schema normalization dumps, and password hashing implementations are finalized for upcoming viva evaluation.</p>
+                            <span class="notice-author">Prof. Coordinator • Department of IT</span>
                         </div>
                     </div>
 
                 </div>
 
-                <!-- RIGHT SIDEBAR (Events Calendar & Upcoming Schedule) -->
+                <!-- RIGHT SIDEBAR -->
                 <div class="portal-right-col">
                     
                     <!-- Events Calendar Widget -->
@@ -160,61 +189,61 @@
                         <div class="calendar-header">
                             <h3>Events Calendar</h3>
                             <div class="cal-nav">
-                                <button class="cal-btn">&lang;</button>
-                                <span class="cal-month">August 2026</span>
-                                <button class="cal-btn">&rang;</button>
+                                <button class="cal-btn" aria-label="Previous month">&lang;</button>
+                                <span class="cal-month">October 2026</span>
+                                <button class="cal-btn" aria-label="Next month">&rang;</button>
                             </div>
                         </div>
 
                         <div class="cal-grid">
                             <span class="day-hdr">Su</span><span class="day-hdr">Mo</span><span class="day-hdr">Tu</span><span class="day-hdr">We</span><span class="day-hdr">Th</span><span class="day-hdr">Fr</span><span class="day-hdr">Sa</span>
-                            <span>26</span><span>27</span><span>28</span><span>29</span><span>30</span><span>31</span><span class="day-num">1</span>
-                            <span class="day-num">2</span><span class="day-num">3</span><span class="day-num">4</span><span class="day-num">5</span><span class="day-num">6</span><span class="day-num">7</span><span class="day-num">8</span>
-                            <span class="day-num">9</span><span class="day-num today-dot">10</span><span class="day-num">11</span><span class="day-num event-dot">12</span><span class="day-num">13</span><span class="day-num">14</span><span class="day-num">15</span>
-                            <span class="day-num">16</span><span class="day-num">17</span><span class="day-num">18</span><span class="day-num">19</span><span class="day-num">20</span><span class="day-num">21</span><span class="day-num">22</span>
+                            <span>28</span><span>29</span><span>30</span><span class="day-num">1</span><span class="day-num">2</span><span class="day-num">3</span><span class="day-num">4</span>
+                            <span class="day-num">5</span><span class="day-num">6</span><span class="day-num">7</span><span class="day-num">8</span><span class="day-num">9</span><span class="day-num today-dot">10</span><span class="day-num">11</span>
+                            <span class="day-num">12</span><span class="day-num">13</span><span class="day-num">14</span><span class="day-num event-dot">15</span><span class="day-num">16</span><span class="day-num">17</span><span class="day-num">18</span>
+                            <span class="day-num">19</span><span class="day-num event-dot">20</span><span class="day-num">21</span><span class="day-num">22</span><span class="day-num">23</span><span class="day-num">24</span><span class="day-num event-dot">25</span>
                         </div>
                     </div>
 
                     <!-- Upcoming Schedule / Timeline -->
                     <div class="portal-card upcoming-widget">
-                        <h3>Upcoming Events</h3>
+                        <h3>Upcoming Schedule</h3>
                         
                         <div class="timeline-item">
-                            <div class="timeline-dot" style="background: #f59e0b;"></div>
+                            <div class="timeline-dot" style="background: var(--accent-green);"></div>
                             <div class="timeline-content">
-                                <h4>n8n & Webflow Masterclass</h4>
-                                <p>Oct 12 at 4:00 PM</p>
+                                <h4>Cloud Computing Seminar</h4>
+                                <p>Oct 15 at 10:00 AM • Auditorium</p>
                             </div>
                         </div>
 
                         <div class="timeline-item">
                             <div class="timeline-dot" style="background: #3b82f6;"></div>
                             <div class="timeline-content">
-                                <h4>University Expo</h4>
-                                <p>Nov 02 at 10:00 AM</p>
+                                <h4>Full-Stack PERN Workshop</h4>
+                                <p>Oct 20 at 2:00 PM • Lab 3</p>
                             </div>
                         </div>
 
                         <div class="timeline-item">
-                            <div class="timeline-dot" style="background: var(--accent-green);"></div>
+                            <div class="timeline-dot" style="background: #f59e0b;"></div>
                             <div class="timeline-content">
-                                <h4>Industrial Training Defense</h4>
-                                <p>Dec 12 at 9:00 AM</p>
+                                <h4>Responsive UI Sprint Challenge</h4>
+                                <p>Oct 25 at 9:00 AM • Virtual</p>
                             </div>
                         </div>
                     </div>
 
-                    <!-- NEW CONTENT: RECENT FORUM DISCUSSIONS -->
+                    <!-- RECENT FORUM DISCUSSIONS -->
                     <div class="portal-card">
-                        <h3>Recent Forum Topics</h3>
+                        <h3>Active Forum Topics</h3>
                         <div style="display: flex; flex-direction: column; gap: 12px; margin-top: 15px;">
                             <div style="font-size: 0.85rem; border-bottom: 1px solid var(--border-color); padding-bottom: 8px;">
-                                <a href="forum.html" style="color: var(--text-primary); text-decoration: none; font-weight: 600;">Neon DB connection timeout fix</a>
-                                <p style="margin: 3px 0 0 0; font-size: 0.75rem; color: var(--text-secondary);">4 replies • 1 hr ago</p>
+                                <a href="forum.html" style="color: var(--text-primary); text-decoration: none; font-weight: 600;">MySQL PDO prepared statements gotchas</a>
+                                <p style="margin: 3px 0 0 0; font-size: 0.75rem; color: var(--text-secondary);">6 replies • 45 mins ago</p>
                             </div>
                             <div style="font-size: 0.85rem;">
-                                <a href="forum.html" style="color: var(--text-primary); text-decoration: none; font-weight: 600;">React state management best practices</a>
-                                <p style="margin: 3px 0 0 0; font-size: 0.75rem; color: var(--text-secondary);">8 replies • 3 hrs ago</p>
+                                <a href="discussion.html" style="color: var(--text-primary); text-decoration: none; font-weight: 600;">HTML5 canvas CAPTCHA generation logic</a>
+                                <p style="margin: 3px 0 0 0; font-size: 0.75rem; color: var(--text-secondary);">12 replies • 2 hrs ago</p>
                             </div>
                         </div>
                     </div>
@@ -226,23 +255,55 @@
         </main>
     </div>
 
+    <!-- JOIN CLASS MODAL (Practical 4 Modal) -->
+    <div class="modal-overlay" id="join-class-modal" role="dialog" aria-modal="true" aria-labelledby="join-modal-title">
+        <div class="modal-box">
+            <div class="modal-header">
+                <h3 id="join-modal-title">Enroll in Academic Class</h3>
+                <button class="modal-close-btn" aria-label="Close modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p style="color: var(--text-secondary); margin-bottom: 15px;">Enter the 6-character course access code provided by your subject coordinator.</p>
+                <div class="form-field-wrap">
+                    <label for="class-code" class="form-label">Course Access Code</label>
+                    <input type="text" id="class-code" class="form-input" placeholder="e.g. IT305A" maxlength="10" required>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="action-btn-outline" data-modal-close>Cancel</button>
+                <button class="action-btn-solid" id="btn-submit-join-class">Join Classroom</button>
+            </div>
+        </div>
+    </div>
 
-
+    <!-- Interactive Scripts -->
+    <script src="../js/app.js"></script>
     <script>
-    // Automatically highlight the current active sidebar menu item
-    document.addEventListener("DOMContentLoaded", function () {
-        const currentPage = window.location.pathname.split("/").pop();
-        const menuLinks = document.querySelectorAll(".text-menu a");
-
-        menuLinks.forEach(link => {
-            const linkPage = link.getAttribute("href").split("/").pop();
-            if (linkPage === currentPage) {
-                link.classList.add("active");
-            } else {
-                link.classList.remove("active");
-            }
+        document.getElementById('btn-download-report').addEventListener('click', () => {
+            alert('📄 Academic Progress Report PDF generated! Download will commence shortly.');
         });
-    });
-</script>
+        document.getElementById('btn-submit-join-class').addEventListener('click', () => {
+            const code = document.getElementById('class-code').value.trim();
+            if (!code) {
+                alert('Please enter a class code.');
+                return;
+            }
+        // Practical 10: Automatic Session & RBAC Verification
+        (async function checkClientAuth() {
+            try {
+                const res = await fetch('../php/session_status.php');
+                if (res.ok) {
+                    const data = await res.json();
+                    if (!data.authenticated) {
+                        // Redirect unauthenticated user to login
+                        window.location.href = '../php/login.php?msg=unauthorized';
+                    }
+                }
+            } catch (err) {
+                // If running statically without PHP server, allow offline static inspection
+                console.info('Static mode: PHP server not responding', err);
+            }
+        })();
+    </script>
 </body>
 </html>

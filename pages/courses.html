@@ -3,16 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Students Hub - Courses</title>
+    <title>Students Hub - Enrolled Courses & Modules</title>
+    <meta name="description" content="Browse your enrolled engineering courses, module syllabi, lab guidelines, and progress trackers.">
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body class="dashboard-body">
+
+    <!-- Accessibility Skip Link -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
 
     <!-- APP WRAPPER -->
     <div class="app-layout">
         
         <!-- FULL TEXT SIDEBAR -->
-        <aside class="text-sidebar">
+        <aside class="text-sidebar" role="navigation" aria-label="Student Navigation">
             <div class="sidebar-brand-text">
                 <h2>Students Hub</h2>
             </div>
@@ -22,33 +26,61 @@
                 <li><a href="dashboard.html">📊 Dashboard</a></li>
                 <li><a href="profile.html">👤 My Profile</a></li>
                 <li><a href="courses.html" class="active">📚 Courses</a></li>
-                <li><a href="events.html">📅 Schedule</a></li>
+                <li><a href="events.html">📅 Schedule & Events</a></li>
                 <li><a href="forum.html">💬 Discussions</a></li>
                 <li><a href="faq.html">❓ Help & FAQ</a></li>
+                <li><a href="admin.html">🛡️ Admin Console</a></li>
             </ul>
 
             <div class="sidebar-footer-text">
-                <a href="index.html" class="logout-text-btn">🚪 Log Out</a>
+                <a href="login.html" class="logout-text-btn">🚪 Log Out</a>
             </div>
         </aside>
 
         <!-- MAIN APP CONTENT AREA -->
-        <main class="app-main-content">
+        <main id="main-content" class="app-main-content">
             
             <!-- TOP HEADER BAR -->
             <header class="app-header-bar">
-                <h2>Enrolled Courses</h2>
+                <div class="header-brand-area">
+                    <h2>Academic Course Modules</h2>
+                </div>
                 
                 <div class="header-actions">
+                    <button class="theme-toggle-btn" role="switch" aria-checked="false" aria-label="Toggle dark mode" title="Switch between Light Cream and Dark Mode">
+                        <span class="celestial-sky">
+                            <span class="sky-cloud cloud-1"></span>
+                            <span class="sky-cloud cloud-2"></span>
+                            <span class="sky-star star-1"></span>
+                            <span class="sky-star star-2"></span>
+                            <span class="sky-star star-3"></span>
+                        </span>
+                        <span class="celestial-orb">
+                            <span class="crater crater-1"></span>
+                            <span class="crater crater-2"></span>
+                            <span class="crater crater-3"></span>
+                        </span>
+                    </button>
+                    <button class="action-btn-solid" onclick="alert('Course Catalog PDF downloading...')">📥 Download Syllabus</button>
+                    
                     <div class="header-profile">
-                        <span class="bell">🔔</span>
+                        <span class="bell" title="Notifications">🔔</span>
                         <div class="avatar-pill">
                             <span>👨‍💻</span>
-                            <strong>Smeet N.</strong>
+                            <strong>Smeet Nakrani</strong>
                         </div>
                     </div>
                 </div>
             </header>
+
+            <!-- BREADCRUMBS -->
+            <nav class="breadcrumbs" aria-label="Breadcrumbs" style="padding: 10px 0 20px 0;">
+                <a href="index.html">Home</a>
+                <span class="separator">/</span>
+                <a href="dashboard.html">Dashboard</a>
+                <span class="separator">/</span>
+                <span class="current">Enrolled Courses</span>
+            </nav>
 
             <!-- COURSES CONTENT GRID -->
             <div class="portal-grid">
@@ -58,8 +90,8 @@
                     
                     <div class="portal-card">
                         <div class="card-header-flex">
-                            <h3>Fall 2026 Modules</h3>
-                            <span class="pill-dropdown">4 Active Courses</span>
+                            <h3>Fall 2026 Academic Modules</h3>
+                            <span class="pill-dropdown">4 Active Modules</span>
                         </div>
 
                         <div class="courses-list-stack">
@@ -68,56 +100,56 @@
                             <div class="course-item-card">
                                 <div class="course-item-icon course-icon-green">☁️</div>
                                 <div class="course-item-details">
-                                    <h4>Cloud Computing & Architecture</h4>
-                                    <p>Prof. Sharma • Main Auditorium</p>
+                                    <h4>Cloud Computing & Virtualization (IT301)</h4>
+                                    <p>Prof. Sharma • Main Auditorium • 4 Credits</p>
                                     <div class="course-progress-bar-wrap">
                                         <div class="course-progress-fill progress-75"></div>
                                     </div>
-                                    <span class="course-progress-text">75% Completed • 4 hours weekly</span>
+                                    <span class="course-progress-text">75% Completed • Next class: Monday 10:00 AM</span>
                                 </div>
-                                <a href="#course1" class="action-btn-solid course-module-btn">Module</a>
+                                <button class="action-btn-solid course-module-btn" onclick="openModuleDetails('Cloud Computing', 'AWS architectures, Docker containerization, Kubernetes clusters, and microservices.')">Overview</button>
                             </div>
 
                             <!-- Course 2 -->
                             <div class="course-item-card">
                                 <div class="course-item-icon course-icon-blue">🧠</div>
                                 <div class="course-item-details">
-                                    <h4>Deep Learning & AI</h4>
-                                    <p>Dr. Patel • Lab 1</p>
+                                    <h4>Deep Learning & Neural Networks (IT302)</h4>
+                                    <p>Dr. Patel • Lab 1 • 4 Credits</p>
                                     <div class="course-progress-bar-wrap">
                                         <div class="course-progress-fill progress-60 bg-blue"></div>
                                     </div>
-                                    <span class="course-progress-text">60% Completed • 3 hours weekly</span>
+                                    <span class="course-progress-text">60% Completed • Next class: Tuesday 2:00 PM</span>
                                 </div>
-                                <a href="#course2" class="action-btn-solid course-module-btn">Module</a>
+                                <button class="action-btn-solid course-module-btn" onclick="openModuleDetails('Deep Learning', 'PyTorch fundamentals, Convolutional Neural Networks, Recurrent models, and Transformers.')">Overview</button>
                             </div>
 
                             <!-- Course 3 -->
                             <div class="course-item-card">
                                 <div class="course-item-icon course-icon-amber">⚡</div>
                                 <div class="course-item-details">
-                                    <h4>PERN Stack Full-Stack Development</h4>
-                                    <p>Lab Project • Studio 2</p>
+                                    <h4>Full-Stack PERN Engineering (IT303)</h4>
+                                    <p>Prof. Ananya • Computer Lab 3 • 4 Credits</p>
                                     <div class="course-progress-bar-wrap">
                                         <div class="course-progress-fill progress-90 bg-amber"></div>
                                     </div>
-                                    <span class="course-progress-text">90% Completed • Project Phase</span>
+                                    <span class="course-progress-text">90% Completed • Lab Project Defense Phase</span>
                                 </div>
-                                <a href="#course3" class="action-btn-solid course-module-btn">Module</a>
+                                <button class="action-btn-solid course-module-btn" onclick="openModuleDetails('PERN Stack Engineering', 'PostgreSQL database modeling, Express middleware, React single-page architecture, and Node.')">Overview</button>
                             </div>
 
                             <!-- Course 4 -->
                             <div class="course-item-card">
                                 <div class="course-item-icon course-icon-purple">🎨</div>
                                 <div class="course-item-details">
-                                    <h4>Advanced UI/UX Design Systems</h4>
-                                    <p>Design Studio • Lab 3</p>
+                                    <h4>Responsive UI Design & Accessibility (IT304)</h4>
+                                    <p>Design Studio • Lab 2 • 3 Credits</p>
                                     <div class="course-progress-bar-wrap">
                                         <div class="course-progress-fill progress-50 bg-purple"></div>
                                     </div>
-                                    <span class="course-progress-text">50% Completed • Weekly Lab</span>
+                                    <span class="course-progress-text">50% Completed • CSS Grid & Mobile Responsiveness</span>
                                 </div>
-                                <a href="#course4" class="action-btn-solid course-module-btn">Module</a>
+                                <button class="action-btn-solid course-module-btn" onclick="openModuleDetails('Responsive UI Design', 'Semantic HTML5, CSS Grid, Flexbox, ARIA landmarks, WCAG compliance, and Bootstrap.')">Overview</button>
                             </div>
 
                         </div>
@@ -129,41 +161,30 @@
                 <div class="portal-right-col">
                     
                     <div class="portal-card">
-                        <h3>Semester Summary</h3>
+                        <h3>Semester Overview</h3>
                         <div class="profile-overview-stack">
                             <div class="overview-row">
                                 <span class="overview-label">Total Credits</span>
                                 <strong class="text-primary-bold">24 Credits</strong>
                             </div>
                             <div class="overview-row">
-                                <span class="overview-label">Attendance Rate</span>
+                                <span class="overview-label">Lecture Attendance</span>
                                 <strong class="text-green-accent">94.5%</strong>
                             </div>
                             <div class="overview-row no-border">
-                                <span class="overview-label">Pending Assignments</span>
-                                <strong class="text-primary-bold">3 Tasks</strong>
+                                <span class="overview-label">Lab Assignments</span>
+                                <strong class="text-primary-bold">3 Pending</strong>
                             </div>
                         </div>
                     </div>
 
                     <div class="portal-card">
-                        <h3>Quick Resources</h3>
-                        <div class="resources-grid" style="grid-template-columns: 1fr; margin-top: 15px;">
-                            <div class="resource-item">
-                                <span class="resource-emoji">📖</span>
-                                <div>
-                                    <h4>Syllabus Guidelines 2026</h4>
-                                    <p>PDF Document</p>
-                                </div>
-                            </div>
-                            <div class="resource-item">
-                                <span class="resource-emoji">🔗</span>
-                                <div>
-                                    <h4>GitHub Repositories</h4>
-                                    <p>Source Code & Starters</p>
-                                </div>
-                            </div>
-                        </div>
+                        <h3>Courseware Documents</h3>
+                        <ul style="list-style: none; padding: 0; margin-top: 15px;">
+                            <li style="padding: 10px 0; border-bottom: 1px solid var(--border-color);"><a href="#" onclick="alert('Downloading Lab Manual...')">📖 IT303 Lab Manual (PDF)</a></li>
+                            <li style="padding: 10px 0; border-bottom: 1px solid var(--border-color);"><a href="#" onclick="alert('Opening Lecture Slides...')">📊 Cloud Architecture Slides</a></li>
+                            <li style="padding: 10px 0;"><a href="schedule.html">📅 Examination Timetable</a></li>
+                        </ul>
                     </div>
 
                 </div>
@@ -173,22 +194,33 @@
         </main>
     </div>
 
+    <!-- MODULE DETAILS MODAL (Practical 4 Modal) -->
+    <div class="modal-overlay" id="course-module-modal" role="dialog" aria-modal="true" aria-labelledby="modal-course-title">
+        <div class="modal-box">
+            <div class="modal-header">
+                <h3 id="modal-course-title">Module Curriculum</h3>
+                <button class="modal-close-btn" aria-label="Close modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p id="modal-course-desc" style="line-height: 1.6; color: var(--text-primary);"></p>
+                <div style="background: var(--bg-elevated); padding: 12px; border-radius: 8px; margin-top: 15px; font-size: 0.9rem;">
+                    <strong>Evaluation Scheme:</strong> 40% Continuous Lab Work + 60% Final Examination.
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="action-btn-solid" data-modal-close>Close</button>
+            </div>
+        </div>
+    </div>
 
+    <!-- Interactive Scripts -->
+    <script src="../js/app.js"></script>
     <script>
-    // Automatically highlight the current active sidebar menu item
-    document.addEventListener("DOMContentLoaded", function () {
-        const currentPage = window.location.pathname.split("/").pop();
-        const menuLinks = document.querySelectorAll(".text-menu a");
-
-        menuLinks.forEach(link => {
-            const linkPage = link.getAttribute("href").split("/").pop();
-            if (linkPage === currentPage) {
-                link.classList.add("active");
-            } else {
-                link.classList.remove("active");
-            }
-        });
-    });
-</script>
+        function openModuleDetails(title, desc) {
+            document.getElementById('modal-course-title').textContent = title;
+            document.getElementById('modal-course-desc').textContent = desc;
+            window.StudentHub.openModal('course-module-modal');
+        }
+    </script>
 </body>
 </html>
