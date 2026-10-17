@@ -245,11 +245,11 @@ python -m http.server 8000
    - View stored CSV/JSON records: `http://localhost/StudentHub-main/php/view_submissions.php`
 6. **Test Secure Authentication & Session Management (Practical 10):**
    - **Login Portal:** `http://localhost/StudentHub-main/php/login.php`
-   - **Student Login:** User: `24IT055` | Password: `Password@123` (Redirects to Student Dashboard `php/dashboard.php`).
+   - **Student Login:** User: `25IT053` | Password: `Password@123` (Redirects to Student Dashboard `php/dashboard.php`).
    - **Admin Login:** User: `admin@studentshub.edu` | Password: `Password@123` (Redirects to Admin Console `php/admin.php`).
    - **Inactivity Timeout Test:** On the Student Dashboard, click **⏳ Test 10-Second Timeout** to watch the countdown tick to 0 and trigger auto-logout redirect to `login.php?msg=timeout`.
    - **Unauthorized Access Test:** In an Incognito window, open `php/dashboard.php` or `php/admin.php` directly without logging in; verify immediate redirection to `login.php?msg=unauthorized`.
-   - **RBAC Privilege Test:** While logged in as student `24IT055`, attempt visiting `php/admin.php`; verify access is blocked and redirected to `dashboard.php?msg=admin_denied` with an alert banner.
+   - **RBAC Privilege Test:** While logged in as student `25IT053`, attempt visiting `php/admin.php`; verify access is blocked and redirected to `dashboard.php?msg=admin_denied` with an alert banner.
    - **Logout:** Click **🚪 Sign Out**; verify session destruction and redirection to `login.php?msg=logout`.
    - **Lab Guide & Viva Reference:** View [docs/practical_10_guide.md](docs/practical_10_guide.md) for full screenshots checklist and viva questions.
 
@@ -270,4 +270,5 @@ python -m http.server 8000
 ---
 
 ## 7. License & Academic Attribution
+**Student Developer:** Krishna Mangukiya (ID: `25IT053`)  
 Created for academic evaluation at Chandubhai S Patel Institute of Technology (CSPIT). All source code, design assets, and practical implementations adhere to educational web engineering standards.

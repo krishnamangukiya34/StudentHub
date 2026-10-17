@@ -321,9 +321,9 @@ function getCurrentUser() {
 
 function loginUser(userData, redirectUrl) {
     const user = {
-        name: userData.name || 'Smeet Nakrani',
-        id: userData.id || '24IT055',
-        email: userData.email || 'smeet@charusat.edu.in',
+        name: userData.name || 'Krishna Mangukiya',
+        id: userData.id || '25IT053',
+        email: userData.email || 'krishna.mangukiya@studentshub.edu',
         role: userData.role || 'Student',
         avatar: userData.avatar || '👨‍💻',
         isLoggedIn: true,
@@ -423,7 +423,7 @@ function initAuthUI() {
                     </div>
                     <div class="capsule-info">
                         <span class="capsule-name">${escapeHtml(user.name || 'Student')}</span>
-                        <span class="capsule-role">${escapeHtml(user.id || '24IT055')} • ${escapeHtml(user.role || 'Student')}</span>
+                        <span class="capsule-role">${escapeHtml(user.id || '25IT053')} • ${escapeHtml(user.role || 'Student')}</span>
                     </div>
                     <span class="capsule-chevron">▾</span>
                 </button>
@@ -436,7 +436,7 @@ function initAuthUI() {
                         </div>
                         <div class="deck-student-details">
                             <div class="deck-name">${escapeHtml(user.name || 'Student')}</div>
-                            <div class="deck-meta">ID: <strong>${escapeHtml(user.id || '24IT055')}</strong> • ${escapeHtml(user.email || 'student@charusat.edu.in')}</div>
+                            <div class="deck-meta">ID: <strong>${escapeHtml(user.id || '25IT053')}</strong> • ${escapeHtml(user.email || 'krishna.mangukiya@studentshub.edu')}</div>
                             <span class="deck-status-pill">🟢 Campus Active • Fall 2026</span>
                         </div>
                     </div>
@@ -634,13 +634,13 @@ function setupLoginPage(user) {
             }
 
             // Resolve friendly student name
-            let resolvedName = 'Smeet Nakrani';
+            let resolvedName = 'Krishna Mangukiya';
             if (usernameVal.toLowerCase().includes('alex')) {
                 resolvedName = 'Alex Mercer';
             } else if (usernameVal.includes('@')) {
                 const prefixPart = usernameVal.split('@')[0];
                 resolvedName = prefixPart.charAt(0).toUpperCase() + prefixPart.slice(1);
-            } else if (usernameVal.toUpperCase() !== '24IT055') {
+            } else if (usernameVal.toUpperCase() !== '25IT053') {
                 resolvedName = usernameVal;
             }
 

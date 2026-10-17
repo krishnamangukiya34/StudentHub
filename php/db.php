@@ -147,7 +147,7 @@ function init_sqlite_schema(PDO $pdo): void {
     $seedSql = "
     INSERT OR IGNORE INTO students (id, roll_no, full_name, email, phone, password_hash, course, year, gender, role, status) VALUES
     (1, '24ADMIN01', 'Prof. Vikram Mehta (Administrator)', 'admin@studentshub.edu', '9899001122', '{$hash}', 'Computer Engineering', 'Faculty Staff', 'Male', 'admin', 'Active'),
-    (2, '24IT055', 'Smeet Nakrani', 'smeet.nakrani@studentshub.edu', '9812345678', '{$hash}', 'B.Tech IT', '3rd Year', 'Male', 'student', 'Active'),
+    (2, '25IT053', 'Krishna Mangukiya', 'krishna.mangukiya@studentshub.edu', '9812345678', '{$hash}', 'B.Tech IT', '3rd Year', 'Male', 'student', 'Active'),
     (3, '24IT001', 'Aarav Sharma', 'aarav.sharma@studentshub.edu', '9876543210', '{$hash}', 'B.Tech IT', '3rd Year', 'Male', 'student', 'Active'),
     (4, '24IT015', 'Diya Patel', 'diya.patel@studentshub.edu', '9823456781', '{$hash}', 'B.Tech CSE', '3rd Year', 'Female', 'student', 'Active');
     ";

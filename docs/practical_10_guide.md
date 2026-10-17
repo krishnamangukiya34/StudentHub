@@ -2,7 +2,7 @@
 
 **Course:** Web Development Fundamentals / Frameworks  
 **Subject Code:** WDF Lab  
-**Student ID:** 24IT055 / 25IT055 (Smeet Nakrani)  
+**Student ID:** 25IT053 (Krishna Mangukiya)  
 **Tools & Environment:** PHP 8+, MySQL (MariaDB), Apache (XAMPP), Browser DevTools  
 **CO Mapping:** CO1, CO5  
 
@@ -112,7 +112,7 @@ Develop an enterprise-grade, secure authentication and session management subsys
   ```php
   $redirectUrl = ($_SESSION['role'] === 'admin') ? 'admin.php' : 'dashboard.php';
   ```
-* **Student User** (`24IT055` / `Password@123`): Redirected to `dashboard.php` with student courses, progress, attendance, and session inspector.
+* **Student User** (`25IT053` / `Password@123`): Redirected to `dashboard.php` with student courses, progress, attendance, and session inspector.
 * **Administrator User** (`admin@studentshub.edu` / `Password@123`): Redirected to `admin.php` with system metrics, user role directory, and live security audit logs.
 
 ---
@@ -189,11 +189,11 @@ To complete lab evaluation, capture screenshots of the following 5 scenarios:
 
 | Screenshot # | Scenario | How to Produce & Capture in StudentHub Portal |
 |---|---|---|
-| **Screenshot 1** | **Login Success & Dashboard** | 1. Open `http://localhost/StudentHub-main/php/login.php`.<br>2. Click **👨‍🎓 Student: 24IT055** demo button.<br>3. Click **Sign In Securely**.<br>4. Capture the authenticated Student Dashboard showing **Assigned Role (STUDENT)**, your name, and session ID. |
-| **Screenshot 2** | **Failed Login Attempt** | 1. Open `php/login.php`.<br>2. Enter roll number `24IT055` with an incorrect password (e.g., `WrongPass999`).<br>3. Submit the form.<br>4. Capture the red error banner: *"Invalid Student ID/Email or password. Please verify your credentials."* |
+| **Screenshot 1** | **Login Success & Dashboard** | 1. Open `http://localhost/StudentHub-main/php/login.php`.<br>2. Click **👨‍🎓 Student: 25IT053** demo button.<br>3. Click **Sign In Securely**.<br>4. Capture the authenticated Student Dashboard showing **Assigned Role (STUDENT)**, your name, and session ID. |
+| **Screenshot 2** | **Failed Login Attempt** | 1. Open `php/login.php`.<br>2. Enter roll number `25IT053` with an incorrect password (e.g., `WrongPass999`).<br>3. Submit the form.<br>4. Capture the red error banner: *"Invalid Student ID/Email or password. Please verify your credentials."* |
 | **Screenshot 3** | **Unauthorized Access Block** | 1. Log out or open an Incognito window.<br>2. Try directly accessing `http://localhost/StudentHub-main/php/dashboard.php`.<br>3. Capture the redirect to `login.php?msg=unauthorized` displaying the red alert banner: *"Access Denied: Please sign in to access the protected dashboard."* |
-| **Screenshot 4** | **Inactivity Session Timeout** | 1. Sign in as student `24IT055`.<br>2. In the Session Inspector card, click **⏳ Test 10-Second Timeout**.<br>3. Wait 10 seconds without interacting.<br>4. Capture the redirect to `login.php?msg=timeout` displaying the amber warning banner: *"Your session has expired due to inactivity. Please sign in again."* |
-| **Screenshot 5** | **RBAC Privilege Enforcement** | 1. Sign in as student `24IT055`.<br>2. Click **⛔ Test Unauthorized Admin Access (RBAC Block)**.<br>3. Capture the redirected dashboard showing the red alert box: *"Role-Based Access Control Blocked: You attempted to access the Administrator Console... recorded in security audit log."* |
+| **Screenshot 4** | **Inactivity Session Timeout** | 1. Sign in as student `25IT053`.<br>2. In the Session Inspector card, click **⏳ Test 10-Second Timeout**.<br>3. Wait 10 seconds without interacting.<br>4. Capture the redirect to `login.php?msg=timeout` displaying the amber warning banner: *"Your session has expired due to inactivity. Please sign in again."* |
+| **Screenshot 5** | **RBAC Privilege Enforcement** | 1. Sign in as student `25IT053`.<br>2. Click **⛔ Test Unauthorized Admin Access (RBAC Block)**.<br>3. Capture the redirected dashboard showing the red alert box: *"Role-Based Access Control Blocked: You attempted to access the Administrator Console... recorded in security audit log."* |
 
 ---
 

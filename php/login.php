@@ -298,8 +298,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <div class="input-group">
                         <span class="input-icon">👤</span>
                         <input type="text" id="login-identifier" name="identifier" class="form-input" 
-                               placeholder="e.g. 24IT055 or admin@studentshub.edu" 
-                               value="<?= htmlspecialchars($_POST['identifier'] ?? '24IT055') ?>" required autofocus>
+                               placeholder="e.g. 25IT053 or admin@studentshub.edu" 
+                               value="<?= htmlspecialchars($_POST['identifier'] ?? '25IT053') ?>" required autofocus>
                     </div>
                 </div>
                 
@@ -330,8 +330,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <span>💡 Quick-Fill Demo Accounts (Password: <code>Password@123</code>)</span>
                 </div>
                 <div class="demo-btn-group">
-                    <button type="button" class="demo-fill-btn" onclick="fillCredentials('24IT055', 'Password@123')">
-                        👨‍🎓 Student: <strong>24IT055</strong>
+                    <button type="button" class="demo-fill-btn" onclick="fillCredentials('25IT053', 'Password@123')">
+                        👨‍🎓 Student: <strong>25IT053</strong>
                     </button>
                     <button type="button" class="demo-fill-btn" onclick="fillCredentials('admin@studentshub.edu', 'Password@123')">
                         🛡️ Admin: <strong>admin</strong>
